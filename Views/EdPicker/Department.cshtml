@@ -1,0 +1,1761 @@
+﻿@model EdPicker.Models.Department
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://wpopaldemo.com/rentme/xmlrpc.php">
+
+    <title>Department</title>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96119720-3', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alef:700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+    <link rel='dns-prefetch' href='//maps.googleapis.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="EdPicker; Feed" href="http://edpicker.com" />
+    <link rel="alternate" type="application/rss+xml" title="EdPicker; EdPicker Comments Feed" href="http://edpicker.com" />
+    <link rel="alternate" type="application/rss+xml" title="EdPicker; EdPicker Feed" href="http://edpicker.com" />
+    <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wpopaldemo.com\/rentme\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />
+    <link rel='stylesheet' id='magnific-popup-css' href='~/Styles/css/magnific-popup.css' type='text/css' media='' />
+    <link rel='stylesheet' id='tiptip-css' href='~/Styles/css/tipTip.css' type='text/css' media='' />
+    <link rel='stylesheet' id='opallisting-comment-css' href='~/Scripts/opallisting/comment.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='selectize-css' href='~/Styles/css/selectize.css' type='text/css' media='' />
+    <link rel='stylesheet' id='owl-carousel-css' href='~/Scripts/js/owl-carousel/owl.carousel.css' type='text/css' media='' />
+    <link rel='stylesheet' id='owl-carousel-theme-css' href='~/Scripts/js/owl-carousel/owl.theme.css' type='text/css' media='' />
+    <link rel='stylesheet' id='opallisting-style-css' href='~/Styles/css/opallisting.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='opalmembership-styles-css' href='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opalmembership/assets/style.css?ver=4.7.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='~/Scripts/revslider/css/settings.css' type='text/css' media='all' />
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+        .tp-caption a {
+            color: #ff7302;
+            text-shadow: none;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+        }
+
+            .tp-caption a:hover {
+                color: #ffa902;
+            }
+    </style>
+    <link rel='stylesheet' id='rentme-open-sans-css' href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Heebo:400,500,700|Playfair+Display:700,400italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+    <link rel='stylesheet' id='rentme-fa-css' href='~/Styles/css/font-awesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='rentme-style-css' href='~/Styles/css/style.css' type='text/css' media='all' />
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='rentme-ie-css'  href='https://wpopaldemo.com/rentme/wp-content/themes/rentme/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <link rel='stylesheet' id='prettyPhoto-css' href='~/Styles/css/rtl-prettyPhoto.css' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='kc-general-css' href='~/Styles/css/kingcomposer.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='kc-animate-css' href='~/Styles/css/animate.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='kc-icon-1-css' href='http://venusdemo.com/wordpress/rentme/wp-content/plugins/kingcomposer/assets/css/icons.css?ver=2.6.11' type='text/css' media='all' />
+    <script type='text/javascript' src='~/Scripts/jquery1.12.4.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery-migrate.min.js'></script>
+
+    <script type='text/javascript' src='//maps.googleapis.com/maps/api/js?sensor=false&#038;libraries=places%2Cdrawing%2Cgeometry&#038;key=AIzaSyDrNlL48YztY5kM6oH6goFmk3aV31qrSpA&#038;ver=0.0.1'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/infobox.js'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/markerclusterer.js'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/jquery.magnific-popup.min.js'></script>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var opalmembership_scripts = {"ajaxurl":"https:\/\/wpopaldemo.com\/rentme\/wp-admin\/admin-ajax.php","checkout":"https:\/\/wpopaldemo.com\/rentme\/membership-checkout\/"};
+/* ]]> */
+    </script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opalmembership/assets/script.js?ver=4.7.5'></script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opalmembership/assets/jquery.payment.min.js?ver=4.7.5'></script>
+    <script type='text/javascript' src='~/Scripts/revslider/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/revslider/js/jquery.themepunch.revolution.min.js'></script>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var SnazzyDataForSnazzyMaps = [];
+SnazzyDataForSnazzyMaps={"id":83,"name":"Muted Blue","description":"An unobtrusive blue design for minimal user-experiences. Design for the Rock RMS project.","url":"https:\/\/snazzymaps.com\/style\/83\/muted-blue","imageUrl":"https:\/\/snazzy-maps-cdn.azureedge.net\/assets\/83-muted-blue.png?v=20170317101642","json":"[\r\n\t{\"featureType\": \"all\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"saturation\": 0},\r\n\t\t\t{\"hue\": \"#e7ecf0\"}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"road\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"saturation\": -70}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"transit\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"visibility\": \"off\"}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"poi\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"visibility\": \"off\"}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"water\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"visibility\": \"simplified\"},\r\n\t\t\t{\"saturation\": -60}\r\n\t\t]\r\n\t}\r\n]","views":35824,"favorites":158,"createdBy":{"name":"Jon Edmiston","url":"http:\/\/www.rockrms.com"},"createdOn":"2014-04-16T02:58:37.86","tags":["greyscale"],"colors":["blue","gray"]};
+/* ]]> */
+    </script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/snazzy-maps/snazzymaps.js?ver=1.1.3'></script>
+    <script type='text/javascript' src='~/Scripts/bootstrap.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/js/jquery.prettyPhoto.js'></script>
+    <link rel='https://api.w.org/' href='https://wpopaldemo.com/rentme/wp-json/' />
+    <link rel='prev' title='Hotel Brussels Motel One' href='http://venusdemo.com/wordpress/rentme/places/hotel-brussels-motel-one/' />
+    <link rel='next' title='Easy Mill Arbor' href='http://venusdemo.com/wordpress/rentme/places/easy-mill-arbor/' />
+    <meta name="generator" content="WordPress 4.7.5" />
+    <link rel="canonical" href="http://www.edpicker.com" />
+    <link rel='shortlink' href='http://www.edpicker.com' />
+    <link rel="alternate" type="application/json+oembed" href="https://wpopaldemo.com/rentme/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwpopaldemo.com%2Frentme%2Fplaces%2Froyal-ontario-museum%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="https://wpopaldemo.com/rentme/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwpopaldemo.com%2Frentme%2Fplaces%2Froyal-ontario-museum%2F&#038;format=xml" />
+    <script type="text/javascript">var kc_script_data={ajax_url:"https://wpopaldemo.com/rentme/wp-admin/admin-ajax.php"}</script>
+
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+    <script>
+        var DepartmentPageApp = angular.module("CollegeDepartmentPage", []);
+
+
+        DepartmentPageApp.controller("MainPage",function  ($scope, $http, $rootScope) {
+
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            $scope.GoToSearchPage = function (Search)
+            {
+                var Location = document.getElementById('LocationID').innerHTML;
+                window.location.href="/Search?q="+Search+'&Location='+Location;
+            }
+
+            @{
+                var PDEPGallery = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PDEPGalleryjson = PDEPGallery.Serialize(Model.PDEPGalleryList);
+
+            }
+
+            $rootScope.Gallery =@Html.Raw(PDEPGalleryjson);
+            @*@{
+                var PDEPTestimonial = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PDEPTestimonialjson = PDEPTestimonial.Serialize(Model.Test);
+
+            }
+
+            $rootScope.Testimonial =@Html.Raw(PDEPTestimonialjson);*@
+
+            @{
+                var PDEPNews = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PDEPNewsjson = PDEPNews.Serialize(Model.PDEPNewsList);
+
+            }
+
+            $rootScope.News =@Html.Raw(PDEPNewsjson);
+
+            @{
+                var PDEPReview = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PDEPReviewjson = PDEPReview.Serialize(Model.PDEPReviewList);
+
+            }
+
+            $rootScope.Review =@Html.Raw(PDEPReviewjson);
+
+
+             @{
+                 var PDEPSubject = new System.Web.Script.Serialization.JavaScriptSerializer();
+                 var PDEPSubjectjson = PDEPSubject.Serialize(Model.PDEPSubjectsList);
+
+             }
+
+            $rootScope.Subject =@Html.Raw(PDEPSubjectjson);
+
+
+             @{
+                 var PDEPLab = new System.Web.Script.Serialization.JavaScriptSerializer();
+                 var PDEPLabjson = PDEPLab.Serialize(Model.PDEPLabsList);
+
+             }
+
+            $rootScope.Lab =@Html.Raw(PDEPLabjson);
+
+            
+
+
+             @{
+                 var PDEPWorkshop= new System.Web.Script.Serialization.JavaScriptSerializer();
+                 var PDEPWorkshopjson = PDEPLab.Serialize(Model.PDEPWorkshopsList);
+
+             }
+
+            $rootScope.Workshop =@Html.Raw(PDEPWorkshopjson);
+
+
+             @{
+                 var PDEPSeminar= new System.Web.Script.Serialization.JavaScriptSerializer();
+                 var PDEPSeminarjson = PDEPLab.Serialize(Model.PDEPSeminarList);
+
+             }
+
+            $rootScope.Seminar =@Html.Raw(PDEPSeminarjson);
+
+             @{
+                 var PDEPPlacementCompany= new System.Web.Script.Serialization.JavaScriptSerializer();
+                 var PDEPPlacementCompanyjson = PDEPLab.Serialize(Model.PDEPPlacementCompaniesList);
+
+             }
+
+            $rootScope.PlacementCompany =@Html.Raw(PDEPPlacementCompanyjson);
+
+           $scope.CallPage=function(InstitutionID)
+           {
+               window.location.href="/GoToPage?InstitutionId="+InstitutionID;
+           }
+           $scope.GoToDepartment=function(DepartmentID)
+           {
+               window.location.href="/Department?DepartmentId="+DepartmentID;
+           }
+           $scope.GoToCollege=function(InstitutionID)
+           {
+               window.location.href="/College?InstitutionId="+InstitutionID;
+           }
+        });
+
+    </script>
+    <style type="text/css" id="rentme-header-css"></style>
+    <meta name="generator" content="Powered by Slider Revolution 5.3.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+</head>
+
+<body ng-app="CollegeDepartmentPage" ng-controller="MainPage" class="opallisting_place-template-default single single-opallisting_place postid-10670 kc-css-system masthead-fixed singular">
+    <div id="page" class="hfeed site">
+        <div class="opal-page-inner row-offcanvas row-offcanvas-left">
+
+            <div class="topbar-mobile  hidden-lg hidden-md">
+                <div class="active-mobile pull-left">
+                    <button data-toggle="offcanvas" class="btn btn-offcanvas btn-toggle-canvas offcanvas" type="button">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="topbar-inner pull-left">
+                    <div class="active-mobile search-popup pull-left">
+                        <span class="fa fa-search"></span>
+                        <div class="active-content">
+                            <form method="get" class="searchform" action="https://wpopaldemo.com/rentme/">
+                                <div class="opal-search input-group">
+                                    <input name="s" maxlength="40" class="form-control input-large input-search" type="text" size="20" placeholder="Search...">
+                                    <span class="input-group-addon input-large btn-search">
+                                        <input type="submit" class="fa" value="&#xf002;" />
+                                    </span>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <header id="opal-masthead" class="site-header header-v1">
+                <div class="header-main clearfix ">
+
+                    <div class="logo-wrapper pull-left">
+                        <div id="opal-logo" class="logo logo-theme">
+                            <a href="https://wpopaldemo.com/rentme">
+                                <img src="~/Images/logo.png" alt="Rentme" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="opal-header-right pull-right">
+                        <div class="header-inner">
+                            <div class="box-user dropdown pull-right">
+
+                                <ul class="list-inline pull-right">
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalNewSearch" class="opal-user-login">
+                                            <span class="fa fa-search"></span> <span id="SearchID">Search</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="opal-mainmenu" class="opal-mainmenu">
+                        <div class="inner pull-left">
+                            <nav data-duration="400" class="hidden-xs hidden-sm opal-megamenu slide animate navbar navbar-mega">
+
+                               
+                            </nav>
+                        </div>
+                    </section>
+                    <div class="opal-header-right pull-right">
+                        <div class="header-inner">
+                            <div class="box-user dropdown pull-right">
+
+                                @*<ul class="list-inline pull-left">
+                                    <li><a href="#" data-toggle="modal" data-target="#modalLoginForm" class="opal-user-login"><span class="fa fa-user"></span> Login</a></li>
+                                    <li><a href="https://wpopaldemo.com/rentme/opal-membership-register/" class="opal-user-register"><span class="fa fa-pencil"></span> Register</a></li>
+                                </ul>
+                                <a href="https://wpopaldemo.com/rentme/place-submission-page-10/" class="rentme-submission-place-url hidden-xs hidden-sm hidden-md">Submit a place</a>*@
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header><!-- #masthead -->
+
+
+            <section id="main" class="site-main">
+
+                <section id="opal-breadscrumb" class="opal-breadscrumb" style=""><div class="container"><h2>@Model.PDEPTimelines.DepartmentName</h2><ol class="breadcrumb"><li><a ng-click="GoToCollege(@Model.PDEPTimelines.InstitutionID)">@Model.PDEPTimelines.CollegeName</a> </li></ol></div></section>
+
+                <section id="main-container" class="site-main container" role="main">
+                    <div class="row">
+
+                        <div class="row">
+                            <main id="primary" class="content content-area col-md-8 col-sm-8 col-xs-12">
+                                <div class="single-opallisting-container">
+
+
+                                    <article id="post-10670" itemscope itemtype="http://schema.org/Place" class="version-1 post-10670 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-clubs place_category-hotels place_category-pubs place_category-wine-bar place_category-wineries opallisting_tags-foods opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-poland opallisting_amenities-bottle-service opallisting_amenities-family-friendly opallisting_amenities-restaurant opallisting_amenities-room-service opallisting_amenities-ticket-reservations opallisting_amenities-wheelchair-accessible opallisting_amenities-wifi">
+
+
+                                        <nav class="opallisting-tab-v1">
+
+
+                                            <ul class="opallisiting-nav-tabs">
+                                                <li class="tab active">
+                                                    <a href="#place-description">
+                                                        About
+                                                    </a>
+                                                </li>
+                                                <li class="tab">
+                                                    <a href="#place-video">
+                                                        <i class="fa fa-film" aria-hidden="true"></i>
+                                                        Achievement
+                                                    </a>
+                                                </li>
+                                                <li class="tab">
+                                                    <a href="#place-matterport">
+                                                        Placements
+                                                    </a>
+                                                </li>
+                                                <li class="tab">
+                                                    <a href="#place-review">
+                                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                        Reviews
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <div class="content-box place-description active" id="place-description">
+                                            <div class="row opal-row">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <div class="place-content">
+                                                        <h3 class="place-title box-heading">About Department</h3>	
+                                                    
+                                                        <p>@Model.PDEPBriefDetails.Brief</p>
+                                                        <div class="content-inline-box row opal-row">
+                                                            <div class="col-md-12 col-xs-12">
+                                                                <div class="list-group place-amenities opallisting-box">
+                                                                    <section class="kc-elm kc-css-154288 kc_row">
+                                                                        <div class="kc-row-container  kc-container">
+                                                                            <div class="kc-wrap-columns">
+                                                                                <div class="kc-elm kc-css-887995 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                                    <div class="kc-col-container">
+                                                                                        <div class="kc-elm kc-css-754739" style="height: 90px; clear: both; width:100%;"></div>
+                                                                                        <div id=" " class="kc-elm kc-css-792933 kc_row kc_row_inner">
+                                                                                            <div class="kc-elm kc-css-936099 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-484414 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPBriefDetails.TotalTotalStudents</span>
+                                                                                                        <h4>Students</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-898661 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-646758 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPBriefDetails.TotalTotalStaff</span>
+                                                                                                        <h4>Staff</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-34691 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-485700 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPBriefDetails.TotalPlaced</span>
+                                                                                                        <h4>Placements</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-374466 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-836576 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPBriefDetails.TotalAchievements</span>
+                                                                                                        <h4>Achievements</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="kc-elm kc-css-674930" style="height: 90px; clear: both; width:100%;"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                </div>
+                                                               
+
+
+                                                                <div class="list-group place-amenities opallisting-box">
+                                                                    <h4 class="list-group-item-heading">Staff</h4>
+                                                                    <div class="list-group-item-text">
+                                                                        <div class="row opal-row">
+                                                                           
+                                                                            <div class="col-lg-6 col-md-6 active">
+                                                                                <span><i class="fa fa-check"></i>  Number of PhD : </span>
+                                                                                <strong>@Model.PDEPStaffs.Totalphd</strong>
+                                                                            </div>
+                                                                            <div class="col-lg-6 col-md-6 active">
+                                                                                <span><i class="fa fa-check"></i>  Number of Doctorate : </span>
+                                                                                <strong>@Model.PDEPStaffs.Totaldoctorate</strong>
+                                                                            </div>
+                                                                            <div class="col-lg-6 col-md-6 active">
+                                                                                <span><i class="fa fa-check"></i>  Number of Professor : </span>
+                                                                                <strong>@Model.PDEPStaffs.Totalprofessor</strong>
+                                                                            </div>
+                                                                            <div class="col-lg-6 col-md-6 active">
+                                                                                <span><i class="fa fa-check"></i>  Number of Lab Technicians : </span>
+                                                                                <strong>@Model.PDEPStaffs.Totallabtechnicians</strong>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-12 col-xs-12">
+                                                                <div class="place-tags">
+                                                                    <h4>
+                                                                        Subjects
+                                                                    </h4>
+                                                                    <a ng-repeat="sub in Subject" title="{{dep.DepartmentName}}">
+                                                                        {{sub.SubjectName}}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="content-inline-box place-specification row opal-row">
+                                                            <div class="col-md-12 col-xs-12">
+
+                                                                <div class="place-specification opallisting-box">
+                                                                    <h4 class="list-group-item-heading">Labs</h4>
+                                                                    <div class="box-info">
+                                                                        <div class="row opal-row">
+                                                                            <div class="col-md-6 col-xs-12" ng-repeat="lab in Lab">
+                                                                                <i class="fa fa-bell"></i>
+                                                                                {{lab.Labname}}
+                                                                            </div>
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div><!-- .place-content -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-box place-video" id="place-video">
+                                            <div class="row opal-row">
+                                                <div class="col-md-12 col-xs-12">
+
+                                                    <div class="place-video-session listing-panel" data-target="">
+                                                        <h3>Activitis</h3>
+                                                        <div class="box-info">
+                                                            <div class="content-inline-box place-specification row opal-row">
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <section class="kc-elm kc-css-154288 kc_row">
+                                                                        <div class="kc-row-container  kc-container">
+                                                                            <div class="kc-wrap-columns">
+                                                                                <div class="kc-elm kc-css-887995 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                                    <div class="kc-col-container">
+                                                                                        <div class="kc-elm kc-css-754739" style="height: 90px; clear: both; width:100%;"></div><div id=" " class="kc-elm kc-css-792933 kc_row kc_row_inner">
+                                                                                            <div class="kc-elm kc-css-936099 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-484414 kc_counter_box">
+                                                                                                        <span class="counterup">80</span>
+                                                                                                        <h4>Projects</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-898661 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-646758 kc_counter_box">
+                                                                                                        <span class="counterup">36</span>
+                                                                                                        <h4>Patents</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-34691 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-485700 kc_counter_box">
+                                                                                                        <span class="counterup">44</span>
+                                                                                                        <h4>Awards</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-374466 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-836576 kc_counter_box">
+                                                                                                        <span class="counterup">16</span>
+                                                                                                        <h4>Participation</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div><div class="kc-elm kc-css-674930" style="height: 90px; clear: both; width:100%;"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <div class="place-specification opallisting-box">
+                                                                        <h4 class="list-group-item-heading">Workshops</h4>
+                                                                        <div class="box-info">
+                                                                            <div class="kc-elm kc-css-436011 kc_col-sm-12 kc_column_inner kc_col-sm-12">
+                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                    <div class="kc-elm kc-css-249344 kc_accordion_wrapper">
+                                                                                       
+
+                                                                                        <div class="kc-elm kc-css-958207 kc_accordion_section group" ng-repeat="work in Workshop">
+                                                                                            <h3 class="kc_accordion_header ui-accordion-header">
+                                                                                            <span class="ui-accordion-header-icon ui-icon"></span>
+                                                                                            <a href="#free-support-and-updates" data-prevent="scroll"><i class="fa-rocket"></i> 
+                                                                                                 {{work.Title}}</a>
+                                                                                            </h3>
+                                                                                            <div class="kc_accordion_content ui-accordion-content kc_clearfix" style="display: none;">
+                                                                                                <div class="kc-panel-body">
+                                                                                                    <div class="kc-elm kc-css-164091 kc_text_block">
+                                                                                                        <p>{{work.Detail}}</p>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                       
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="place-specification opallisting-box">
+                                                                        <h4 class="list-group-item-heading">Seminars</h4>
+                                                                        <div class="box-info">
+                                                                            <div class="kc-elm kc-css-436011 kc_col-sm-12 kc_column_inner kc_col-sm-12">
+                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                    <div class="kc-elm kc-css-249344 kc_accordion_wrapper">
+
+
+                                                                                        <div class="kc-elm kc-css-958207 kc_accordion_section group" ng-repeat="sem in Seminar">
+                                                                                            <h3 class="kc_accordion_header ui-accordion-header">
+                                                                                                <span class="ui-accordion-header-icon ui-icon"></span>
+                                                                                                <a href="#free-support-and-updates" data-prevent="scroll">
+                                                                                                    <i class="fa-rocket"></i>
+                                                                                                    {{sem.Title}}
+                                                                                                </a>
+                                                                                            </h3>
+                                                                                            <div class="kc_accordion_content ui-accordion-content kc_clearfix" style="display: none;">
+                                                                                                <div class="kc-panel-body">
+                                                                                                    <div class="kc-elm kc-css-164091 kc_text_block">
+                                                                                                        <p>{{sem.Detail}}</p>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="list-group place-amenities opallisting-box">
+                                                                        <h4 class="list-group-item-heading">Achievement</h4>
+                                                                        <div class="list-group-item-text">
+                                                                            <div class="row opal-row">
+                                                                                <div class="col-lg-6 col-md-6 active">
+                                                                                    <span><i class="fa fa-check"></i>  Total Projects: </span>
+                                                                                    <strong>@Model.PDEPAchievement.Totalprojects</strong>
+                                                                                </div>
+                                                                                <div class="col-lg-6 col-md-6 active">
+                                                                                    <span><i class="fa fa-check"></i>  Awards: </span>
+                                                                                    <strong>@Model.PDEPAchievement.Totalawards</strong>
+                                                                                </div>
+                                                                                <div class="col-lg-6 col-md-6 active">
+                                                                                    <span><i class="fa fa-check"></i>  Patents : </span>
+                                                                                    <strong>@Model.PDEPAchievement.Totalpatents</strong>
+                                                                                </div>
+                                                                               
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-box place-matterport" id="place-matterport">
+                                            <div class="content-inline-box row opal-row">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <div class="list-group place-amenities opallisting-box">
+                                                        <h4 class="list-group-item-heading">Amenities</h4>
+                                                        <div class="list-group-item-text">
+                                                            <div class="row opal-row">
+                                                                <div class="col-md-12 col-xs-12">
+                                                                    <section class="kc-elm kc-css-154288 kc_row">
+                                                                        <div class="kc-row-container  kc-container">
+                                                                            <div class="kc-wrap-columns">
+                                                                                <div class="kc-elm kc-css-887995 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                                    <div class="kc-col-container">
+                                                                                        <div class="kc-elm kc-css-754739" style="height: 90px; clear: both; width:100%;"></div><div id=" " class="kc-elm kc-css-792933 kc_row kc_row_inner">
+                                                                                            <div class="kc-elm kc-css-936099 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-484414 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPPlacementsBasics.Totalcompanies</span>
+                                                                                                        <h4>Total Companies</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-898661 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-646758 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPPlacementsBasics.Totalplaced</span>
+                                                                                                        <h4>Placed</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-34691 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-485700 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPPlacementsBasics.Conversionrate</span>
+                                                                                                        <h4>Conversion</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div><div class="kc-elm kc-css-374466 kc_col-sm-3 kc_column_inner kc_col-sm-3">
+                                                                                                <div class="kc_wrapper kc-col-inner-container">
+                                                                                                    <div class="kc-elm kc-css-836576 kc_counter_box">
+                                                                                                        <span class="counterup">@Model.PDEPPlacementsBasics.Intership</span>
+                                                                                                        <h4>Internship</h4>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div><div class="kc-elm kc-css-674930" style="height: 90px; clear: both; width:100%;"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <div class="matterport">
+                                                                        <h3 class="box-heading">Placements</h3>
+                                                                        <a class="item" ng-repeat="placementlist in PlacementCompany">
+                                                                            <img width="60" height="40" src="{{placementlist.CompanyImageURL}}" class="attachment- size-" alt="Companyname" />
+                                                                        </a>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                             </div>
+                                           
+                                        </div>
+                                        <div class="content-box place-review" id="place-review">
+                                            <div class="row opal-row">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <div id="opallisting-reviews">
+
+                                                        <div class="review-section row" id="opallisting-comments">
+                                                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                                                <header>
+                                                                    <h3 class="room-single-title">
+                                                                        1 Review                    <a href="#opallisting-review-form-wrapper" class="opallisting-toggle-review write-review">Write a review</a>
+                                                                    </h3>
+                                                                </header>
+                                                            </div>
+
+                                                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                                                <div class="review-section-container">
+                                                                    <div class="rating-summery">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                <ul class="rating-box">
+                                                                                    <li>
+                                                                                        <span class="label">5</span>
+                                                                                        <span class="bar">
+                                                                                            <span style="width: 0.00%"></span>
+                                                                                        </span>
+                                                                                        <span class="percent">0.00%</span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span class="label">4</span>
+                                                                                        <span class="bar">
+                                                                                            <span style="width: 0.00%"></span>
+                                                                                        </span>
+                                                                                        <span class="percent">0.00%</span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span class="label">3</span>
+                                                                                        <span class="bar">
+                                                                                            <span style="width: 0.00%"></span>
+                                                                                        </span>
+                                                                                        <span class="percent">0.00%</span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span class="label">2</span>
+                                                                                        <span class="bar">
+                                                                                            <span style="width: 0.00%"></span>
+                                                                                        </span>
+                                                                                        <span class="percent">0.00%</span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <span class="label">1</span>
+                                                                                        <span class="bar">
+                                                                                            <span style="width: 0.00%"></span>
+                                                                                        </span>
+                                                                                        <span class="percent">0.00%</span>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                <div class="overall">
+                                                                                    <span class="averger">5.00</span>
+                                                                                    <div class="holder">
+                                                                                        Overall rating          
+                                                                                                                  <p class="info">
+                                                                                            <div class="comment-rating" title="">
+                                                                                                <span style="width:100%"></span>
+                                                                                            </div>
+                                                                                            <span class="rating-based">based on all ratings</span>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <ul class="services">
+                                                                                        <li>
+                                                                                            <span class="rating-name">Nightlife</span>
+                                                                                            <span class="percent">0.0%</span>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <span class="rating-name">Exciting</span>
+                                                                                            <span class="percent">0.0%</span>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="reviews">
+                                                                        <ol class="comment-list">
+                                                                            @*<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 comment" id="li-comment-191">
+
+                                                                                <div id="comment-191" class="comment_container">
+
+                                                                                    <div class="comment-author">
+                                                                                        <img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-40 photo' height='40' width='40' />
+                                                                                    </div>
+
+                                                                                    <div class="comment-text">
+                                                                                        <strong class="author">admin</strong>
+
+
+                                                                                        <div class="meta">
+                                                                                            <time datetime="2017-04-27T07:45:45+00:00">
+                                                                                                2 months ago
+                                                                                            </time>
+                                                                                            <div class="comment-rating" title="Rated 0 Star">
+                                                                                                <span style="width:0%"></span>
+                                                                                            </div>
+
+                                                                                            <a href="#" class="opallisting-toggle-helpful" data-action="opallisting_toggle_helpful" data-id="191" data-nonce="589070fad8">
+                                                                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                                                                                Helpful                        <span class="count">0</span>
+                                                                                            </a>
+                                                                                        </div>
+
+                                                                                        <div class="comment-content">
+                                                                                            <p>This boutique hotel offers such friendly service, a great morning continental breakfast, free newspaper, wine happy hours, and evening cookies. it feels like you’re staying in a quaint b&#038;b without the hassle of actually having to eat with other people for breakfast.</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 comment" id="li-comment-191">
+
+                                                                                <div id="comment-191" class="comment_container">
+
+                                                                                    <div class="comment-author">
+                                                                                        <img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-40 photo' height='40' width='40' />
+                                                                                    </div>
+
+                                                                                    <div class="comment-text">
+                                                                                        <strong class="author">admin</strong>
+
+
+                                                                                        <div class="meta">
+                                                                                            <time datetime="2017-04-27T07:45:45+00:00">
+                                                                                                2 months ago
+                                                                                            </time>
+                                                                                            <div class="comment-rating" title="Rated 0 Star">
+                                                                                                <span style="width:0%"></span>
+                                                                                            </div>
+
+                                                                                            <a href="#" class="opallisting-toggle-helpful" data-action="opallisting_toggle_helpful" data-id="191" data-nonce="589070fad8">
+                                                                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                                                                                Helpful                        <span class="count">0</span>
+                                                                                            </a>
+                                                                                        </div>
+
+                                                                                        <div class="comment-content">
+                                                                                            <p>This boutique hotel offers such friendly service, a great morning continental breakfast, free newspaper, wine happy hours, and evening cookies. it feels like you’re staying in a quaint b&#038;b without the hassle of actually having to eat with other people for breakfast.</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>*@
+                                                                            <!-- #comment-## -->
+                                                                        </ol>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="review-section hide" id="opallisting-review-form-wrapper">
+                                                            <h3 class="room-single-title">
+                                                                Ratings and Reviews            <a href="#opallisting-comments" class="opallisting-toggle-review close">Close</a>
+                                                            </h3>
+                                                            <div class="review-section-container">
+                                                                <div id="opallisting-review-form">
+                                                                    <div id="respond" class="comment-respond">
+                                                                        <h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/rentme/places/same-nightclub/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://wpopaldemo.com/rentme/wp-comments-post.php" method="post" id="commentform" class="opallisting-comment-form" novalidate>
+                                                                            <div class="opallisting-rating-warpper"><div class="opallisting-star" data-type="8"><p class="comment-form-rating"><label for="rating-position">Nightlife</label></p></div><div class="opallisting-star" data-type="15"><p class="comment-form-rating"><label for="rating-position">Exciting</label></p></div></div><p class="form-row comment-form-title"><input id="title" class="form-control" name="title" type="text" value="" placeholder="Summarize your opinion or hightlight interesting detail" /></p><p class="form-row comment-form-comment"><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" placeholder="Tell about your experience or leave a tip for others"></textarea><input type="hidden" name="action" value="opallisting_process_add_review" /><input name="opallisting-comment-nonce" value="11ba8f9322" type="hidden" /></p><p class="form-row comment-form-author"><input id="author" class="form-control" name="author" type="text" value="" placeholder="Your name" size="30" aria-required="true" /></p>
+                                                                            <p class="form-row comment-form-email"><input id="email" class="form-control" name="email" type="text" value="" placeholder="Your@email.com" size="30" aria-required="true" /></p>
+                                                                            <p class="form-submit">
+                                                                                <input name="submit" type="submit" id="submit" class="submit" value="Submit" /> <input type='hidden' name='comment_post_ID' value='10670' id='comment_post_ID' />
+                                                                                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                                                                            </p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="482aaaca63" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="243" /></p>
+                                                                        </form>
+                                                                    </div><!-- #respond -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="clear clearfix"></div>
+
+                                    </article><!-- #post-## -->
+
+
+
+
+                                </div>
+                            </main><!-- .site-main -->
+                            <aside class="sidebar sidebar-right col-md-4 col-sm-4 col-xs-12" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+                                <div id="opallisting_single_place_widget-3" class="widget widget_opallisting_single_place_widget">
+                                    <h2 class="widgettitle">Photo Gallery</h2><div class="opallisting-place-gallery widget-content">
+                                        <div class="row">
+
+                                            <div class="col-md-4" ng-repeat="sri in Gallery">
+                                                <a class="item" href="{{sri.GalleryURL}}">
+                                                    <img width="890" height="593" src="{{sri.GalleryURL}}" class="attachment- size-" alt="" />
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div id="opallisting_open_hours_widget-4" class="widget widget_opallisting_open_hours_widget">
+                                    <div class="place-open-hours widget-content">
+                                        <h2 class="widgettitle">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            News                    <span class="status opening"></span>
+                                            <span class="time">
+                                              
+                                            </span>
+                                        </h2>
+                                        <table class="place-open-hours-table">
+                                           
+                                            <tbody>
+                                                <tr ng-repeat="new in News" class="">
+                                                    <td>{{new.News}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="opallisting_user_contact_widget-3" class="widget widget_opallisting_user_contact_widget">
+                                    <h2 class="widgettitle">Message the Business</h2><div class="widget-content">
+
+                                        <form action="https://wpopaldemo.com/rentme/places/same-nightclub?opallisting_place=same-nightclub&#038;post_type=opallisting_place&#038;name=same-nightclub" class="opallisting-contact-form" data-id="">
+
+
+                                            <p class="form-row validate-required" id="name-field">
+                                                <label for="name">
+                                                    Name			 <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <input type="text" class="" name="name" id="name" value="" placeholder="Your name" />
+                                            </p><p class="form-row validate-required" id="email-field">
+                                                <label for="email">
+                                                    Email			 <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <input type="text" class="" name="email" id="email" value="" placeholder="Your@email.com" />
+                                            </p><p class="form-row validate-required" id="subject-field">
+                                                <label for="subject">
+                                                    Subject			 <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <input type="text" class="" name="subject" id="subject" value="" placeholder="Just another question" />
+                                            </p><p class="form-row validate-required" id="content-field">
+                                                <label for="content">
+                                                    Message			 <abbr class="required" title="required">*</abbr>
+                                                </label><textarea name="content" id="content" cols="20" rows="5" placeholder="Comment..."></textarea>
+                                            </p>
+                                            
+                                            <p class="form-row submit">
+                                                <input type="hidden" id="opallisting-contact-nonce" name="opallisting-contact-nonce" value="2cd2dc1c43" /><input type="hidden" name="_wp_http_referer" value="/rentme/places/same-nightclub/" />			<input type="hidden" name="action" value="opallisting_process_contact_form" />
+                                                <input type="hidden" name="contact-form-id" value="" />
+                                                <input type="hidden" name="place-id" value="10670" />
+                                                <button type="submit" class="btn btn-primary btn-block submit">Send Message</button>
+                                            </p>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <div>
+
+
+                        <h3 class="box-heading">You may also like</h3>
+                        <div class="opallisting-carousel-play">
+                            <div class="opallisting-places opallisting-places-carousel opallisting-carousel" data-items="3" data-pagination="true" data-navigation="true">
+                                <div class="item">
+                                    <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-11398 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-bars place_category-hotels place_category-wine-bar place_category-wineries opallisting_tags-bar opallisting_tags-club opallisting_tags-room opallisting_location-london">
+
+
+                                        <header>
+                                            <span class="featured">Featured</span>
+                                            <div class="place-box-image">
+                                                <a href="https://wpopaldemo.com/rentme/places/pattaya-nightlife/" class="place-box-image-inner">
+                                                    <img width="495" height="500" src="https://wpopaldemo.com/rentme/wp-content/uploads/2017/03/place-35-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                </a>
+                                            </div>
+
+                                            <div class="place-actions">
+
+                                                <a href="https://wpopaldemo.com/rentme/profile-page/admin/profile/" class="author-link"><img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-96 photo' height='96' width='96' /><span>admin</span></a>
+                                                <a href="#" data-icon="heart" data-id="11398" data-nonce="f937f05126" class="favorite  opallisting-need-login">
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </header>
+
+                                        <div class="place-content">
+
+                                            <h4 class="place-title"><a href="https://wpopaldemo.com/rentme/places/pattaya-nightlife/" rel="bookmark">Pattaya Nightlife</a></h4>
+
+                                            <div class="place-address">
+                                                <i class="fa fa-map-marker"></i>
+                                                Gerrard Street, London
+                                            </div>
+
+                                            <div class="place-type">
+                                                <span class="fa fa-music "></span>
+                                                <span>Nightlife</span>
+                                            </div>
+                                            <div class="place-meta">
+
+                                                <div class="comment-rating-wrap">
+                                                    <div class="comment-rating" title="Rated 0 Star for listing">
+                                                        <span style="width:0%"></span>
+                                                    </div>
+                                                    <div class="listing-count-reviews">(0 Reviews)</div>
+                                                </div>
+                                                <span class="current-status  opening">
+                                                    Opening
+                                                </span>
+                                            </div>
+                                        </div><!-- .place-content -->
+
+
+                                        <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/pattaya-nightlife/" />
+
+                                    </article><!-- #post-## -->
+                                </div>
+                                <div class="item">
+                                    <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-11389 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-bars place_category-cinemas place_category-clubs place_category-hostels place_category-pubs place_category-wine-bar opallisting_tags-bar opallisting_tags-club opallisting_tags-room opallisting_location-itali opallisting_amenities-credit-card-payment opallisting_amenities-daily-specials opallisting_amenities-family-friendly opallisting_amenities-free-delivery opallisting_amenities-restaurant opallisting_amenities-wifi">
+
+
+                                        <header>
+                                            <div class="place-box-image">
+                                                <a href="https://wpopaldemo.com/rentme/places/los-angeles-club-spotlight/" class="place-box-image-inner">
+                                                    <img width="495" height="500" src="https://wpopaldemo.com/rentme/wp-content/uploads/2017/03/place-34-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                </a>
+                                            </div>
+
+                                            <div class="place-actions">
+
+                                                <a href="https://wpopaldemo.com/rentme/profile-page/admin/profile/" class="author-link"><img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-96 photo' height='96' width='96' /><span>admin</span></a>
+                                                <a href="#" data-icon="heart" data-id="11389" data-nonce="f937f05126" class="favorite  opallisting-need-login">
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </header>
+
+                                        <div class="place-content">
+
+                                            <h4 class="place-title"><a href="https://wpopaldemo.com/rentme/places/los-angeles-club-spotlight/" rel="bookmark">Los angeles club spotlight</a></h4>
+
+                                            <div class="place-address">
+                                                <i class="fa fa-map-marker"></i>
+                                                Metropolitan City of Milan
+                                            </div>
+
+                                            <div class="place-type">
+                                                <span class="fa fa-music "></span>
+                                                <span>Nightlife</span>
+                                            </div>
+                                            <div class="place-meta">
+
+                                                <div class="comment-rating-wrap">
+                                                    <div class="comment-rating" title="Rated 0 Star for listing">
+                                                        <span style="width:0%"></span>
+                                                    </div>
+                                                    <div class="listing-count-reviews">(0 Reviews)</div>
+                                                </div>
+                                                <span class="current-status  opening">
+                                                    Opening
+                                                </span>
+                                            </div>
+                                        </div><!-- .place-content -->
+
+
+                                        <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/los-angeles-club-spotlight/" />
+
+                                    </article><!-- #post-## -->
+                                </div>
+                                <div class="item">
+                                    <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-10675 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-bars place_category-bbq place_category-bed-breakfast place_category-clubs place_category-hotels place_category-wine-bar place_category-wineries opallisting_tags-bar opallisting_tags-club opallisting_tags-room opallisting_location-cabridge opallisting_amenities-live-music opallisting_amenities-restaurant opallisting_amenities-room-service opallisting_amenities-wifi">
+
+
+                                        <header>
+                                            <div class="place-box-image">
+                                                <a href="https://wpopaldemo.com/rentme/places/track-field-bar/" class="place-box-image-inner">
+                                                    <img width="495" height="500" src="https://wpopaldemo.com/rentme/wp-content/uploads/2016/12/place-13-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                </a>
+                                            </div>
+
+                                            <div class="place-actions">
+
+                                                <a href="https://wpopaldemo.com/rentme/profile-page/admin/profile/" class="author-link"><img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-96 photo' height='96' width='96' /><span>admin</span></a>
+                                                <a href="#" data-icon="heart" data-id="10675" data-nonce="f937f05126" class="favorite  opallisting-need-login">
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </header>
+
+                                        <div class="place-content">
+
+                                            <h4 class="place-title"><a href="https://wpopaldemo.com/rentme/places/track-field-bar/" rel="bookmark">Track &#038; Field Bar</a></h4>
+
+                                            <div class="place-address">
+                                                <i class="fa fa-map-marker"></i>
+                                                Cambridge, Station Road
+                                            </div>
+
+                                            <div class="place-type">
+                                                <span class="fa fa-music "></span>
+                                                <span>Nightlife</span>
+                                            </div>
+                                            <div class="place-meta">
+
+                                                <div class="comment-rating-wrap">
+                                                    <div class="comment-rating" title="Rated 0 Star for listing">
+                                                        <span style="width:0%"></span>
+                                                    </div>
+                                                    <div class="listing-count-reviews">(0 Reviews)</div>
+                                                </div>
+                                                <span class="current-status  opening">
+                                                    Opening
+                                                </span>
+                                            </div>
+                                        </div><!-- .place-content -->
+
+
+                                        <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/track-field-bar/" />
+
+                                    </article><!-- #post-## -->
+                                </div>
+                                <div class="item">
+                                    <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-10674 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-bars place_category-bbq place_category-bed-breakfast place_category-hostels place_category-hotels place_category-wine-bar place_category-wineries opallisting_tags-bar opallisting_tags-club opallisting_location-canada opallisting_amenities-free-delivery opallisting_amenities-free-parking opallisting_amenities-live-music opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-serves-alcohol opallisting_amenities-take-out opallisting_amenities-wifi">
+
+
+                                        <header>
+                                            <div class="place-box-image">
+                                                <a href="https://wpopaldemo.com/rentme/places/crocodile-rock/" class="place-box-image-inner">
+                                                    <img width="495" height="500" src="https://wpopaldemo.com/rentme/wp-content/uploads/2016/12/place-12-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                </a>
+                                            </div>
+
+                                            <div class="place-actions">
+
+                                                <a href="https://wpopaldemo.com/rentme/profile-page/admin/profile/" class="author-link"><img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-96 photo' height='96' width='96' /><span>admin</span></a>
+                                                <a href="#" data-icon="heart" data-id="10674" data-nonce="f937f05126" class="favorite  opallisting-need-login">
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </header>
+
+                                        <div class="place-content">
+
+                                            <h4 class="place-title"><a href="https://wpopaldemo.com/rentme/places/crocodile-rock/" rel="bookmark">Crocodile Rock</a></h4>
+
+                                            <div class="place-address">
+                                                <i class="fa fa-map-marker"></i>
+                                                Canada Square, London
+                                            </div>
+
+                                            <div class="place-type">
+                                                <span class="fa fa-music "></span>
+                                                <span>Nightlife</span>
+                                            </div>
+                                            <div class="place-meta">
+
+                                                <div class="comment-rating-wrap">
+                                                    <div class="comment-rating" title="Rated 0 Star for listing">
+                                                        <span style="width:0%"></span>
+                                                    </div>
+                                                    <div class="listing-count-reviews">(0 Reviews)</div>
+                                                </div>
+                                                <span class="current-status closed">
+                                                    Closed
+                                                </span>
+                                            </div>
+                                        </div><!-- .place-content -->
+
+
+                                        <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/crocodile-rock/" />
+
+                                    </article><!-- #post-## -->
+                                </div>
+                                <div class="item">
+                                    <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-10535 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-cinemas opallisting_tags-groceries opallisting_tags-rice opallisting_tags-sandweek opallisting_tags-shop opallisting_location-uk opallisting_amenities-daily-specials opallisting_amenities-online-ordering opallisting_amenities-wifi">
+
+
+                                        <header>
+                                            <span class="featured">Featured</span>
+                                            <div class="place-box-image">
+                                                <a href="https://wpopaldemo.com/rentme/places/theatre-and-cinemas/" class="place-box-image-inner">
+                                                    <img width="495" height="500" src="https://wpopaldemo.com/rentme/wp-content/uploads/2016/11/place-6-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                </a>
+                                            </div>
+
+                                            <div class="place-actions">
+
+                                                <a href="https://wpopaldemo.com/rentme/profile-page/admin/profile/" class="author-link"><img alt='' src='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png' srcset='https://wpopaldemo.com/rentme/wp-content/uploads/2014/06/avatar.png 2x' class='avatar avatar-96 photo' height='96' width='96' /><span>admin</span></a>
+                                                <a href="#" data-icon="heart" data-id="10535" data-nonce="f937f05126" class="favorite  opallisting-need-login">
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </header>
+
+                                        <div class="place-content">
+
+                                            <h4 class="place-title"><a href="https://wpopaldemo.com/rentme/places/theatre-and-cinemas/" rel="bookmark">Theatre and cinemas</a></h4>
+
+                                            <div class="place-address">
+                                                <i class="fa fa-map-marker"></i>
+                                                Ireland West Airport Knock
+                                            </div>
+
+                                            <div class="place-type">
+                                                <span class="fa fa-music "></span>
+                                                <span>Nightlife</span>
+                                            </div>
+                                            <div class="place-meta">
+
+                                                <div class="comment-rating-wrap">
+                                                    <div class="comment-rating" title="Rated 0 Star for listing">
+                                                        <span style="width:0%"></span>
+                                                    </div>
+                                                    <div class="listing-count-reviews">(1 Review)</div>
+                                                </div>
+                                                <span class="current-status  opening">
+                                                    Opening
+                                                </span>
+                                            </div>
+                                        </div><!-- .place-content -->
+
+
+                                        <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/theatre-and-cinemas/" />
+
+                                    </article><!-- #post-## -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section><!-- .content-area -->
+
+            </section><!-- #main -->
+            <footer id="opal-footer" class="opal-footer" style="background-image:url('https://wpopaldemo.com/rentme/wp-content/uploads/2016/11/background-7.png');">
+
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+                                <aside id="widget_sp_image-18" class="widget clearfix widget_sp_image"><img width="187" height="57" class="attachment-full" style="max-width: 100%;" src="https://wpopaldemo.com/rentme/wp-content/uploads/2015/01/logo-footer.png" /></aside>
+                            </div>
+
+
+                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                <aside id="popupnewsletter-3" class="clearfix widget_popupnewsletter">
+                                    <div class="popupnewsletter">
+                                        <span class="pull-right">Subscribe to Our News Offers</span>
+                                        <button type="button" class="btn btn-flying-right pull-right" data-toggle="modal" data-target="#popupNewsletterModal">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="popupNewsletterModal" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content" style="background: url('') no-repeat 0 0 transparent">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <div class="modal-body">
+                                                        <div class="popupnewsletter-widget  ">
+                                                            <div>
+                                                                <h3>
+                                                                    <span>Newsletter</span>
+                                                                </h3>
+
+                                                                <p class="description">
+                                                                    Put your content here
+                                                                </p>
+
+
+                                                                <script type="text/javascript">
+(function() {
+	if (!window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push({
+						event   : event,
+						callback: callback
+					});
+				}
+			}
+		}
+	}
+})();
+                                                                </script><!-- MailChimp for WordPress v4.1.2 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-6363 mc4wp-form-basic" method="post" data-id="6363" data-name="Default sign-up form">
+                                                                    <div class="mc4wp-form-fields">
+                                                                        <div class="form-style-1">
+                                                                            <div class="input-group">
+                                                                                <input id="mc4wp_email" class="form-control" name="EMAIL" required="required" type="email" placeholder="Your Email" />
+                                                                                <div class="input-group-btn">
+                                                                                    <input class="btn-primary btn" type="submit" value="Subcribe" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><div style="display: none;"><input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></div><input type="hidden" name="_mc4wp_timestamp" value="1498820782" /><input type="hidden" name="_mc4wp_form_id" value="6363" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
+                                                                    </div><div class="mc4wp-response"></div>
+                                                                </form><!-- / MailChimp for WordPress Plugin -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="footer-bottom-inner ">
+                            <div class="row equal-height">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <aside id="nav_menu-24" class="widget clearfix widget_nav_menu">
+                                        <h3 class="widget-title">Theme Features</h3><div class="menu-menu-1-container">
+                                            <ul id="menu-menu-1" class="menu">
+                                                <li id="menu-item-11280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11280"><a href="#">Poromo</a></li>
+                                                <li id="menu-item-11281" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11281"><a href="#">Place List</a></li>
+                                                <li id="menu-item-11282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11282"><a href="#">Map</a></li>
+                                                <li id="menu-item-11283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11283"><a href="#">List User</a></li>
+                                                <li id="menu-item-11284" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11284"><a href="#">Post Place</a></li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+
+
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 space-top-40">
+                                    <aside id="nav_menu-25" class="widget clearfix widget_nav_menu">
+                                        <div class="menu-menu-2-container">
+                                            <ul id="menu-menu-2" class="menu">
+                                                <li id="menu-item-11287" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11287"><a href="#">Teams</a></li>
+                                                <li id="menu-item-11288" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11288"><a href="#">Forums</a></li>
+                                                <li id="menu-item-11289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11289"><a href="#">Upcoming events</a></li>
+                                                <li id="menu-item-11290" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11290"><a href="#">Affiliates</a></li>
+                                                <li id="menu-item-11291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11291"><a href="#">Rentme Local</a></li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                    <aside id="nav_menu-26" class="widget clearfix widget_nav_menu">
+                                        <h3 class="widget-title">Categories</h3><div class="menu-menu-3-container">
+                                            <ul id="menu-menu-3" class="menu">
+                                                <li id="menu-item-11292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11292"><a href="#">Charities</a></li>
+                                                <li id="menu-item-11293" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11293"><a href="#">City Essentials</a></li>
+                                                <li id="menu-item-11294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11294"><a href="#">Event &#038; Party Planning</a></li>
+                                                <li id="menu-item-11349" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11349"><a href="#">Fitness</a></li>
+                                                <li id="menu-item-11350" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11350"><a href="#">Food Shopping</a></li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 space-top-40 clearstyle">
+
+                                    <aside id="nav_menu-27" class="widget clearfix widget_nav_menu">
+                                        <div class="menu-menu-4-container">
+                                            <ul id="menu-menu-4" class="menu">
+                                                <li id="menu-item-11297" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11297"><a href="#">Gifts</a></li>
+                                                <li id="menu-item-11298" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11298"><a href="#">Health &#038; Wellness</a></li>
+                                                <li id="menu-item-11299" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11299"><a href="#">Upcoming events</a></li>
+                                                <li id="menu-item-11300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11300"><a href="#">Home</a></li>
+                                                <li id="menu-item-11301" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11301"><a href="#">Male Grooming</a></li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 space-top-40">
+
+                                    <aside id="nav_menu-28" class="widget clearfix widget_nav_menu">
+                                        <div class="menu-menu-5-container">
+                                            <ul id="menu-menu-5" class="menu">
+                                                <li id="menu-item-11302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11302"><a href="#">Nightlife</a></li>
+                                                <li id="menu-item-11303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11303"><a href="#">Parenting</a></li>
+                                                <li id="menu-item-11304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11304"><a href="#">Pets</a></li>
+                                                <li id="menu-item-11305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11305"><a href="#">Restaurants</a></li>
+                                                <li id="menu-item-11306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11306"><a href="#">Shopping</a></li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 space-top-40">
+                                    <aside id="nav_menu-29" class="widget clearfix widget_nav_menu">
+                                        <div class="menu-menu-6-container">
+                                            <ul id="menu-menu-6" class="menu">
+                                                <li id="menu-item-11307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11307"><a href="#">Sports</a></li>
+                                                <li id="menu-item-11308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11308"><a href="#">Things to do</a></li>
+                                                <li id="menu-item-11309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11309"><a href="#">Travel</a></li>
+                                                <li id="menu-item-11310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11310"><a href="#">Vehicles</a></li>
+                                                <li id="menu-item-11311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11311"><a href="#">Women&#8217;s Beauty</a></li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </footer><!-- #colophon -->
+            <div class="opal-copyright clearfix">
+                <div class="container">
+                    <a href="#" class="scrollup"><span class="fa fa-long-arrow-up"></span></a>
+                    Copyright 2017 - EdPicker - All Rights Reserved.
+                </div>
+            </div>
+
+            <div id="opal-off-canvas" class="opal-off-canvas sidebar-offcanvas hidden-lg hidden-md">
+                <div class="opal-off-canvas-body">
+                    <div class="offcanvas-head bg-primary">
+                        <button type="button" class="btn btn-offcanvas btn-toggle-canvas btn-default" data-toggle="offcanvas">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <span>Menu</span>
+                    </div>
+                    <nav class="navbar navbar-offcanvas navbar-static">
+                        <div class="navbar-collapse navbar-offcanvas-collapse">
+                            <ul id="main-menu-offcanvas" class="nav navbar-nav">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children dropdown menu-item-4479 level-0">
+                                    <a href="https://wpopaldemo.com/rentme/">Home </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-9939 level-1"><a href="https://wpopaldemo.com/rentme/">Home 1</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9938 level-1"><a href="https://wpopaldemo.com/rentme/home-2/">Home 2</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10054 level-1"><a href="https://wpopaldemo.com/rentme/home-3/">Home 3</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10982 level-1"><a href="https://wpopaldemo.com/rentme/home-4/">Home 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11068 level-0">
+                                    <a href="#">Listings </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-taxonomy menu-item-object-place_category current-opallisting_place-ancestor current-menu-parent current-opallisting_place-parent menu-item-11075 level-1"><a href="https://wpopaldemo.com/rentme/place-category/hotels/">Property Grid</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11668 level-1"><a href="https://wpopaldemo.com/rentme/split-map/">Split Map</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11223 level-1"><a href="https://wpopaldemo.com/rentme/search-places-with-map/">Sidebar filter With Map</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11224 level-1"><a href="https://wpopaldemo.com/rentme/search-places-with-form/">Sidebar filter With Form</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11225 level-1"><a href="https://wpopaldemo.com/rentme/search-places-with-map-and-form/">Sidebar filter With Map and Form</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11405 level-1"><a href="https://wpopaldemo.com/rentme/users/">List Users</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown active menu-item-11069 level-0">
+                                    <a href="#">Property </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11528 level-1"><a href="https://wpopaldemo.com/rentme/places/roy-thomson-hall/">Property With Slider</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11529 level-1"><a href="https://wpopaldemo.com/rentme/places/hockey-hall-of-fame/">Property With Map</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11073 level-1"><a href="https://wpopaldemo.com/rentme/places/closest-hotel-to-university-of-kentucky/">Property With Gallery</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11074 level-1"><a href="https://wpopaldemo.com/rentme/places/spring-break-hot-spots/">Property With Tab1</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place current-menu-item active menu-item-11072 level-1 active  active "><a href="https://wpopaldemo.com/rentme/places/same-nightclub/">Property With Tab2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11179 level-0">
+                                    <a href="https://wpopaldemo.com/rentme/membership-packages-page/">Membership </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11182 level-1"><a href="https://wpopaldemo.com/rentme/membership-packages-page/">Member Packages</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11183 level-1"><a href="https://wpopaldemo.com/rentme/membership-dashboard/">Membership Account</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1767 level-0"><a title="Page" href="#">Pages</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9502 level-0"><a href="#">Features</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11261 level-0"><a href="#">Gallery</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11123 level-0">
+                                    <a href="#">Blog </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11124 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/blog-simple-left-sidebar/">Blog Simple </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11121 level-2"><a href="https://wpopaldemo.com/rentme/blog-simple-left-sidebar/">Blog Simple Left Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11122 level-2"><a href="https://wpopaldemo.com/rentme/blog-simple-right-sidebar/">Blog Simple Right Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11120 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Simple Full Width</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-395 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/blog-medium-full-width/">Blog Medium </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11132 level-2"><a href="https://wpopaldemo.com/rentme/blog-medium-left-sidebar/">Blog Medium Left Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11137 level-2"><a href="https://wpopaldemo.com/rentme/blog-medium-right-sidebar/">Blog Medium Right Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11133 level-2"><a href="https://wpopaldemo.com/rentme/blog-medium-full-width/">Blog Medium Full Width</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11141 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Grid </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11146 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid-right-sidebar/">Blog Grid Right Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11147 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid-left-sidebar/">Blog Grid Left Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11148 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Grid Full</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children dropdown menu-item-11149 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/french-theme-park-will-use-50-drones-for-a-nighttime-spectacle/">Blog Detail Page </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-11150 level-2"><a href="https://wpopaldemo.com/rentme/zumper-national-rent-report-april-2016/">Blog Detail Page Left Sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #page -->
+
+    <script type="text/html" id="tmpl-map-error-message">
+        <div class="overlay">
+            <div id="map-error-message">
+                <h3>Error</h3>
+                <div class="body-panel">
+                    <p class="desc">{{ data.message }}</p>
+                    <a href="#" id="opallisting-close-map-message" class="btn button">OK</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-marker-template">
+        <div class="opallisting-map-marker">
+            <div class="opallisting-map-marker-inner">
+                <span class="{{ data.marker_icon }}" style="color: {{{ data.color }}}"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                <path fill="{{{ data.color }}}" d="M256,0C167.641,0,96,71.625,96,160c0,24.75,5.625,48.219,15.672,69.125C112.234,230.313,256,512,256,512l142.594-279.375   C409.719,210.844,416,186.156,416,160C416,71.625,344.375,0,256,0z M256,256c-53.016,0-96-43-96-96s42.984-96,96-96 c53,0,96,43,96,96S309,256,256,256z"></path>
+						</svg>
+                <span class="shadow"></span>
+                <span class="pulse"></span>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-loading">
+        <svg class="opallisting-loading" width="57" height="57" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)" stroke-width="2">
+                    <circle cx="5" cy="50" r="5">
+                        <animate attributeName="cy"
+                                 begin="0s" dur="2.2s"
+                                 values="50;5;50;50"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="cx"
+                                 begin="0s" dur="2.2s"
+                                 values="5;27;49;5"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="27" cy="5" r="5">
+                        <animate attributeName="cy"
+                                 begin="0s" dur="2.2s"
+                                 from="5" to="5"
+                                 values="5;50;50;5"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="cx"
+                                 begin="0s" dur="2.2s"
+                                 from="27" to="27"
+                                 values="27;49;5;27"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="49" cy="50" r="5">
+                        <animate attributeName="cy"
+                                 begin="0s" dur="2.2s"
+                                 values="50;50;5;50"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="cx"
+                                 from="49" to="49"
+                                 begin="0s" dur="2.2s"
+                                 values="49;5;27;49"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                    </circle>
+                </g>
+            </g>
+        </svg>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-carousel-txt">
+        <div class="owl-text">
+            <span class="current">{{ data.current }}</span>
+            of					<span class="total">{{ data.total }}</span>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-place-grid-item">
+        <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid post-10670 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-clubs place_category-hotels place_category-pubs place_category-wine-bar place_category-wineries opallisting_tags-foods opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-poland opallisting_amenities-bottle-service opallisting_amenities-family-friendly opallisting_amenities-restaurant opallisting_amenities-room-service opallisting_amenities-ticket-reservations opallisting_amenities-wheelchair-accessible opallisting_amenities-wifi">
+
+            <header>
+                <div class="place-box-image">
+                    <a href="{{ data.url }}" class="place-box-image-inner">
+                        <img src="{{ data.thumb }}">
+                    </a>
+                </div>
+                <div class="place-actions">
+                    {{{ data.author_image }}}
+                    <a href="#" data-icon="heart" data-id="{{ data.id }}" data-nonce="{{ data.nonce }}" class="favorite active opallisting-toggle-favorite">
+                        <i class="{{ data.fav_class }}"></i>
+                    </a>
+                </div>
+            </header>
+
+            <div class="place-content">
+                <h4 class="place-title"><a href="{{ data.url }}" rel="bookmark">{{{ data.title }}}</a></h4>
+
+                <div class="place-address">
+                    <i class="fa fa-map-marker"></i>
+                    {{{ data.address }}}
+                </div>
+
+                <div class="place-type">
+                    <span class="{{ data.type_icon }}"></span>
+                    <span>{{ data.type_title }}</span>
+                </div>
+                <div class="place-meta">
+                    <div class="comment-rating-wrap">
+                        <div class="comment-rating">
+                            <span style="width:{{{ ( ( data.rating / 5 ) * 100 )  }}}%"></span>
+                        </div>
+                        <div class="listing-count-reviews">({{ data.review_count }})</div>
+                    </div>
+                    </footer>
+                </div><!-- .place-content -->
+
+                <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/same-nightclub/" />
+
+        </article><!-- #post-## -->
+    </script>
+
+    <div class="modal fade" id="modalNewSearch" tabindex="-1" role="dialog" aria-labelledby="modalNewSearch">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <a href="http://edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+
+                        <input class="form-control" id="SearchInputBox" ng-model="TagSearch" ng-change="FireSearchTB(TagSearch)" name="search_tags" style="border-radius:0px;">
+                        <span>Search: {{TagSearch}}</span>
+                        <a ng-repeat="srt in SearchResultTags">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1">
+                                    <span ng-click="GoToSearchPage(srt.Tags)">{{srt.Tags}}</span>
+                                </li>
+                            </ul>
+                        </a>
+
+                        <button type="button" class="close btn btn-sm btn-success pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Save</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function () {
+            function addEventListener(element, event, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(event, handler, false);
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + event, handler);
+                }
+            } function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = "http://" + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            if (urlFields && urlFields.length > 0) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    addEventListener(urlFields[j], 'blur', maybePrefixUrlField);
+                }
+            }/* test if browser supports date fields */
+            var testInput = document.createElement('input');
+            testInput.setAttribute('type', 'date');
+            if (testInput.type !== 'date') {
+
+                /* add placeholder & pattern to all date fields */
+                var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+                for (var i = 0; i < dateFields.length; i++) {
+                    if (!dateFields[i].placeholder) {
+                        dateFields[i].placeholder = 'YYYY-MM-DD';
+                    }
+                    if (!dateFields[i].pattern) {
+                        dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+                    }
+                }
+            }
+
+        })();
+    </script>
+
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/akismet/_inc/form.js?ver=3.3.2'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = { "recaptcha": { "messages": { "empty": "Please verify that you are not a robot." } } };
+        /* ]]> */
+    </script>
+
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpUtilSettings = { "ajax": { "url": "\/rentme\/wp-admin\/admin-ajax.php" } };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/Scripts/js/wp-util.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/js/core.min.js'></script>
+
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opallisting/assets/js/map.js?ver=1.0.0'></script>
+
+    <script type='text/javascript' src='~/Scripts/listing.js'></script>
+
+    <script type='text/javascript' src='~/Scripts/jquery.tipTip.minified.js'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var OpalListingComment = { "option_enabled_rating": "1", "option_require_rating": "1", "require_rating": "Please rating before submit your review.", "map": { "SHARE_LOCATION": "Let's share your current location", "CURRENT_LOCATION": "Current Location", "ZERO_RESULTS": "No route could be found between the origin and destination.", "UNKNOWN_ERROR": "A directions request could not be processed due to a server error. The request may succeed if you try again.", "NO_DIRECTION": "No directions found.", "REQUEST_DENIED": "This webpage is not allowed to use the directions service.", "OVER_QUERY_LIMIT": "The webpage has gone over the requests limit in too short a period of time.", "NOT_FOUND": "At least one of the origin, destination, or waypoints could not be geocoded.", "INVALID_REQUEST": "The DirectionsRequest provided was invalid.", "ERROR": "There was an unknown error in your request. Requeststatus: " } };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/Scripts/rating.js'></script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opallisting/assets/libs/selectize/selectize.min.js?ver=1.0'></script>
+    <script type='text/javascript' src='~/Scripts/js/owl-carousel/owl.carousel.min.js'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var rentmeAjax = { "ajaxurl": "https:\/\/wpopaldemo.com\/rentme\/wp-admin\/admin-ajax.php" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/Scripts/js/functions.js'></script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/kingcomposer/assets/frontend/js/kingcomposer.min.js?ver=2.6.11'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var mc4wp_forms_config = [];
+        /* ]]> */
+    </script>
+
+</body>
+</html>

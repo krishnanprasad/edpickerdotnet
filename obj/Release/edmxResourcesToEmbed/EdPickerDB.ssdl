@@ -1,0 +1,1382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Edlooker_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Edlooker_Dev.Edlooker._Temp_storedProcedure' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="_Temp_storedProcedure">
+          <Property Name="Id" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+        </EntityType>-->
+  <EntityType Name="_TempD_BOOKING_LOG">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Booking_ID" Type="varchar" MaxLength="333" StoreGeneratedPattern="Computed" />
+    <Property Name="Customer_ID" Type="varchar" MaxLength="300" />
+    <Property Name="Total_Product" Type="int" />
+    <Property Name="Total_Cost" Type="bigint" />
+    <Property Name="Booking_Time" Type="datetime" />
+    <Property Name="Delivery_Time" Type="int" />
+    <Property Name="Delivery_Pincode" Type="varchar" MaxLength="300" />
+    <Property Name="Delivery_Address" Type="varchar" MaxLength="300" />
+    <Property Name="Delivery_Phone" Type="varchar" MaxLength="300" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="_TempD_Booking_Product_List">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Booking_ID" Type="varchar" MaxLength="300" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Cost" Type="bigint" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="_TempD_Category_Detail">
+    <Key>
+      <PropertyRef Name="Category_ID" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_ID" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Category_Name" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="_TempD_Company_Detail">
+    <Key>
+      <PropertyRef Name="Company_ID" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_ID" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="300" />
+    <Property Name="Company_ImgSrc" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="_TempD_CUSTOMER_DETAILS">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_ID" Type="varchar" MaxLength="32" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="varchar" MaxLength="300" />
+    <Property Name="Address" Type="varchar" MaxLength="300" />
+    <Property Name="Landmark" Type="varchar" MaxLength="300" />
+    <Property Name="Phone" Type="varchar" MaxLength="300" />
+    <Property Name="Email" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="300" />
+    <Property Name="Pincode" Type="varchar" MaxLength="300" />
+    <Property Name="Wallet_Balance" Type="bigint" />
+    <Property Name="Cust_Image" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="_TempD_Product_Detail">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" Nullable="false" />
+    <Property Name="Product_Name" Type="varchar" MaxLength="300" />
+    <Property Name="Cost" Type="bigint" />
+    <Property Name="_Weighing_List" Type="int" />
+    <Property Name="Company_ID" Type="varchar" MaxLength="300" />
+    <Property Name="Product_Description" Type="varchar" MaxLength="300" />
+    <Property Name="Product_ImgSrc" Type="varchar" MaxLength="300" />
+    <Property Name="Availability" Type="int" />
+    <Property Name="Category_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="_TempD_Product_Weighing_List">
+    <Key>
+      <PropertyRef Name="Product_Weighing_ID" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_ID" Type="int" />
+    <Property Name="Product_Weighing_ID" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Weighing_Type" Type="varchar" MaxLength="300" />
+    <Property Name="Weighing_Description" Type="varchar" MaxLength="300" />
+    <Property Name="Cost" Type="bigint" />
+  </EntityType>
+  <EntityType Name="COUAchievements">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Detail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUBasicDetails">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Numberofstudent" Type="bigint" />
+    <Property Name="Placement" Type="bigint" />
+    <Property Name="Achievement" Type="bigint" />
+    <Property Name="TotalSessions" Type="bigint" />
+    <Property Name="TotalHours" Type="bigint" />
+  </EntityType>
+  <EntityType Name="COUBatchAvailable">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="BatchName" Type="varchar(max)" />
+    <Property Name="BatchTiming" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="GalleryDetail" Type="varchar(max)" />
+    <Property Name="GalleryURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COULabs">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="Labname" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUNews">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="News" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COURGeneral">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="About" Type="varchar(max)" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="Institutionname" Type="varchar(max)" />
+    <Property Name="CourseName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUSeminars">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Detail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUStaffDetails">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="NumberofStaff" Type="bigint" />
+    <Property Name="NumberofStudent" Type="bigint" />
+    <Property Name="StudentStaffRatio" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUSubjectList">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="SubjectName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="COUTestimonials">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="varchar" MaxLength="900" />
+    <Property Name="TestimonialName" Type="varchar(max)" />
+    <Property Name="TestimonialDetail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PBLOG">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="varchar" MaxLength="5000" />
+    <Property Name="URL" Type="varchar" MaxLength="5000" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="TotalView" Type="int" />
+    <Property Name="Tags" Type="varchar" MaxLength="5000" />
+    <Property Name="FromSource" Type="varchar" MaxLength="5000" />
+    <Property Name="ImageSource" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="PCALENDER">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="varchar" MaxLength="5000" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="LastDateforApplying" Type="datetime" />
+    <Property Name="URL" Type="varchar" MaxLength="5000" />
+    <Property Name="TotalView" Type="int" />
+    <Property Name="Tags" Type="varchar" MaxLength="5000" />
+    <Property Name="Source" Type="varchar" MaxLength="5000" />
+    <Property Name="ImageSource" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="PCCBriefDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Brief" Type="varchar(max)" />
+    <Property Name="FoundedYear" Type="varchar(max)" />
+    <Property Name="PrinicpalName" Type="varchar(max)" />
+    <Property Name="Vision" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionId" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDOne" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDTwo" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDThree" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <EntityType Name="PCCContactDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Latitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Location" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Website" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCCourseList">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="Hours" Type="varchar(max)" />
+    <Property Name="Sessions" Type="varchar(max)" />
+    <Property Name="Minspersession" Type="varchar(max)" />
+    <Property Name="Schedule" Type="varchar(max)" />
+    <Property Name="TotalSeat" Type="varchar(max)" />
+    <Property Name="CourseURL" Type="varchar(max)" />
+    <Property Name="CourseName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="GalleryDetail" Type="varchar(max)" />
+    <Property Name="GalleryURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCGeneralDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="NumberofStaff" Type="bigint" />
+    <Property Name="NumberofStudent" Type="bigint" />
+    <Property Name="NumberofPlacements" Type="bigint" />
+    <Property Name="NumberofAssistants" Type="bigint" />
+    <Property Name="NumberofCourse" Type="bigint" />
+    <Property Name="NumberofSessions" Type="bigint" />
+    <Property Name="Parking" Type="varchar(max)" />
+    <Property Name="AC" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCNews">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="News" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCSocialMediaDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="FacebookInstitutionURL" Type="varchar(max)" />
+    <Property Name="InstagramInstitutionURL" Type="varchar(max)" />
+    <Property Name="TwitterInstitutionURL" Type="varchar(max)" />
+    <Property Name="GoogleplusInstitutionURL" Type="varchar(max)" />
+    <Property Name="YoutubeInstitutionURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCTestimonials">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="TestimonialName" Type="varchar(max)" />
+    <Property Name="TestimonialDetail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCCTimelineDetails">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionName" Type="varchar(max)" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="InformationRating" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewRating" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewPercentage" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="BannerImageURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCityDetails">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="900" />
+    <Property Name="StateID" Type="int" />
+  </EntityType>
+  <EntityType Name="PCOLBriefDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Brief" Type="varchar(max)" />
+    <Property Name="FoundedYear" Type="varchar(max)" />
+    <Property Name="PrinicpalName" Type="varchar(max)" />
+    <Property Name="Vision" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionId" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDOne" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDTwo" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDThree" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <EntityType Name="PCOLContactDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Latitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Location" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Website" Type="varchar(max)" />
+    <Property Name="Address" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLDepartments">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLFaclities">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="TotalStudents" Type="bigint" />
+    <Property Name="TotalStaff" Type="bigint" />
+    <Property Name="TotalDepartments" Type="bigint" />
+    <Property Name="TotalClubs" Type="bigint" />
+    <Property Name="Canteen" Type="varchar(max)" />
+    <Property Name="Transport" Type="varchar(max)" />
+    <Property Name="Library" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="GalleryDetail" Type="varchar(max)" />
+    <Property Name="GalleryURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLGeneralDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="EnterpreneurshipCell" Type="varchar(max)" />
+    <Property Name="Scholorship" Type="varchar(max)" />
+    <Property Name="Canteen" Type="varchar(max)" />
+    <Property Name="ArtsClub" Type="varchar(max)" />
+    <Property Name="TechnologyClub" Type="varchar(max)" />
+    <Property Name="SmartClasses" Type="varchar(max)" />
+    <Property Name="Transportation" Type="varchar(max)" />
+    <Property Name="Hostel" Type="varchar(max)" />
+    <Property Name="RaggingAssociation" Type="varchar(max)" />
+    <Property Name="NirbhayaAssociation" Type="varchar(max)" />
+    <Property Name="DepressionAssociation" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLHostel">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Gender" Type="varchar(max)" />
+    <Property Name="TotalAvailablity" Type="varchar(max)" />
+    <Property Name="StudperRoom" Type="varchar(max)" />
+    <Property Name="AC" Type="varchar(max)" />
+    <Property Name="Food" Type="varchar(max)" />
+    <Property Name="Internet" Type="varchar(max)" />
+    <Property Name="GYM" Type="varchar(max)" />
+    <Property Name="SwimmingPool" Type="varchar(max)" />
+    <Property Name="Policestationdistance" Type="varchar(max)" />
+    <Property Name="Hospitaldistance" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLNews">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="News" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLReview">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Review" Type="varchar(max)" />
+    <Property Name="Dated" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLSocialMediaDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="FacebookInstitutionURL" Type="varchar(max)" />
+    <Property Name="InstagramInstitutionURL" Type="varchar(max)" />
+    <Property Name="TwitterInstitutionURL" Type="varchar(max)" />
+    <Property Name="GoogleplusInstitutionURL" Type="varchar(max)" />
+    <Property Name="YoutubeInstitutionURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLSports">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="SportsAvailable" Type="varchar(max)" />
+    <Property Name="Facilties" Type="varchar(max)" />
+    <Property Name="NumberofCoach" Type="varchar(max)" />
+    <Property Name="NumberofAchievements" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLTestimonials">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="TestimonialName" Type="varchar(max)" />
+    <Property Name="TestimonialDetail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLTimelineDetails">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionName" Type="varchar(max)" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="InformationRating" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewRating" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewPercentage" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="BannerImageURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCOLTransport">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="TotalBus" Type="bigint" />
+    <Property Name="Tracking" Type="varchar(max)" />
+    <Property Name="StudentBus" Type="bigint" />
+    <Property Name="BusFees" Type="bigint" />
+    <Property Name="BusRoutes" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PCountryDetails">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <EntityType Name="PDEPAchievements">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Totalprojects" Type="int" />
+    <Property Name="Totalawards" Type="int" />
+    <Property Name="Totalparticipation" Type="int" />
+    <Property Name="Totalpatents" Type="int" />
+  </EntityType>
+  <EntityType Name="PDEPBriefDetail">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Brief" Type="varchar(max)" />
+    <Property Name="TotalTotalStudents" Type="int" />
+    <Property Name="TotalTotalStaff" Type="int" />
+    <Property Name="TotalPlaced" Type="int" />
+    <Property Name="TotalAchievements" Type="int" />
+  </EntityType>
+  <EntityType Name="PDEPGallery">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="GalleryDetail" Type="varchar(max)" />
+    <Property Name="GalleryURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPLabs">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Labname" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPLectures">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Detail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPNews">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="News" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPPlacementCompanies">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Companyname" Type="varchar(max)" />
+    <Property Name="CompanyImageURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPPlacementsBasic">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Totalcompanies" Type="bigint" />
+    <Property Name="Totalplaced" Type="bigint" />
+    <Property Name="Conversionrate" Type="bigint" />
+    <Property Name="Intership" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PDEPReview">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Review" Type="varchar(max)" />
+    <Property Name="Dated" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPSeminars">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Detail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPStaff">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Totalphd" Type="int" />
+    <Property Name="Totaldoctorate" Type="int" />
+    <Property Name="Totalprofessor" Type="int" />
+    <Property Name="Totallabtechnicians" Type="int" />
+  </EntityType>
+  <EntityType Name="PDEPSubjects">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="SubjectName" Type="varchar(max)" />
+    <Property Name="Points" Type="decimal" Precision="12" Scale="6" />
+  </EntityType>
+  <EntityType Name="PDEPTimeline">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar(max)" />
+    <Property Name="CollegeURL" Type="varchar(max)" />
+    <Property Name="CollegeName" Type="varchar(max)" />
+    <Property Name="CourseDuration" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PDEPWorkshops">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="900" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Detail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PInstitutionRegistration">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionName" Type="varchar(max)" />
+    <Property Name="Location" Type="varchar(max)" />
+    <Property Name="CourseOffered" Type="varchar(max)" />
+    <Property Name="ContactName" Type="varchar(max)" />
+    <Property Name="ContactPerson" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Edlooker_Dev.Edlooker.PKGActivities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PKGActivities">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="OutdoorPlayArea" Type="varchar" MaxLength="900" />
+    <Property Name="Painting" Type="varchar" MaxLength="900" />
+    <Property Name="Yoga" Type="varchar" MaxLength="900" />
+    <Property Name="StoryTelling" Type="varchar" MaxLength="900" />
+    <Property Name="StageShow" Type="varchar" MaxLength="900" />
+    <Property Name="Learning" Type="varchar" MaxLength="900" />
+    <Property Name="Waterpool" Type="varchar" MaxLength="900" />
+    <Property Name="Dance" Type="varchar" MaxLength="900" />
+    <Property Name="Music" Type="varchar" MaxLength="900" />
+    <Property Name="CCTV" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Edlooker_Dev.Edlooker.PKGBriefDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PKGBriefDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="Brief" Type="varchar(max)" />
+    <Property Name="FoundedYear" Type="varchar" MaxLength="900" />
+    <Property Name="PrinicpalName" Type="varchar" MaxLength="900" />
+    <Property Name="Vision" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PKGCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionId" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDOne" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDTwo" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDThree" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Edlooker_Dev.Edlooker.PKGContactDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PKGContactDetails">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="Latitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="LocationAddress" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Website" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Edlooker_Dev.Edlooker.PKGDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PKGDetails">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="TotalStudents" Type="varchar" MaxLength="900" />
+    <Property Name="TotalStaff" Type="varchar" MaxLength="900" />
+    <Property Name="TotalRooms" Type="varchar" MaxLength="900" />
+    <Property Name="Food" Type="varchar" MaxLength="900" />
+    <Property Name="Curriculam" Type="varchar" MaxLength="900" />
+    <Property Name="Transport" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <EntityType Name="PKGEventsDetails">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar(max)" />
+    <Property Name="Event" Type="varchar(max)" />
+    <Property Name="Date" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PKGGallery">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar(max)" />
+    <Property Name="GalleryURL" Type="varchar(max)" />
+    <Property Name="GalleryDetail" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Edlooker_Dev.Edlooker.PKGSocialMediaDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PKGSocialMediaDetails">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="FacebookAvailableImageURL" Type="varchar(max)" />
+    <Property Name="FacebookInstitutionURL" Type="varchar(max)" />
+    <Property Name="InstagramAvailableImageURL" Type="varchar(max)" />
+    <Property Name="InstagramInstitutionURL" Type="varchar(max)" />
+    <Property Name="TwitterAvailableImageURL" Type="varchar(max)" />
+    <Property Name="TwitterInstitutionURL" Type="varchar(max)" />
+    <Property Name="GoogleplusAvailableImageURL" Type="varchar(max)" />
+    <Property Name="GoogleplusInstitutionURL" Type="varchar(max)" />
+    <Property Name="YoutubeAvailableImageURL" Type="varchar(max)" />
+    <Property Name="YoutubeInstitutionURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PKGTestimonials">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar(max)" />
+    <Property Name="TestimonialName" Type="varchar(max)" />
+    <Property Name="TestimonialDetail" Type="varchar(max)" />
+    <Property Name="Relation" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Edlooker_Dev.Edlooker.PKGTimelineDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PKGTimelineDetails">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionName" Type="varchar" MaxLength="900" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="AdmissionsStatusID" Type="int" />
+    <Property Name="InformationRating" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewRating" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewPercentage" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="BannerImageURL" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <EntityType Name="PMessageToInstitution">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="500" />
+    <Property Name="Username" Type="varchar" MaxLength="500" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="500" />
+    <Property Name="UserPhone" Type="varchar" MaxLength="500" />
+    <Property Name="UserQuestion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PNEWS">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="varchar" MaxLength="5000" />
+    <Property Name="URL" Type="varchar" MaxLength="5000" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="TotalView" Type="int" />
+    <Property Name="Tags" Type="varchar" MaxLength="5000" />
+    <Property Name="FromSource" Type="varchar" MaxLength="5000" />
+    <Property Name="ImageSrc" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="PSCAchievements">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="AchievementHeading" Type="varchar(max)" />
+    <Property Name="AchievementDetail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCBriefDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Brief" Type="varchar(max)" />
+    <Property Name="FoundedYear" Type="varchar(max)" />
+    <Property Name="PrinicpalName" Type="varchar(max)" />
+    <Property Name="Vision" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionId" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDOne" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDTwo" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionIDThree" Type="varchar" MaxLength="900" />
+  </EntityType>
+  <EntityType Name="PSCContactDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Latitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Website" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCExtraCurricular">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="SmartClassURL" Type="varchar(max)" />
+    <Property Name="YogaURL" Type="varchar(max)" />
+    <Property Name="DigitalContentURL" Type="varchar(max)" />
+    <Property Name="SocialClubURL" Type="varchar(max)" />
+    <Property Name="StudentTrackingURL" Type="varchar(max)" />
+    <Property Name="TotalVacationsURL" Type="varchar(max)" />
+    <Property Name="ArtsClubURL" Type="varchar(max)" />
+    <Property Name="TechnologyClubURL" Type="varchar(max)" />
+    <Property Name="WomenSafetyClubURL" Type="varchar(max)" />
+    <Property Name="LanguageClubURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" />
+    <Property Name="GalleryURL" Type="varchar(max)" />
+    <Property Name="GalleryDetail" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCGeneralDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="TotalStudents" Type="bigint" />
+    <Property Name="TotalStaff" Type="bigint" />
+    <Property Name="TotalSections" Type="bigint" />
+    <Property Name="Canteen" Type="varchar(max)" />
+    <Property Name="Curriculam" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCHostel">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="Gender" Type="varchar(max)" />
+    <Property Name="TotalAvailablity" Type="bigint" />
+    <Property Name="HostelCampus" Type="varchar(max)" />
+    <Property Name="StudentsperRoom" Type="int" />
+    <Property Name="AC" Type="varchar(max)" />
+    <Property Name="Food" Type="varchar(max)" />
+    <Property Name="Internet" Type="varchar(max)" />
+    <Property Name="GYM" Type="varchar(max)" />
+    <Property Name="SwimmingPool" Type="varchar(max)" />
+    <Property Name="NearestHospital" Type="varchar(max)" />
+    <Property Name="NearestPoliceStation" Type="varchar(max)" />
+    <Property Name="ApproxFees" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCNews">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="News" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCSocialMediaDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="FacebookAvailableImageURL" Type="varchar(max)" />
+    <Property Name="FacebookInstitutionURL" Type="varchar(max)" />
+    <Property Name="InstagramAvailableImageURL" Type="varchar(max)" />
+    <Property Name="InstagramInstitutionURL" Type="varchar(max)" />
+    <Property Name="TwitterAvailableImageURL" Type="varchar(max)" />
+    <Property Name="TwitterInstitutionURL" Type="varchar(max)" />
+    <Property Name="GoogleplusAvailableImageURL" Type="varchar(max)" />
+    <Property Name="GoogleplusInstitutionURL" Type="varchar(max)" />
+    <Property Name="YoutubeAvailableImageURL" Type="varchar(max)" />
+    <Property Name="YoutubeInstitutionURL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCSports">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="SportsAvailable" Type="varchar(max)" />
+    <Property Name="Facilties" Type="varchar(max)" />
+    <Property Name="NumberofCoach" Type="varchar(max)" />
+    <Property Name="NumberofAchievements" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCTestimonials">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="TestimonialName" Type="varchar(max)" />
+    <Property Name="TestimonialDetail" Type="varchar(max)" />
+    <Property Name="Relation" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCTimelineDetails">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="InstitutionName" Type="varchar(max)" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="AdmissionsStatusID" Type="int" />
+    <Property Name="InformationRating" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewRating" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewPercentage" Type="decimal" Precision="6" Scale="3" />
+    <Property Name="BoardName" Type="varchar(max)" />
+    <Property Name="BannerImageURL" Type="varchar(max)" />
+    <Property Name="ClassRange" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSCTransport">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="TotalBus" Type="bigint" />
+    <Property Name="Tracking" Type="varchar(max)" />
+    <Property Name="StudentPerBus" Type="int" />
+    <Property Name="ApproxBusFees" Type="varchar(max)" />
+    <Property Name="BusRoutes" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PSearchTable">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="InstitutionName" Type="varchar" MaxLength="999" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="900" />
+    <Property Name="InstitutionImageURL" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="InstitutionURL" Type="varchar" MaxLength="999" />
+    <Property Name="Tags" Type="varchar" MaxLength="900" />
+    <Property Name="InformationRating" Type="decimal" Precision="6" Scale="3" Nullable="false" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="PaidStatus" Type="bit" />
+    <Property Name="InstitutionType" Type="int" />
+    <Property Name="LocationTags" Type="varchar" MaxLength="900" />
+    <Property Name="Latitude" Type="decimal" Precision="12" Scale="8" />
+    <Property Name="Longitude" Type="decimal" Precision="12" Scale="8" />
+    <Property Name="ViewCount" Type="int" />
+  </EntityType>
+  <EntityType Name="PStateDetails">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="900" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="PTags">
+    <Key>
+      <PropertyRef Name="Tags" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tags" Type="varchar" MaxLength="900" Nullable="false" />
+    <Property Name="SimilarTags" Type="varchar" MaxLength="990" />
+  </EntityType>
+  <EntityType Name="PTrendingList">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstitutionID" Type="varchar" MaxLength="900" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PUserKeyWordSearch">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KeyWordTerm" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PUserLocationKeyword">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KeyWordTerm" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PUserSearch">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SearchTerm" Type="varchar(max)" />
+    <Property Name="Location" Type="varchar(max)" />
+    <Property Name="Time" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TestUploadImage">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Size" Type="int" />
+    <Property Name="ImageData" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__PKGActivi__Insti__57DD0BE4">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGActivities" Type="Self.PKGActivities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGActivities">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGBriefD__Insti__55F4C372">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGBriefDetail" Type="Self.PKGBriefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGBriefDetail">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGContac__Insti__5BAD9CC8">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGContactDetails" Type="Self.PKGContactDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGContactDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGDetail__Insti__59C55456">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGDetails" Type="Self.PKGDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGSocial__Insti__5D95E53A">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGSocialMediaDetails" Type="Self.PKGSocialMediaDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGSocialMediaDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGTimeli__Insti__531856C7">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGTimelineDetails" Type="Self.PKGTimelineDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGTimelineDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PStateDet__Count__4B7734FF">
+    <End Role="PCountryDetails" Type="Self.PCountryDetails" Multiplicity="0..1" />
+    <End Role="PStateDetails" Type="Self.PStateDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PCountryDetails">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="PStateDetails">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Edlooker_DevModelStoreContainer">
+    <EntitySet Name="_TempD_BOOKING_LOG" EntityType="Self._TempD_BOOKING_LOG" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="_TempD_Booking_Product_List" EntityType="Self._TempD_Booking_Product_List" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="_TempD_Category_Detail" EntityType="Self._TempD_Category_Detail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="_TempD_Company_Detail" EntityType="Self._TempD_Company_Detail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="_TempD_CUSTOMER_DETAILS" EntityType="Self._TempD_CUSTOMER_DETAILS" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="_TempD_Product_Detail" EntityType="Self._TempD_Product_Detail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="_TempD_Product_Weighing_List" EntityType="Self._TempD_Product_Weighing_List" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUAchievements" EntityType="Self.COUAchievements" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUBasicDetails" EntityType="Self.COUBasicDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUBatchAvailable" EntityType="Self.COUBatchAvailable" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUGallery" EntityType="Self.COUGallery" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COULabs" EntityType="Self.COULabs" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUNews" EntityType="Self.COUNews" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COURGeneral" EntityType="Self.COURGeneral" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUSeminars" EntityType="Self.COUSeminars" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUStaffDetails" EntityType="Self.COUStaffDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUSubjectList" EntityType="Self.COUSubjectList" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="COUTestimonials" EntityType="Self.COUTestimonials" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PBLOG" EntityType="Self.PBLOG" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCALENDER" EntityType="Self.PCALENDER" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCBriefDetail" EntityType="Self.PCCBriefDetail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCCompetitorTable" EntityType="Self.PCCCompetitorTable" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCContactDetails" EntityType="Self.PCCContactDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCCourseList" EntityType="Self.PCCCourseList" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCGallery" EntityType="Self.PCCGallery" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCGeneralDetails" EntityType="Self.PCCGeneralDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCNews" EntityType="Self.PCCNews" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCSocialMediaDetails" EntityType="Self.PCCSocialMediaDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCTestimonials" EntityType="Self.PCCTestimonials" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCCTimelineDetails" EntityType="Self.PCCTimelineDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCityDetails" EntityType="Self.PCityDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLBriefDetail" EntityType="Self.PCOLBriefDetail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLCompetitorTable" EntityType="Self.PCOLCompetitorTable" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLContactDetails" EntityType="Self.PCOLContactDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLDepartments" EntityType="Self.PCOLDepartments" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLFaclities" EntityType="Self.PCOLFaclities" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLGallery" EntityType="Self.PCOLGallery" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLGeneralDetails" EntityType="Self.PCOLGeneralDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLHostel" EntityType="Self.PCOLHostel" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLNews" EntityType="Self.PCOLNews" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLReview" EntityType="Self.PCOLReview" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLSocialMediaDetails" EntityType="Self.PCOLSocialMediaDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLSports" EntityType="Self.PCOLSports" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLTestimonials" EntityType="Self.PCOLTestimonials" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLTimelineDetails" EntityType="Self.PCOLTimelineDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCOLTransport" EntityType="Self.PCOLTransport" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PCountryDetails" EntityType="Self.PCountryDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPAchievements" EntityType="Self.PDEPAchievements" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPBriefDetail" EntityType="Self.PDEPBriefDetail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPGallery" EntityType="Self.PDEPGallery" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPLabs" EntityType="Self.PDEPLabs" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPLectures" EntityType="Self.PDEPLectures" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPNews" EntityType="Self.PDEPNews" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPPlacementCompanies" EntityType="Self.PDEPPlacementCompanies" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPPlacementsBasic" EntityType="Self.PDEPPlacementsBasic" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPReview" EntityType="Self.PDEPReview" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPSeminars" EntityType="Self.PDEPSeminars" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPStaff" EntityType="Self.PDEPStaff" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPSubjects" EntityType="Self.PDEPSubjects" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPTimeline" EntityType="Self.PDEPTimeline" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PDEPWorkshops" EntityType="Self.PDEPWorkshops" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PInstitutionRegistration" EntityType="Self.PInstitutionRegistration" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PKGCompetitorTable" EntityType="Self.PKGCompetitorTable" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PKGEventsDetails" EntityType="Self.PKGEventsDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PKGGallery" EntityType="Self.PKGGallery" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PKGTestimonials" EntityType="Self.PKGTestimonials" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PMessageToInstitution" EntityType="Self.PMessageToInstitution" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PNEWS" EntityType="Self.PNEWS" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCAchievements" EntityType="Self.PSCAchievements" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCBriefDetail" EntityType="Self.PSCBriefDetail" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCCompetitorTable" EntityType="Self.PSCCompetitorTable" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCContactDetails" EntityType="Self.PSCContactDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCExtraCurricular" EntityType="Self.PSCExtraCurricular" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCGallery" EntityType="Self.PSCGallery" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCGeneralDetails" EntityType="Self.PSCGeneralDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCHostel" EntityType="Self.PSCHostel" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCNews" EntityType="Self.PSCNews" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCSocialMediaDetails" EntityType="Self.PSCSocialMediaDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCSports" EntityType="Self.PSCSports" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCTestimonials" EntityType="Self.PSCTestimonials" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCTimelineDetails" EntityType="Self.PSCTimelineDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSCTransport" EntityType="Self.PSCTransport" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PSearchTable" EntityType="Self.PSearchTable" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PStateDetails" EntityType="Self.PStateDetails" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PTags" EntityType="Self.PTags" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PTrendingList" EntityType="Self.PTrendingList" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PUserKeyWordSearch" EntityType="Self.PUserKeyWordSearch" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PUserLocationKeyword" EntityType="Self.PUserLocationKeyword" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PUserSearch" EntityType="Self.PUserSearch" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="TestUploadImage" EntityType="Self.TestUploadImage" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="Type" EntityType="Self.Type" Schema="Edlooker" store:Type="Tables" />
+    <EntitySet Name="PKGActivities" EntityType="Self.PKGActivities" store:Type="Tables" store:Schema="Edlooker">
+      <DefiningQuery>SELECT 
+    [PKGActivities].[SNO] AS [SNO], 
+    [PKGActivities].[InstitutionID] AS [InstitutionID], 
+    [PKGActivities].[OutdoorPlayArea] AS [OutdoorPlayArea], 
+    [PKGActivities].[Painting] AS [Painting], 
+    [PKGActivities].[Yoga] AS [Yoga], 
+    [PKGActivities].[StoryTelling] AS [StoryTelling], 
+    [PKGActivities].[StageShow] AS [StageShow], 
+    [PKGActivities].[Learning] AS [Learning], 
+    [PKGActivities].[Waterpool] AS [Waterpool], 
+    [PKGActivities].[Dance] AS [Dance], 
+    [PKGActivities].[Music] AS [Music], 
+    [PKGActivities].[CCTV] AS [CCTV]
+    FROM [Edlooker].[PKGActivities] AS [PKGActivities]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PKGBriefDetail" EntityType="Self.PKGBriefDetail" store:Type="Tables" store:Schema="Edlooker">
+      <DefiningQuery>SELECT 
+    [PKGBriefDetail].[SNO] AS [SNO], 
+    [PKGBriefDetail].[InstitutionID] AS [InstitutionID], 
+    [PKGBriefDetail].[Brief] AS [Brief], 
+    [PKGBriefDetail].[FoundedYear] AS [FoundedYear], 
+    [PKGBriefDetail].[PrinicpalName] AS [PrinicpalName], 
+    [PKGBriefDetail].[Vision] AS [Vision]
+    FROM [Edlooker].[PKGBriefDetail] AS [PKGBriefDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PKGContactDetails" EntityType="Self.PKGContactDetails" store:Type="Tables" store:Schema="Edlooker">
+      <DefiningQuery>SELECT 
+    [PKGContactDetails].[SNO] AS [SNO], 
+    [PKGContactDetails].[InstitutionID] AS [InstitutionID], 
+    [PKGContactDetails].[Latitude] AS [Latitude], 
+    [PKGContactDetails].[Longitude] AS [Longitude], 
+    [PKGContactDetails].[LocationAddress] AS [LocationAddress], 
+    [PKGContactDetails].[Phone] AS [Phone], 
+    [PKGContactDetails].[Email] AS [Email], 
+    [PKGContactDetails].[Website] AS [Website]
+    FROM [Edlooker].[PKGContactDetails] AS [PKGContactDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PKGDetails" EntityType="Self.PKGDetails" store:Type="Tables" store:Schema="Edlooker">
+      <DefiningQuery>SELECT 
+    [PKGDetails].[SNO] AS [SNO], 
+    [PKGDetails].[InstitutionID] AS [InstitutionID], 
+    [PKGDetails].[TotalStudents] AS [TotalStudents], 
+    [PKGDetails].[TotalStaff] AS [TotalStaff], 
+    [PKGDetails].[TotalRooms] AS [TotalRooms], 
+    [PKGDetails].[Food] AS [Food], 
+    [PKGDetails].[Curriculam] AS [Curriculam], 
+    [PKGDetails].[Transport] AS [Transport]
+    FROM [Edlooker].[PKGDetails] AS [PKGDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PKGSocialMediaDetails" EntityType="Self.PKGSocialMediaDetails" store:Type="Tables" store:Schema="Edlooker">
+      <DefiningQuery>SELECT 
+    [PKGSocialMediaDetails].[SNO] AS [SNO], 
+    [PKGSocialMediaDetails].[InstitutionID] AS [InstitutionID], 
+    [PKGSocialMediaDetails].[FacebookAvailableImageURL] AS [FacebookAvailableImageURL], 
+    [PKGSocialMediaDetails].[FacebookInstitutionURL] AS [FacebookInstitutionURL], 
+    [PKGSocialMediaDetails].[InstagramAvailableImageURL] AS [InstagramAvailableImageURL], 
+    [PKGSocialMediaDetails].[InstagramInstitutionURL] AS [InstagramInstitutionURL], 
+    [PKGSocialMediaDetails].[TwitterAvailableImageURL] AS [TwitterAvailableImageURL], 
+    [PKGSocialMediaDetails].[TwitterInstitutionURL] AS [TwitterInstitutionURL], 
+    [PKGSocialMediaDetails].[GoogleplusAvailableImageURL] AS [GoogleplusAvailableImageURL], 
+    [PKGSocialMediaDetails].[GoogleplusInstitutionURL] AS [GoogleplusInstitutionURL], 
+    [PKGSocialMediaDetails].[YoutubeAvailableImageURL] AS [YoutubeAvailableImageURL], 
+    [PKGSocialMediaDetails].[YoutubeInstitutionURL] AS [YoutubeInstitutionURL]
+    FROM [Edlooker].[PKGSocialMediaDetails] AS [PKGSocialMediaDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PKGTimelineDetails" EntityType="Self.PKGTimelineDetails" store:Type="Tables" store:Schema="Edlooker">
+      <DefiningQuery>SELECT 
+    [PKGTimelineDetails].[SNO] AS [SNO], 
+    [PKGTimelineDetails].[InstitutionID] AS [InstitutionID], 
+    [PKGTimelineDetails].[InstitutionName] AS [InstitutionName], 
+    [PKGTimelineDetails].[CityID] AS [CityID], 
+    [PKGTimelineDetails].[AdmissionsStatusID] AS [AdmissionsStatusID], 
+    [PKGTimelineDetails].[InformationRating] AS [InformationRating], 
+    [PKGTimelineDetails].[ReviewRating] AS [ReviewRating], 
+    [PKGTimelineDetails].[ReviewPercentage] AS [ReviewPercentage], 
+    [PKGTimelineDetails].[BannerImageURL] AS [BannerImageURL]
+    FROM [Edlooker].[PKGTimelineDetails] AS [PKGTimelineDetails]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__PKGActivi__Insti__57DD0BE4" Association="Self.FK__PKGActivi__Insti__57DD0BE4">
+      <End Role="PSearchTable" EntitySet="PSearchTable" />
+      <End Role="PKGActivities" EntitySet="PKGActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGBriefD__Insti__55F4C372" Association="Self.FK__PKGBriefD__Insti__55F4C372">
+      <End Role="PSearchTable" EntitySet="PSearchTable" />
+      <End Role="PKGBriefDetail" EntitySet="PKGBriefDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGContac__Insti__5BAD9CC8" Association="Self.FK__PKGContac__Insti__5BAD9CC8">
+      <End Role="PSearchTable" EntitySet="PSearchTable" />
+      <End Role="PKGContactDetails" EntitySet="PKGContactDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGDetail__Insti__59C55456" Association="Self.FK__PKGDetail__Insti__59C55456">
+      <End Role="PSearchTable" EntitySet="PSearchTable" />
+      <End Role="PKGDetails" EntitySet="PKGDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGSocial__Insti__5D95E53A" Association="Self.FK__PKGSocial__Insti__5D95E53A">
+      <End Role="PSearchTable" EntitySet="PSearchTable" />
+      <End Role="PKGSocialMediaDetails" EntitySet="PKGSocialMediaDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGTimeli__Insti__531856C7" Association="Self.FK__PKGTimeli__Insti__531856C7">
+      <End Role="PSearchTable" EntitySet="PSearchTable" />
+      <End Role="PKGTimelineDetails" EntitySet="PKGTimelineDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PStateDet__Count__4B7734FF" Association="Self.FK__PStateDet__Count__4B7734FF">
+      <End Role="PCountryDetails" EntitySet="PCountryDetails" />
+      <End Role="PStateDetails" EntitySet="PStateDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

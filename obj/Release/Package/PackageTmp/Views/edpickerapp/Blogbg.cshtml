@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BLOG BACKGROUND</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+        var blogbgApp = angular.module("blogbgApp", []);
+        blogbgApp.controller("blogbgCtrl", ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+
+            $scope.Insertblog = function (heading,url,description,tags,frmsrc,imgsrc) {
+                var post = $http({
+                    method: "POST",
+                    url: "/edpickerapp/Insertblogbg",
+                    dataType: 'json',
+                    data: { Headings: heading, URL: url, Description: description, Tags: tags, FrmSrc: frmsrc, ImgSrc: imgsrc },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+                    if (data == true) {
+                        alert("blog UPDATED");
+                    }
+                    else {
+                        alert("blog UPDATE FAILED");
+                    }
+
+                });
+            }
+
+        }]);
+    </script>
+</head>
+<body ng-app="blogbgApp">
+    <div class="container" ng-controller="blogbgCtrl">
+        <h2>BLOG INSERT</h2>
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="headingblog">Heading:</label>
+                <input type="text" class="form-control" id="headingblog" ng-model="blogheading" placeholder="Enter Heading" name="headingblog">
+            </div>
+            <div class="form-group">
+                <label for="urlblog">URL:</label>
+                <input type="text" class="form-control" id="urlblog" ng-model="blogurl" placeholder="Enter URL" name="urlblog">
+            </div>
+            <div class="form-group">
+                <label for="descriptionblog">Description:</label>
+                <textarea class="form-control" rows="5" id="descriptionblog" ng-model="blogdescription" placeholder="Enter description" name="descriptionblog"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tagsblog">Tags:</label>
+                <input type="text" class="form-control" id="tagsblog" ng-model="blogtags" placeholder="Enter Tags" name="tagsblog">
+            </div>
+            <div class="form-group">
+                <label for="frmsrcblog">From Source:</label>
+                <input type="text" class="form-control" id="frmsrcblog" ng-model="blogfrmsrc" placeholder="Enter From Source" name="frmsrcblog">
+            </div>
+            <div class="form-group">
+                <label for="imgsrcblog">Image Source:</label>
+                <input type="text" class="form-control" id="imgsrcblog" ng-model="blogimgsrc" placeholder="Enter Image Source" name="imgsrcblog">
+            </div>
+            <button type="submit" ng-click="Insertblog(blogheading,blogurl,blogdescription,blogtags,blogfrmsrc,blogimgsrc)" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

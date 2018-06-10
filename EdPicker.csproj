@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB50CD1C-4E24-40F8-98D2-0A0185990F2E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdPicker</RootNamespace>
+    <AssemblyName>EdPicker</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\edpickerappController.cs" />
+    <Compile Include="Controllers\EdPickerController.cs" />
+    <Compile Include="Controllers\EPWebAPIController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\POCController.cs" />
+    <Compile Include="Controllers\POCApiController.cs" />
+    <Compile Include="COUAchievement.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUBasicDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUBatchAvailable.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUGallery.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COULab.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUNew.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COURGeneral.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUSeminar.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUStaffDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUSubjectList.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUTestimonial.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_BOOKING_LOG.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_Booking_Product_List.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_Category_Detail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_Company_Detail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_CUSTOMER_DETAILS.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_Product_Detail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_TempD_Product_Weighing_List.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EdPickerDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EdPickerDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EdPickerDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EdPickerDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EdPickerDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Calender.cs" />
+    <Compile Include="Models\CoachingCenter.cs" />
+    <Compile Include="Models\College.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\IndexPage.cs" />
+    <Compile Include="Models\Kindergarten.cs" />
+    <Compile Include="Models\MapDetails.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\POC.cs" />
+    <Compile Include="Models\School.cs" />
+    <Compile Include="Models\Search.cs" />
+    <Compile Include="PBLOG.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCALENDER.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCBriefDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCCompetitorTable.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCContactDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCCourseList.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCGallery.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCGeneralDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCNew.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCSocialMediaDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCTestimonial.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCCTimelineDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCityDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLBriefDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLCompetitorTable.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLContactDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLDepartment.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLFaclity.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLGallery.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLGeneralDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLHostel.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLNew.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLReview.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLSocialMediaDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLSport.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLTestimonial.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLTimelineDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCOLTransport.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PCountryDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPAchievement.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPBriefDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPGallery.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPLab.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPLecture.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPNew.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPPlacementCompany.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPPlacementsBasic.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPReview.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPSeminar.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPStaff.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPSubject.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPTimeline.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDEPWorkshop.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PInstitutionRegistration.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGActivity.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGBriefDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGCompetitorTable.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGContactDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGEventsDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGGallery.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGSocialMediaDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGTestimonial.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PKGTimelineDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMessageToInstitution.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNEW.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSCAchievement.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCBriefDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCCompetitorTable.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCContactDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCExtraCurricular.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCGallery.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCGeneralDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCHostel.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCNew.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCSocialMediaDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCSport.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCTestimonial.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCTimelineDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSCTransport.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PSearchTable.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PStateDetail.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PTag.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PTrendingList.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PUserKeyWordSearch.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PUserLocationKeyword.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PUserSearch.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestUploadImage.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type.cs">
+      <DependentUpon>EdPickerDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="EdPickerDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EdPickerDB.edmx</DependentUpon>
+      <LastGenOutput>EdPickerDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EdPickerDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EdPickerDB.edmx</DependentUpon>
+      <LastGenOutput>EdPickerDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe1.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe10.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe11.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe12.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe13.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe14.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe15.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe16.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe2.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe3.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe4.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe5.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe6.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe7.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe8.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\Bachpanplayschoolcbe9.jpeg" />
+    <Content Include="Images\Bachpanplayschoolcbe\BachpanplayschoolcbePP.jpeg" />
+    <Content Include="Images\background6.jpg" />
+    <Content Include="Images\bg-place.jpg" />
+    <Content Include="Images\Cosmicdancestudiocbe\Cosmicdancestudiocbe1.jpg" />
+    <Content Include="Images\Cosmicdancestudiocbe\Cosmicdancestudiocbe2.jpg" />
+    <Content Include="Images\Cosmicdancestudiocbe\Cosmicdancestudiocbe3.jpg" />
+    <Content Include="Images\Cosmicdancestudiocbe\CosmicdancestudiocbePP.jpg" />
+    <Content Include="Images\Dummy\SKCET.jpg" />
+    <Content Include="Images\Dummy\SRM.jpg" />
+    <Content Include="Images\HomePage.jpg" />
+    <Content Include="Images\Isharpacademycbe\Isharpacademycbe1.jpeg" />
+    <Content Include="Images\Isharpacademycbe\Isharpacademycbe2.jpeg" />
+    <Content Include="Images\Isharpacademycbe\Isharpacademycbe3.jpeg" />
+    <Content Include="Images\Isharpacademycbe\IsharpacademycbePP.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe1.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe2.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe3.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe4.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe5.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe6.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe7.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\Kiddieskingdompreschoolcbe9.jpg" />
+    <Content Include="Images\Kiddieskingdompreschoolcbe\KiddieskingdompreschoolcbePP.jpg" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe1.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe2.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe3.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe4.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe5.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe6.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe7.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\Littleflowerplayschoolcbe8.JPG" />
+    <Content Include="Images\Littleflowerplayschoolcbe\LittleflowerplayschoolcbePP.JPG" />
+    <Content Include="Images\logo-white.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\map-marker.png" />
+    <Content Include="Images\map-pin.png" />
+    <Content Include="Images\NoImage.jpg" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava1.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava2.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava3.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava4.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava5.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava6.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava7.JPG" />
+    <Content Include="Images\PranavaKindergarten\%40Pranava8.JPG" />
+    <Content Include="Images\PranavaKindergarten\BannerImage.JPG" />
+    <Content Include="Images\PranavaKindergarten\PranavaplayschoolPP.JPG" />
+    <Content Include="Images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Images\prettyPhoto\default\loader.gif" />
+    <Content Include="Images\prettyPhoto\default\sprite.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe1.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe10.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe11.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe12.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe13.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe14.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe15.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe2.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe3.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe4.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe5.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe6.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe7.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe8.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\Rainbowkindergartencbe9.jpg" />
+    <Content Include="Images\Rainbowkindergartencbe\RainbowkindergartencbePP.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe1.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe10.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe11.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe2.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe3.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe4.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe5.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe6.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe7.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe8.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\Shriannainurseryschoolcbe9.jpg" />
+    <Content Include="Images\Shriannainurseryschoolcbe\ShriannainurseryschoolcbePP.jpg" />
+    <Content Include="Images\Srikrishnacollegeofengineeringandtechnology\Srikrishnacollegeofengineeringandtechnology1.jpg" />
+    <Content Include="Images\Steupupcbe\Steupupcbe1.jpg" />
+    <Content Include="Images\Steupupcbe\SteupupcbePP.jpg" />
+    <Content Include="Images\TestmonialUnknown.jpg" />
+    <Content Include="Images\Tholkalaisilambam\%40Tholkalaisilambam1.jpg" />
+    <Content Include="Images\Tholkalaisilambam\%40Tholkalaisilambam2.jpg" />
+    <Content Include="Images\Tholkalaisilambam\%40Tholkalaisilambam3.jpg" />
+    <Content Include="Images\Tholkalaisilambam\%40Tholkalaisilambam4.jpg" />
+    <Content Include="Images\Tholkalaisilambam\%40TholkalaisilambamPP.jpg" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe1.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe10.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe11.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe12.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe13.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe14.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe15.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe16.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe17.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe18.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe19.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe2.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe3.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe4.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe5.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe6.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe7.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe8.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\Tinystepsplayschoolcbe9.JPG" />
+    <Content Include="Images\Tinystepsplayschoolcbe\TinystepsplayschoolcbePP.JPG" />
+    <Content Include="Images\Tvsekharanmemorialschoolcbe\Tvsekharanmemorialschoolcbe1.jpg" />
+    <Content Include="Images\Tvsekharanmemorialschoolcbe\Tvsekharanmemorialschoolcbe2.JPG" />
+    <Content Include="Images\Tvsekharanmemorialschoolcbe\Tvsekharanmemorialschoolcbe3.JPG" />
+    <Content Include="Images\Tvsekharanmemorialschoolcbe\Tvsekharanmemorialschoolcbe4.JPG" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <EntityDeploy Include="EdPickerDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EdPickerDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EdPickerDB.edmx.diagram">
+      <DependentUpon>EdPickerDB.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\formcontactscripts.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-migrate.min.js" />
+    <Content Include="Scripts\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.tipTip.minified.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery1.12.4.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\core.min.js" />
+    <Content Include="Scripts\js\custom-admin.js" />
+    <Content Include="Scripts\js\customizer.js" />
+    <Content Include="Scripts\js\featured-content-admin.js" />
+    <Content Include="Scripts\js\functions.js" />
+    <Content Include="Scripts\js\html5.js" />
+    <Content Include="Scripts\js\isotope.pkgd.min.js" />
+    <Content Include="Scripts\js\jquery.counterup.min.js" />
+    <Content Include="Scripts\js\jquery.drawDoughnutChart.js" />
+    <Content Include="Scripts\js\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\js\keyboard-image-navigation.js" />
+    <Content Include="Scripts\js\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Scripts\js\owl-carousel\grabbing.png" />
+    <Content Include="Scripts\js\owl-carousel\owl.carousel.css" />
+    <Content Include="Scripts\js\owl-carousel\owl.carousel.js" />
+    <Content Include="Scripts\js\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Scripts\js\owl-carousel\owl.theme.css" />
+    <Content Include="Scripts\js\owl-carousel\owl.transitions.css" />
+    <Content Include="Scripts\js\slider.js" />
+    <Content Include="Scripts\js\waypoints.min.js" />
+    <Content Include="Scripts\js\woocommerce.js" />
+    <Content Include="Scripts\js\wp-util.min.js" />
+    <Content Include="Scripts\kingcomposer\element_block_heading.php" />
+    <Content Include="Scripts\kingcomposer\element_blog_posts.php" />
+    <Content Include="Scripts\kingcomposer\element_give_report.php" />
+    <Content Include="Scripts\kingcomposer\element_posttype_our_team.php" />
+    <Content Include="Scripts\kingcomposer\element_pricing_table.php" />
+    <Content Include="Scripts\kingcomposer\element_testimonials.php" />
+    <Content Include="Scripts\kingcomposer\element_timelife.php" />
+    <Content Include="Scripts\kingcomposer\kc_title.php" />
+    <Content Include="Scripts\listing.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\opallisting\archive-place.php" />
+    <Content Include="Scripts\opallisting\comment.css" />
+    <Content Include="Scripts\opallisting\content-single-place.php" />
+    <Content Include="Scripts\opallisting\infobox.js" />
+    <Content Include="Scripts\opallisting\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\opallisting\markerclusterer.js" />
+    <Content Include="Scripts\opallisting\single-place-map.php" />
+    <Content Include="Scripts\opallisting\single-place-slider.php" />
+    <Content Include="Scripts\opallisting\single-place.php" />
+    <Content Include="Scripts\opallisting\specific-meta-box.js" />
+    <Content Include="Scripts\rating.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\revslider\css\settings.css" />
+    <Content Include="Scripts\revslider\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Scripts\revslider\js\jquery.themepunch.tools.min.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\selectize.min.js" />
+    <Content Include="Scripts\specific-meta-box.js" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\css\animate.css" />
+    <Content Include="Styles\css\custom-admin.css" />
+    <Content Include="Styles\css\editor-style.css" />
+    <Content Include="Styles\css\font-awesome.css" />
+    <Content Include="Styles\css\font-awesome.min.css" />
+    <Content Include="Styles\css\form-basic.min.css" />
+    <Content Include="Styles\css\ie.css" />
+    <Content Include="Styles\css\kingcomposer.min.css" />
+    <Content Include="Styles\css\magnific-popup.css" />
+    <Content Include="Styles\css\opallisting.css" />
+    <Content Include="Styles\css\opallisting1.css" />
+    <Content Include="Styles\css\prettyPhoto.css" />
+    <Content Include="Styles\css\rtl-custom-admin.css" />
+    <Content Include="Styles\css\rtl-editor-style.css" />
+    <Content Include="Styles\css\rtl-font-awesome.css" />
+    <Content Include="Styles\css\rtl-font-awesome.min.css" />
+    <Content Include="Styles\css\rtl-ie.css" />
+    <Content Include="Styles\css\rtl-prettyPhoto.css" />
+    <Content Include="Styles\css\rtl-style.css" />
+    <Content Include="Styles\css\rtl-woocommerce.css" />
+    <Content Include="Styles\css\selectize.css" />
+    <Content Include="Styles\css\skins\green\rtl-style.css" />
+    <Content Include="Styles\css\skins\green\rtl-woocommerce.css" />
+    <Content Include="Styles\css\skins\green\style.css" />
+    <Content Include="Styles\css\skins\green\woocommerce.css" />
+    <Content Include="Styles\css\skins\red\rtl-style.css" />
+    <Content Include="Styles\css\skins\red\rtl-woocommerce.css" />
+    <Content Include="Styles\css\skins\red\style.css" />
+    <Content Include="Styles\css\skins\red\woocommerce.css" />
+    <Content Include="Styles\css\skins\yellow\rtl-style.css" />
+    <Content Include="Styles\css\skins\yellow\rtl-woocommerce.css" />
+    <Content Include="Styles\css\skins\yellow\style.css" />
+    <Content Include="Styles\css\skins\yellow\woocommerce.css" />
+    <Content Include="Styles\css\style.css" />
+    <Content Include="Styles\css\tipTip.css" />
+    <Content Include="Styles\css\woocommerce.css" />
+    <Content Include="Styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\Rentmestyle.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Styles\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Styles\fonts\FontAwesome.otf" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\EdPicker\Arts.cshtml" />
+    <Content Include="Views\EdPicker\CoachingAcademy.cshtml" />
+    <Content Include="Views\EdPicker\CoachingCenter.cshtml" />
+    <Content Include="Views\EdPicker\College.cshtml" />
+    <Content Include="Views\EdPicker\Course.cshtml" />
+    <Content Include="Views\EdPicker\Department.cshtml" />
+    <Content Include="Views\EdPicker\Index.cshtml" />
+    <Content Include="Views\EdPicker\Kindergarten.cshtml" />
+    <Content Include="Views\EdPicker\News.cshtml" />
+    <Content Include="Views\EdPicker\POCMap.cshtml" />
+    <Content Include="Views\EdPicker\Registration.cshtml" />
+    <Content Include="Views\EdPicker\School.cshtml" />
+    <Content Include="Views\EdPicker\Search.cshtml" />
+    <Content Include="Views\EdPicker\Sports.cshtml" />
+    <Content Include="Views\POC\Index.cshtml" />
+    <Content Include="Views\POC\MapTrial.cshtml" />
+    <Content Include="Views\POC\ImageUploader.cshtml" />
+    <Content Include="Views\POC\LoadImages.cshtml" />
+    <Content Include="Views\EdPicker\Calender.cshtml" />
+    <Content Include="Views\Shared\ContentPage.cshtml" />
+    <Content Include="Views\EdPicker\Blog.cshtml" />
+    <Content Include="Views\EdPicker\Events.cshtml" />
+    <Content Include="Views\EdPicker\Social.cshtml" />
+    <Content Include="Views\edpickerapp\Newsbg.cshtml" />
+    <Content Include="Views\edpickerapp\Blogbg.cshtml" />
+    <Content Include="Views\edpickerapp\Login.cshtml" />
+    <Content Include="Views\edpickerapp\InstitutionRegistration.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50448</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50448/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

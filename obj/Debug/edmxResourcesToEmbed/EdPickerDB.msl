@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Edlooker_DevModelStoreContainer" CdmEntityContainer="Edlooker_DevEntities1">
+    <EntitySetMapping Name="COUAchievements">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUAchievement">
+        <MappingFragment StoreEntitySet="COUAchievements">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUBasicDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUBasicDetail">
+        <MappingFragment StoreEntitySet="COUBasicDetails">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Numberofstudent" ColumnName="Numberofstudent" />
+          <ScalarProperty Name="Placement" ColumnName="Placement" />
+          <ScalarProperty Name="Achievement" ColumnName="Achievement" />
+          <ScalarProperty Name="TotalSessions" ColumnName="TotalSessions" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUBatchAvailables">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUBatchAvailable">
+        <MappingFragment StoreEntitySet="COUBatchAvailable">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+          <ScalarProperty Name="BatchTiming" ColumnName="BatchTiming" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUGalleries">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUGallery">
+        <MappingFragment StoreEntitySet="COUGallery">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="GalleryDetail" ColumnName="GalleryDetail" />
+          <ScalarProperty Name="GalleryURL" ColumnName="GalleryURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COULabs">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COULab">
+        <MappingFragment StoreEntitySet="COULabs">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Labname" ColumnName="Labname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUNews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUNew">
+        <MappingFragment StoreEntitySet="COUNews">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="News" ColumnName="News" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COURGenerals">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COURGeneral">
+        <MappingFragment StoreEntitySet="COURGeneral">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="About" ColumnName="About" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Institutionname" ColumnName="Institutionname" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUSeminars">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUSeminar">
+        <MappingFragment StoreEntitySet="COUSeminars">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUStaffDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUStaffDetail">
+        <MappingFragment StoreEntitySet="COUStaffDetails">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="NumberofStaff" ColumnName="NumberofStaff" />
+          <ScalarProperty Name="NumberofStudent" ColumnName="NumberofStudent" />
+          <ScalarProperty Name="StudentStaffRatio" ColumnName="StudentStaffRatio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUSubjectLists">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUSubjectList">
+        <MappingFragment StoreEntitySet="COUSubjectList">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUTestimonials">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.COUTestimonial">
+        <MappingFragment StoreEntitySet="COUTestimonials">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+          <ScalarProperty Name="TestimonialDetail" ColumnName="TestimonialDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCBriefDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCBriefDetail">
+        <MappingFragment StoreEntitySet="PCCBriefDetail">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Brief" ColumnName="Brief" />
+          <ScalarProperty Name="FoundedYear" ColumnName="FoundedYear" />
+          <ScalarProperty Name="PrinicpalName" ColumnName="PrinicpalName" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCCompetitorTables">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCCompetitorTable">
+        <MappingFragment StoreEntitySet="PCCCompetitorTable">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="InstitutionIDOne" ColumnName="InstitutionIDOne" />
+          <ScalarProperty Name="InstitutionIDTwo" ColumnName="InstitutionIDTwo" />
+          <ScalarProperty Name="InstitutionIDThree" ColumnName="InstitutionIDThree" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCContactDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCContactDetail">
+        <MappingFragment StoreEntitySet="PCCContactDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCCourseLists">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCCourseList">
+        <MappingFragment StoreEntitySet="PCCCourseList">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Hours" ColumnName="Hours" />
+          <ScalarProperty Name="Sessions" ColumnName="Sessions" />
+          <ScalarProperty Name="Minspersession" ColumnName="Minspersession" />
+          <ScalarProperty Name="Schedule" ColumnName="Schedule" />
+          <ScalarProperty Name="TotalSeat" ColumnName="TotalSeat" />
+          <ScalarProperty Name="CourseURL" ColumnName="CourseURL" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCGalleries">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCGallery">
+        <MappingFragment StoreEntitySet="PCCGallery">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="GalleryDetail" ColumnName="GalleryDetail" />
+          <ScalarProperty Name="GalleryURL" ColumnName="GalleryURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCGeneralDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCGeneralDetail">
+        <MappingFragment StoreEntitySet="PCCGeneralDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="NumberofStaff" ColumnName="NumberofStaff" />
+          <ScalarProperty Name="NumberofStudent" ColumnName="NumberofStudent" />
+          <ScalarProperty Name="NumberofPlacements" ColumnName="NumberofPlacements" />
+          <ScalarProperty Name="NumberofAssistants" ColumnName="NumberofAssistants" />
+          <ScalarProperty Name="NumberofCourse" ColumnName="NumberofCourse" />
+          <ScalarProperty Name="NumberofSessions" ColumnName="NumberofSessions" />
+          <ScalarProperty Name="Parking" ColumnName="Parking" />
+          <ScalarProperty Name="AC" ColumnName="AC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCNews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCNew">
+        <MappingFragment StoreEntitySet="PCCNews">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="News" ColumnName="News" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCSocialMediaDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCSocialMediaDetail">
+        <MappingFragment StoreEntitySet="PCCSocialMediaDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="FacebookInstitutionURL" ColumnName="FacebookInstitutionURL" />
+          <ScalarProperty Name="InstagramInstitutionURL" ColumnName="InstagramInstitutionURL" />
+          <ScalarProperty Name="TwitterInstitutionURL" ColumnName="TwitterInstitutionURL" />
+          <ScalarProperty Name="GoogleplusInstitutionURL" ColumnName="GoogleplusInstitutionURL" />
+          <ScalarProperty Name="YoutubeInstitutionURL" ColumnName="YoutubeInstitutionURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCTestimonials">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCTestimonial">
+        <MappingFragment StoreEntitySet="PCCTestimonials">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+          <ScalarProperty Name="TestimonialDetail" ColumnName="TestimonialDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCCTimelineDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCCTimelineDetail">
+        <MappingFragment StoreEntitySet="PCCTimelineDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="InformationRating" ColumnName="InformationRating" />
+          <ScalarProperty Name="ReviewRating" ColumnName="ReviewRating" />
+          <ScalarProperty Name="ReviewPercentage" ColumnName="ReviewPercentage" />
+          <ScalarProperty Name="BannerImageURL" ColumnName="BannerImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCityDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCityDetail">
+        <MappingFragment StoreEntitySet="PCityDetails">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLBriefDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLBriefDetail">
+        <MappingFragment StoreEntitySet="PCOLBriefDetail">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Brief" ColumnName="Brief" />
+          <ScalarProperty Name="FoundedYear" ColumnName="FoundedYear" />
+          <ScalarProperty Name="PrinicpalName" ColumnName="PrinicpalName" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLCompetitorTables">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLCompetitorTable">
+        <MappingFragment StoreEntitySet="PCOLCompetitorTable">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="InstitutionIDOne" ColumnName="InstitutionIDOne" />
+          <ScalarProperty Name="InstitutionIDTwo" ColumnName="InstitutionIDTwo" />
+          <ScalarProperty Name="InstitutionIDThree" ColumnName="InstitutionIDThree" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLContactDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLContactDetail">
+        <MappingFragment StoreEntitySet="PCOLContactDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLDepartments">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLDepartment">
+        <MappingFragment StoreEntitySet="PCOLDepartments">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLFaclities">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLFaclity">
+        <MappingFragment StoreEntitySet="PCOLFaclities">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TotalStudents" ColumnName="TotalStudents" />
+          <ScalarProperty Name="TotalStaff" ColumnName="TotalStaff" />
+          <ScalarProperty Name="TotalDepartments" ColumnName="TotalDepartments" />
+          <ScalarProperty Name="TotalClubs" ColumnName="TotalClubs" />
+          <ScalarProperty Name="Canteen" ColumnName="Canteen" />
+          <ScalarProperty Name="Transport" ColumnName="Transport" />
+          <ScalarProperty Name="Library" ColumnName="Library" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLGalleries">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLGallery">
+        <MappingFragment StoreEntitySet="PCOLGallery">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="GalleryDetail" ColumnName="GalleryDetail" />
+          <ScalarProperty Name="GalleryURL" ColumnName="GalleryURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLGeneralDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLGeneralDetail">
+        <MappingFragment StoreEntitySet="PCOLGeneralDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="EnterpreneurshipCell" ColumnName="EnterpreneurshipCell" />
+          <ScalarProperty Name="Scholorship" ColumnName="Scholorship" />
+          <ScalarProperty Name="Canteen" ColumnName="Canteen" />
+          <ScalarProperty Name="ArtsClub" ColumnName="ArtsClub" />
+          <ScalarProperty Name="TechnologyClub" ColumnName="TechnologyClub" />
+          <ScalarProperty Name="SmartClasses" ColumnName="SmartClasses" />
+          <ScalarProperty Name="Transportation" ColumnName="Transportation" />
+          <ScalarProperty Name="Hostel" ColumnName="Hostel" />
+          <ScalarProperty Name="RaggingAssociation" ColumnName="RaggingAssociation" />
+          <ScalarProperty Name="NirbhayaAssociation" ColumnName="NirbhayaAssociation" />
+          <ScalarProperty Name="DepressionAssociation" ColumnName="DepressionAssociation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLHostels">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLHostel">
+        <MappingFragment StoreEntitySet="PCOLHostel">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="TotalAvailablity" ColumnName="TotalAvailablity" />
+          <ScalarProperty Name="StudperRoom" ColumnName="StudperRoom" />
+          <ScalarProperty Name="AC" ColumnName="AC" />
+          <ScalarProperty Name="Food" ColumnName="Food" />
+          <ScalarProperty Name="Internet" ColumnName="Internet" />
+          <ScalarProperty Name="GYM" ColumnName="GYM" />
+          <ScalarProperty Name="SwimmingPool" ColumnName="SwimmingPool" />
+          <ScalarProperty Name="Policestationdistance" ColumnName="Policestationdistance" />
+          <ScalarProperty Name="Hospitaldistance" ColumnName="Hospitaldistance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLNews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLNew">
+        <MappingFragment StoreEntitySet="PCOLNews">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="News" ColumnName="News" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLReviews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLReview">
+        <MappingFragment StoreEntitySet="PCOLReview">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="Dated" ColumnName="Dated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLSocialMediaDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLSocialMediaDetail">
+        <MappingFragment StoreEntitySet="PCOLSocialMediaDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="FacebookInstitutionURL" ColumnName="FacebookInstitutionURL" />
+          <ScalarProperty Name="InstagramInstitutionURL" ColumnName="InstagramInstitutionURL" />
+          <ScalarProperty Name="TwitterInstitutionURL" ColumnName="TwitterInstitutionURL" />
+          <ScalarProperty Name="GoogleplusInstitutionURL" ColumnName="GoogleplusInstitutionURL" />
+          <ScalarProperty Name="YoutubeInstitutionURL" ColumnName="YoutubeInstitutionURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLSports">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLSport">
+        <MappingFragment StoreEntitySet="PCOLSports">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="SportsAvailable" ColumnName="SportsAvailable" />
+          <ScalarProperty Name="Facilties" ColumnName="Facilties" />
+          <ScalarProperty Name="NumberofCoach" ColumnName="NumberofCoach" />
+          <ScalarProperty Name="NumberofAchievements" ColumnName="NumberofAchievements" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLTestimonials">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLTestimonial">
+        <MappingFragment StoreEntitySet="PCOLTestimonials">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+          <ScalarProperty Name="TestimonialDetail" ColumnName="TestimonialDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLTimelineDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLTimelineDetail">
+        <MappingFragment StoreEntitySet="PCOLTimelineDetails">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="InformationRating" ColumnName="InformationRating" />
+          <ScalarProperty Name="ReviewRating" ColumnName="ReviewRating" />
+          <ScalarProperty Name="ReviewPercentage" ColumnName="ReviewPercentage" />
+          <ScalarProperty Name="BannerImageURL" ColumnName="BannerImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCOLTransports">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCOLTransport">
+        <MappingFragment StoreEntitySet="PCOLTransport">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TotalBus" ColumnName="TotalBus" />
+          <ScalarProperty Name="Tracking" ColumnName="Tracking" />
+          <ScalarProperty Name="StudentBus" ColumnName="StudentBus" />
+          <ScalarProperty Name="BusFees" ColumnName="BusFees" />
+          <ScalarProperty Name="BusRoutes" ColumnName="BusRoutes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCountryDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCountryDetail">
+        <MappingFragment StoreEntitySet="PCountryDetails">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPAchievements">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPAchievement">
+        <MappingFragment StoreEntitySet="PDEPAchievements">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Totalprojects" ColumnName="Totalprojects" />
+          <ScalarProperty Name="Totalawards" ColumnName="Totalawards" />
+          <ScalarProperty Name="Totalparticipation" ColumnName="Totalparticipation" />
+          <ScalarProperty Name="Totalpatents" ColumnName="Totalpatents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPBriefDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPBriefDetail">
+        <MappingFragment StoreEntitySet="PDEPBriefDetail">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Brief" ColumnName="Brief" />
+          <ScalarProperty Name="TotalTotalStudents" ColumnName="TotalTotalStudents" />
+          <ScalarProperty Name="TotalTotalStaff" ColumnName="TotalTotalStaff" />
+          <ScalarProperty Name="TotalPlaced" ColumnName="TotalPlaced" />
+          <ScalarProperty Name="TotalAchievements" ColumnName="TotalAchievements" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPGalleries">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPGallery">
+        <MappingFragment StoreEntitySet="PDEPGallery">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="GalleryDetail" ColumnName="GalleryDetail" />
+          <ScalarProperty Name="GalleryURL" ColumnName="GalleryURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPLabs">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPLab">
+        <MappingFragment StoreEntitySet="PDEPLabs">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Labname" ColumnName="Labname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPLectures">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPLecture">
+        <MappingFragment StoreEntitySet="PDEPLectures">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPNews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPNew">
+        <MappingFragment StoreEntitySet="PDEPNews">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="News" ColumnName="News" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPPlacementCompanies">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPPlacementCompany">
+        <MappingFragment StoreEntitySet="PDEPPlacementCompanies">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Companyname" ColumnName="Companyname" />
+          <ScalarProperty Name="CompanyImageURL" ColumnName="CompanyImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPPlacementsBasics">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPPlacementsBasic">
+        <MappingFragment StoreEntitySet="PDEPPlacementsBasic">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Totalcompanies" ColumnName="Totalcompanies" />
+          <ScalarProperty Name="Totalplaced" ColumnName="Totalplaced" />
+          <ScalarProperty Name="Conversionrate" ColumnName="Conversionrate" />
+          <ScalarProperty Name="Intership" ColumnName="Intership" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPReviews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPReview">
+        <MappingFragment StoreEntitySet="PDEPReview">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Review" ColumnName="Review" />
+          <ScalarProperty Name="Dated" ColumnName="Dated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPSeminars">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPSeminar">
+        <MappingFragment StoreEntitySet="PDEPSeminars">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPStaffs">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPStaff">
+        <MappingFragment StoreEntitySet="PDEPStaff">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Totalphd" ColumnName="Totalphd" />
+          <ScalarProperty Name="Totaldoctorate" ColumnName="Totaldoctorate" />
+          <ScalarProperty Name="Totalprofessor" ColumnName="Totalprofessor" />
+          <ScalarProperty Name="Totallabtechnicians" ColumnName="Totallabtechnicians" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPSubjects">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPSubject">
+        <MappingFragment StoreEntitySet="PDEPSubjects">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPTimelines">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPTimeline">
+        <MappingFragment StoreEntitySet="PDEPTimeline">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="CollegeURL" ColumnName="CollegeURL" />
+          <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+          <ScalarProperty Name="CourseDuration" ColumnName="CourseDuration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PDEPWorkshops">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PDEPWorkshop">
+        <MappingFragment StoreEntitySet="PDEPWorkshops">
+          <ScalarProperty Name="SerialNos" ColumnName="SerialNos" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PInstitutionRegistrations">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PInstitutionRegistration">
+        <MappingFragment StoreEntitySet="PInstitutionRegistration">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CourseOffered" ColumnName="CourseOffered" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGCompetitorTables">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGCompetitorTable">
+        <MappingFragment StoreEntitySet="PKGCompetitorTable">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="InstitutionIDOne" ColumnName="InstitutionIDOne" />
+          <ScalarProperty Name="InstitutionIDTwo" ColumnName="InstitutionIDTwo" />
+          <ScalarProperty Name="InstitutionIDThree" ColumnName="InstitutionIDThree" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGEventsDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGEventsDetail">
+        <MappingFragment StoreEntitySet="PKGEventsDetails">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGGalleries">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGGallery">
+        <MappingFragment StoreEntitySet="PKGGallery">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="GalleryURL" ColumnName="GalleryURL" />
+          <ScalarProperty Name="GalleryDetail" ColumnName="GalleryDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGTestimonials">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGTestimonial">
+        <MappingFragment StoreEntitySet="PKGTestimonials">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+          <ScalarProperty Name="TestimonialDetail" ColumnName="TestimonialDetail" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMessageToInstitutions">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PMessageToInstitution">
+        <MappingFragment StoreEntitySet="PMessageToInstitution">
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+          <ScalarProperty Name="UserQuestion" ColumnName="UserQuestion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCAchievements">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCAchievement">
+        <MappingFragment StoreEntitySet="PSCAchievements">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="AchievementHeading" ColumnName="AchievementHeading" />
+          <ScalarProperty Name="AchievementDetail" ColumnName="AchievementDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCBriefDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCBriefDetail">
+        <MappingFragment StoreEntitySet="PSCBriefDetail">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Brief" ColumnName="Brief" />
+          <ScalarProperty Name="FoundedYear" ColumnName="FoundedYear" />
+          <ScalarProperty Name="PrinicpalName" ColumnName="PrinicpalName" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCCompetitorTables">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCCompetitorTable">
+        <MappingFragment StoreEntitySet="PSCCompetitorTable">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="InstitutionIDOne" ColumnName="InstitutionIDOne" />
+          <ScalarProperty Name="InstitutionIDTwo" ColumnName="InstitutionIDTwo" />
+          <ScalarProperty Name="InstitutionIDThree" ColumnName="InstitutionIDThree" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCContactDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCContactDetail">
+        <MappingFragment StoreEntitySet="PSCContactDetails">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCExtraCurriculars">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCExtraCurricular">
+        <MappingFragment StoreEntitySet="PSCExtraCurricular">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="SmartClassURL" ColumnName="SmartClassURL" />
+          <ScalarProperty Name="YogaURL" ColumnName="YogaURL" />
+          <ScalarProperty Name="DigitalContentURL" ColumnName="DigitalContentURL" />
+          <ScalarProperty Name="SocialClubURL" ColumnName="SocialClubURL" />
+          <ScalarProperty Name="StudentTrackingURL" ColumnName="StudentTrackingURL" />
+          <ScalarProperty Name="TotalVacationsURL" ColumnName="TotalVacationsURL" />
+          <ScalarProperty Name="ArtsClubURL" ColumnName="ArtsClubURL" />
+          <ScalarProperty Name="TechnologyClubURL" ColumnName="TechnologyClubURL" />
+          <ScalarProperty Name="WomenSafetyClubURL" ColumnName="WomenSafetyClubURL" />
+          <ScalarProperty Name="LanguageClubURL" ColumnName="LanguageClubURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCGalleries">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCGallery">
+        <MappingFragment StoreEntitySet="PSCGallery">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="GalleryURL" ColumnName="GalleryURL" />
+          <ScalarProperty Name="GalleryDetail" ColumnName="GalleryDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCGeneralDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCGeneralDetail">
+        <MappingFragment StoreEntitySet="PSCGeneralDetails">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TotalStudents" ColumnName="TotalStudents" />
+          <ScalarProperty Name="TotalStaff" ColumnName="TotalStaff" />
+          <ScalarProperty Name="TotalSections" ColumnName="TotalSections" />
+          <ScalarProperty Name="Canteen" ColumnName="Canteen" />
+          <ScalarProperty Name="Curriculam" ColumnName="Curriculam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCHostels">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCHostel">
+        <MappingFragment StoreEntitySet="PSCHostel">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="TotalAvailablity" ColumnName="TotalAvailablity" />
+          <ScalarProperty Name="HostelCampus" ColumnName="HostelCampus" />
+          <ScalarProperty Name="StudentsperRoom" ColumnName="StudentsperRoom" />
+          <ScalarProperty Name="AC" ColumnName="AC" />
+          <ScalarProperty Name="Food" ColumnName="Food" />
+          <ScalarProperty Name="Internet" ColumnName="Internet" />
+          <ScalarProperty Name="GYM" ColumnName="GYM" />
+          <ScalarProperty Name="SwimmingPool" ColumnName="SwimmingPool" />
+          <ScalarProperty Name="NearestHospital" ColumnName="NearestHospital" />
+          <ScalarProperty Name="NearestPoliceStation" ColumnName="NearestPoliceStation" />
+          <ScalarProperty Name="ApproxFees" ColumnName="ApproxFees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCNews">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCNew">
+        <MappingFragment StoreEntitySet="PSCNews">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="News" ColumnName="News" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCSocialMediaDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCSocialMediaDetail">
+        <MappingFragment StoreEntitySet="PSCSocialMediaDetails">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="FacebookAvailableImageURL" ColumnName="FacebookAvailableImageURL" />
+          <ScalarProperty Name="FacebookInstitutionURL" ColumnName="FacebookInstitutionURL" />
+          <ScalarProperty Name="InstagramAvailableImageURL" ColumnName="InstagramAvailableImageURL" />
+          <ScalarProperty Name="InstagramInstitutionURL" ColumnName="InstagramInstitutionURL" />
+          <ScalarProperty Name="TwitterAvailableImageURL" ColumnName="TwitterAvailableImageURL" />
+          <ScalarProperty Name="TwitterInstitutionURL" ColumnName="TwitterInstitutionURL" />
+          <ScalarProperty Name="GoogleplusAvailableImageURL" ColumnName="GoogleplusAvailableImageURL" />
+          <ScalarProperty Name="GoogleplusInstitutionURL" ColumnName="GoogleplusInstitutionURL" />
+          <ScalarProperty Name="YoutubeAvailableImageURL" ColumnName="YoutubeAvailableImageURL" />
+          <ScalarProperty Name="YoutubeInstitutionURL" ColumnName="YoutubeInstitutionURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCSports">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCSport">
+        <MappingFragment StoreEntitySet="PSCSports">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="SportsAvailable" ColumnName="SportsAvailable" />
+          <ScalarProperty Name="Facilties" ColumnName="Facilties" />
+          <ScalarProperty Name="NumberofCoach" ColumnName="NumberofCoach" />
+          <ScalarProperty Name="NumberofAchievements" ColumnName="NumberofAchievements" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCTestimonials">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCTestimonial">
+        <MappingFragment StoreEntitySet="PSCTestimonials">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TestimonialName" ColumnName="TestimonialName" />
+          <ScalarProperty Name="TestimonialDetail" ColumnName="TestimonialDetail" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCTimelineDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCTimelineDetail">
+        <MappingFragment StoreEntitySet="PSCTimelineDetails">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="AdmissionsStatusID" ColumnName="AdmissionsStatusID" />
+          <ScalarProperty Name="InformationRating" ColumnName="InformationRating" />
+          <ScalarProperty Name="ReviewRating" ColumnName="ReviewRating" />
+          <ScalarProperty Name="ReviewPercentage" ColumnName="ReviewPercentage" />
+          <ScalarProperty Name="BoardName" ColumnName="BoardName" />
+          <ScalarProperty Name="BannerImageURL" ColumnName="BannerImageURL" />
+          <ScalarProperty Name="ClassRange" ColumnName="ClassRange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSCTransports">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSCTransport">
+        <MappingFragment StoreEntitySet="PSCTransport">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TotalBus" ColumnName="TotalBus" />
+          <ScalarProperty Name="Tracking" ColumnName="Tracking" />
+          <ScalarProperty Name="StudentPerBus" ColumnName="StudentPerBus" />
+          <ScalarProperty Name="ApproxBusFees" ColumnName="ApproxBusFees" />
+          <ScalarProperty Name="BusRoutes" ColumnName="BusRoutes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PSearchTables">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PSearchTable">
+        <MappingFragment StoreEntitySet="PSearchTable">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="InstitutionImageURL" ColumnName="InstitutionImageURL" />
+          <ScalarProperty Name="InstitutionURL" ColumnName="InstitutionURL" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="InformationRating" ColumnName="InformationRating" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="InstitutionType" ColumnName="InstitutionType" />
+          <ScalarProperty Name="LocationTags" ColumnName="LocationTags" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PStateDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PStateDetail">
+        <MappingFragment StoreEntitySet="PStateDetails">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PTags">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PTag">
+        <MappingFragment StoreEntitySet="PTags">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="SimilarTags" ColumnName="SimilarTags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PTrendingLists">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PTrendingList">
+        <MappingFragment StoreEntitySet="PTrendingList">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUserKeyWordSearches">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PUserKeyWordSearch">
+        <MappingFragment StoreEntitySet="PUserKeyWordSearch">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="KeyWordTerm" ColumnName="KeyWordTerm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUserLocationKeywords">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PUserLocationKeyword">
+        <MappingFragment StoreEntitySet="PUserLocationKeyword">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="KeyWordTerm" ColumnName="KeyWordTerm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUserSearches">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PUserSearch">
+        <MappingFragment StoreEntitySet="PUserSearch">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="SearchTerm" ColumnName="SearchTerm" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Types">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGActivities">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGActivity">
+        <MappingFragment StoreEntitySet="PKGActivities">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="OutdoorPlayArea" ColumnName="OutdoorPlayArea" />
+          <ScalarProperty Name="Painting" ColumnName="Painting" />
+          <ScalarProperty Name="Yoga" ColumnName="Yoga" />
+          <ScalarProperty Name="StoryTelling" ColumnName="StoryTelling" />
+          <ScalarProperty Name="StageShow" ColumnName="StageShow" />
+          <ScalarProperty Name="Learning" ColumnName="Learning" />
+          <ScalarProperty Name="Waterpool" ColumnName="Waterpool" />
+          <ScalarProperty Name="Dance" ColumnName="Dance" />
+          <ScalarProperty Name="Music" ColumnName="Music" />
+          <ScalarProperty Name="CCTV" ColumnName="CCTV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGBriefDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGBriefDetail">
+        <MappingFragment StoreEntitySet="PKGBriefDetail">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Brief" ColumnName="Brief" />
+          <ScalarProperty Name="FoundedYear" ColumnName="FoundedYear" />
+          <ScalarProperty Name="PrinicpalName" ColumnName="PrinicpalName" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGContactDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGContactDetail">
+        <MappingFragment StoreEntitySet="PKGContactDetails">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="LocationAddress" ColumnName="LocationAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGDetail">
+        <MappingFragment StoreEntitySet="PKGDetails">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="TotalStudents" ColumnName="TotalStudents" />
+          <ScalarProperty Name="TotalStaff" ColumnName="TotalStaff" />
+          <ScalarProperty Name="TotalRooms" ColumnName="TotalRooms" />
+          <ScalarProperty Name="Food" ColumnName="Food" />
+          <ScalarProperty Name="Curriculam" ColumnName="Curriculam" />
+          <ScalarProperty Name="Transport" ColumnName="Transport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGSocialMediaDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGSocialMediaDetail">
+        <MappingFragment StoreEntitySet="PKGSocialMediaDetails">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="FacebookAvailableImageURL" ColumnName="FacebookAvailableImageURL" />
+          <ScalarProperty Name="FacebookInstitutionURL" ColumnName="FacebookInstitutionURL" />
+          <ScalarProperty Name="InstagramAvailableImageURL" ColumnName="InstagramAvailableImageURL" />
+          <ScalarProperty Name="InstagramInstitutionURL" ColumnName="InstagramInstitutionURL" />
+          <ScalarProperty Name="TwitterAvailableImageURL" ColumnName="TwitterAvailableImageURL" />
+          <ScalarProperty Name="TwitterInstitutionURL" ColumnName="TwitterInstitutionURL" />
+          <ScalarProperty Name="GoogleplusAvailableImageURL" ColumnName="GoogleplusAvailableImageURL" />
+          <ScalarProperty Name="GoogleplusInstitutionURL" ColumnName="GoogleplusInstitutionURL" />
+          <ScalarProperty Name="YoutubeAvailableImageURL" ColumnName="YoutubeAvailableImageURL" />
+          <ScalarProperty Name="YoutubeInstitutionURL" ColumnName="YoutubeInstitutionURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PKGTimelineDetails">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PKGTimelineDetail">
+        <MappingFragment StoreEntitySet="PKGTimelineDetails">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="AdmissionsStatusID" ColumnName="AdmissionsStatusID" />
+          <ScalarProperty Name="InformationRating" ColumnName="InformationRating" />
+          <ScalarProperty Name="ReviewRating" ColumnName="ReviewRating" />
+          <ScalarProperty Name="ReviewPercentage" ColumnName="ReviewPercentage" />
+          <ScalarProperty Name="BannerImageURL" ColumnName="BannerImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestUploadImages">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.TestUploadImage">
+        <MappingFragment StoreEntitySet="TestUploadImage">
+          <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PBLOGs">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PBLOG">
+        <MappingFragment StoreEntitySet="PBLOG">
+          <ScalarProperty Name="ImageSource" ColumnName="ImageSource" />
+          <ScalarProperty Name="FromSource" ColumnName="FromSource" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="TotalView" ColumnName="TotalView" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PCALENDERs">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PCALENDER">
+        <MappingFragment StoreEntitySet="PCALENDER">
+          <ScalarProperty Name="ImageSource" ColumnName="ImageSource" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="TotalView" ColumnName="TotalView" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="LastDateforApplying" ColumnName="LastDateforApplying" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PNEWS">
+      <EntityTypeMapping TypeName="Edlooker_DevModel.PNEW">
+        <MappingFragment StoreEntitySet="PNEWS">
+          <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+          <ScalarProperty Name="FromSource" ColumnName="FromSource" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="TotalView" ColumnName="TotalView" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

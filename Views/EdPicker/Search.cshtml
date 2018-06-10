@@ -1,0 +1,640 @@
+﻿@model EdPicker.Models.Search
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://wpopaldemo.com/rentme/xmlrpc.php">
+
+    <title>EdPicker:Search</title>
+    <link rel='dns-prefetch' href='//maps.googleapis.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96119720-3', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alef:700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+   
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />
+    <link rel='stylesheet' id='magnific-popup-css' href='~/Styles/css/magnific-popup.css' type='text/css' media='' />
+    <link rel='stylesheet' id='tiptip-css' href='~/Styles/css/tipTip.css' type='text/css' media='' />
+    <link rel='stylesheet' id='opallisting-comment-css' href='~/Scripts/opallisting/comment.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='selectize-css' href='~/Styles/css/selectize.css' type='text/css' media='' />
+    <link rel='stylesheet' id='owl-carousel-css' href='~/Scripts/js/owl-carousel/owl.carousel.css' type='text/css' media='' />
+    <link rel='stylesheet' id='owl-carousel-theme-css' href='~/Scripts/js/owl-carousel/owl.theme.css' type='text/css' media='' />
+    <link rel='stylesheet' id='opallisting-style-css' href='~/Styles/css/opallisting.css' type='text/css' media='all' />
+    
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='~/Scripts/revslider/css/settings.css' type='text/css' media='all' />
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+        .tp-caption a {
+            color: #ff7302;
+            text-shadow: none;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+        }
+
+            .tp-caption a:hover {
+                color: #ffa902;
+            }
+    </style>
+    <link rel='stylesheet' id='rentme-open-sans-css' href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Heebo:400,500,700|Playfair+Display:700,400italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+    <link rel='stylesheet' id='rentme-fa-css' href='~/Styles/css/font-awesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='rentme-style-css' href='~/Styles/css/style.css' type='text/css' media='all' />
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='rentme-ie-css'  href='https://wpopaldemo.com/rentme/wp-content/themes/rentme/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <link rel='stylesheet' id='prettyPhoto-css' href='~/Styles/css/rtl-prettyPhoto.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='kc-general-css' href='~/Styles/css/kingcomposer.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='kc-animate-css' href='~/Styles/css/animate.css' type='text/css' media='all' />
+    
+    <script type='text/javascript' src='~/Scripts/jquery1.12.4.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery-migrate.min.js'></script>
+    
+    <script type='text/javascript' src='//maps.googleapis.com/maps/api/js?sensor=false&#038;libraries=places%2Cdrawing%2Cgeometry&#038;key=AIzaSyDrNlL48YztY5kM6oH6goFmk3aV31qrSpA&#038;ver=0.0.1'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/infobox.js'></script>
+    
+    <script type='text/javascript' src='~/Scripts/opallisting/jquery.magnific-popup.min.js'></script>
+   
+    
+    
+    <script type='text/javascript' src='~/Scripts/bootstrap.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/js/jquery.prettyPhoto.js'></script>
+   
+ 
+    
+    
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+    <script>
+        var SearchPageApp = angular.module("SearchPage", []);
+
+
+        SearchPageApp.controller("SearchResult",function ($scope, $http, $rootScope) {
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            $scope.GoToSearchPage = function (Search)
+            {
+                var Location = document.getElementById('LocationID').innerHTML;
+                window.location.href ="/EdPicker/Search?q="+Search+'&Location='+Location;
+            }
+
+            $scope.FireLocation = function (SearchLocation) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetLocation",
+                    dataType: 'json',
+                    data: { l: SearchLocation },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            $scope.ChangeLocation = function (SearchLocation) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetLocation",
+                    dataType: 'json',
+                    data: { Location: SearchLocation },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.LocationResult = data.data;
+
+                });
+            }
+            $scope.SaveLocation = function (ResultLocation) {
+
+                document.getElementById('LocationID').innerHTML = ResultLocation;
+                $rootScope.SelectedLocation = ResultLocation;
+                document.getElementById('LocationInputBox').value= ResultLocation;
+                var Search=document.getElementById('SearchTitle').innerHTML;
+                window.location.href ="/EdPicker/Search?q="+Search+'&Location='+ResultLocation;
+            }
+            @{
+                var List = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var Listjson = List.Serialize(Model.SearchTable);
+
+            }
+
+            $rootScope.SearchList =@Html.Raw(Listjson);
+            $scope.CallPage=function(InstitutionID)
+            {
+                window.location.href ="/EdPicker/GoToPage?InstitutionId="+InstitutionID;
+            }
+            $scope.FireSearchPage=function(Search)
+            {
+                var Location = document.getElementById('LocationID').innerHTML;
+                window.location.href ="/EdPicker/Search?q="+Search+'&Location='+Location;
+            }
+        });
+
+    </script>
+    <style type="text/css" id="rentme-header-css"> </style>
+   <style>
+       .container {
+           width: 100%;
+           margin: 0 auto;
+           margin-top: 50px;
+       }
+
+       #map_container {
+           position: relative;
+       }
+
+       #map {
+           height: 0;
+           overflow: hidden;
+           padding-bottom: 22.25%;
+           padding-top: 30px;
+           position: relative;
+       }
+   </style>
+
+    <meta name="generator" content="Powered by Slider Revolution 5.3.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+</head>
+
+<body ng-app="SearchPage" ng-controller="SearchResult" class="archive tax-place_category term-hotels term-445 kc-css-system masthead-fixed" >
+    <div  id="page" class="hfeed site">
+        <div class="opal-page-inner row-offcanvas row-offcanvas-left">
+
+            <div class="topbar-mobile  hidden-lg hidden-md">
+                <div class="active-mobile pull-left">
+                    <button data-toggle="offcanvas" class="btn btn-offcanvas btn-toggle-canvas offcanvas" type="button">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+               
+            </div>
+            <header id="opal-masthead" class="site-header header-v1">
+                <div class="header-main clearfix ">
+
+                    <div class="logo-wrapper pull-left">
+                        <div id="opal-logo" class="logo logo-theme">
+                            <a href="http://www.edpicker.com">
+                                <img src="~/Images/logo.png" alt="edpicker" />
+                            </a>
+                        </div>
+                    </div>
+                  
+                    <div class="opal-header-right pull-right">
+                        <div class="header-inner">
+                            <div class="box-user dropdown pull-right">
+
+                                <ul class="list-inline pull-left">
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalNewSearch" class="opal-user-login">
+                                            <span class="fa fa-search"></span> <span id="SearchID">Search</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalLocationSelect" class="opal-user-login">
+                                            <span class="fa fa-map-pin"></span>
+                                            <span id="LocationID" ng-model="myLocation">@Model.UserLocation</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header><!-- #masthead -->
+
+
+            <section id="main" class="site-main">
+                
+                    <div class="container">
+                        
+                        <div id="map_container"></div>
+                        <div id="map" style="min-height: 400px;"></div>
+                    </div>	
+               
+                <section id="main-container" class="site-main container" role="main">
+                   
+
+                        <main id="primary" class="content content-area col-md-12">
+                            
+                            <div class="opallisting-archive-container">
+                                <div class="opallisting-archive-top">
+                                    
+                                        
+                                            
+                                                                                    
+                                        
+                                        <div class="row opal-row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="opallisting-count pull-left">
+                                                    Hey! @Model.SearchCount Institution Found for <span data-toggle="modal" data-target="#modalNewSearch" style="color:#00bac6" id="SearchTitle">@Model.SearchTitle</span><span> in</span><a href="#" data-toggle="modal" style="color:#00bac6" data-target="#modalLocationSelect"> @Model.UserLocation</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                <div class="opallisting-archive-bottom opallisting-rows">
+                                    <div class="opal-row">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"
+                                                  ng-repeat="sl in SearchList">
+                                                <article itemscope="itemscope" 
+                                                         itemtype="http://schema.org/Place" 
+                                                         class="place-grid place-grid-v1 post-11489 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-cinemas place_category-clubs place_category-hostels place_category-hotels place_category-motels place_category-museums place_category-theatres opallisting_tags-food opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-spain opallisting_amenities-bottle-service opallisting_amenities-child-care opallisting_amenities-family-friendly opallisting_amenities-free-delivery opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-private-parties opallisting_amenities-reservations">
+
+
+                                                    <header>
+                                                        <div class="place-box-image">
+                                                            <a ng-click="CallPage(sl.InstitutionID)" class="place-box-image-inner">
+                                                                <img width="495" height="360" src="{{sl.InstitutionImageURL}}" 
+                                                                     class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                            </a>
+                                                        </div>
+                                                       
+                                                        
+                                                    </header>
+
+                                                    <div class="place-content">
+
+                                                        <h4 class="place-title"><a ng-click="CallPage(sl.InstitutionID)">
+                                                            {{sl.InstitutionName}}</a></h4>
+                                                            <span style="display:none" id="PassIntitutionId">{{sl.InstitutionID}}</span>
+
+                                                        <div class="place-address">
+                                                            <i class="fa fa-map-marker"></i>
+                                                           {{sl.Location}}
+                                                        </div>
+                                                        
+                                                        <div class="place-meta">
+
+                                                            <div class="comment-rating-wrap">
+                                                                <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                    <span style="width:0%"></span>
+                                                                </div>
+                                                                <div class="listing-count-reviews">(1 Review)</div>
+                                                            </div>
+                                                            <span class="current-status closed">
+                                                                <i class="fa fa-eye"></i>
+                                                                {{sl.ViewCount}}
+                                                            </span>
+                                                        </div>
+                                                    </div><!-- .place-content -->
+
+
+                                                  
+                                                </article><!-- #post-## -->
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            @*<div class="w-pagination">
+                                <div class="pbr-pagination pagination-main"><ul class="pagination"><li class="disabled"><a aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li><li class="active" data-paged="1"><a href="https://wpopaldemo.com/rentme/place-category/hotels/">1 <span class="sr-only"></span></a></li><li data-paged="2"><a href="https://wpopaldemo.com/rentme/place-category/hotels/page/2/">2</a></li><li data-paged="2"><a aria-label="Next" href="https://wpopaldemo.com/rentme/place-category/hotels/page/2/"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li></ul></div>
+                            </div>*@
+
+
+                        </main><!-- .site-main -->
+                    
+                </section><!-- .content-area -->
+
+            </section><!-- #main -->
+         
+            <div class="opal-copyright clearfix">
+                <div class="container">
+                    <a href="#" class="scrollup"><span class="fa fa-long-arrow-up"></span></a>
+                    Copyright 2017 - EdPicker theme - All Rights Reserved.
+                </div>
+            </div>
+
+            @*<div id="opal-off-canvas" class="opal-off-canvas sidebar-offcanvas hidden-lg hidden-md">
+                <div class="opal-off-canvas-body">
+                    <div class="offcanvas-head bg-primary">
+                        <button type="button" class="btn btn-offcanvas btn-toggle-canvas btn-default" data-toggle="offcanvas">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <span>Menu</span>
+                    </div>
+                    <nav class="navbar navbar-offcanvas navbar-static">
+                        <div class="navbar-collapse navbar-offcanvas-collapse">
+                            <ul id="main-menu-offcanvas" class="nav navbar-nav">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children dropdown active menu-item-4479 level-0">
+                                    <a href="https://wpopaldemo.com/rentme/">Kindergarten </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-9939 level-1"><a href="https://wpopaldemo.com/rentme/">Play School</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9938 level-1"><a href="https://wpopaldemo.com/rentme/home-2/">Nursery</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10046 current_page_item active menu-item-10054 level-1 active  active "><a href="https://wpopaldemo.com/rentme/home-3/">Home 3</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10982 level-1"><a href="https://wpopaldemo.com/rentme/home-4/">Home 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11068 level-0">
+                                    <a href="#">School </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-taxonomy menu-item-object-place_category menu-item-11075 level-1"><a href="https://wpopaldemo.com/rentme/place-category/hotels/">Property Grid</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11668 level-1"><a href="https://wpopaldemo.com/rentme/split-map/">Split Map</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11223 level-1"><a href="https://wpopaldemo.com/rentme/search-places-with-map/">Sidebar filter With Map</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11224 level-1"><a href="https://wpopaldemo.com/rentme/search-places-with-form/">Sidebar filter With Form</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11225 level-1"><a href="https://wpopaldemo.com/rentme/search-places-with-map-and-form/">Sidebar filter With Map and Form</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11405 level-1"><a href="https://wpopaldemo.com/rentme/users/">List Users</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11069 level-0">
+                                    <a href="#">College </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11528 level-1"><a href="https://wpopaldemo.com/rentme/places/roy-thomson-hall/">Property With Slider</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11529 level-1"><a href="https://wpopaldemo.com/rentme/places/hockey-hall-of-fame/">Property With Map</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11073 level-1"><a href="https://wpopaldemo.com/rentme/places/closest-hotel-to-university-of-kentucky/">Property With Gallery</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11074 level-1"><a href="https://wpopaldemo.com/rentme/places/spring-break-hot-spots/">Property With Tab1</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11072 level-1"><a href="https://wpopaldemo.com/rentme/places/same-nightclub/">Property With Tab2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11179 level-0">
+                                    <a href="https://wpopaldemo.com/rentme/membership-packages-page/">Membership </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11182 level-1"><a href="https://wpopaldemo.com/rentme/membership-packages-page/">Member Packages</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11183 level-1"><a href="https://wpopaldemo.com/rentme/membership-dashboard/">Membership Account</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1767 level-0"><a title="Page" href="#">Pages</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9502 level-0"><a href="#">Features</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11261 level-0"><a href="#">Gallery</a></li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11123 level-0">
+                                    <a href="#">Tution Center </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11124 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/blog-simple-left-sidebar/">Blog Simple </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11121 level-2"><a href="https://wpopaldemo.com/rentme/blog-simple-left-sidebar/">Blog Simple Left Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11122 level-2"><a href="https://wpopaldemo.com/rentme/blog-simple-right-sidebar/">Blog Simple Right Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11120 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Simple Full Width</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-395 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/blog-medium-full-width/">Blog Medium </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11132 level-2"><a href="https://wpopaldemo.com/rentme/blog-medium-left-sidebar/">Blog Medium Left Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11137 level-2"><a href="https://wpopaldemo.com/rentme/blog-medium-right-sidebar/">Blog Medium Right Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11133 level-2"><a href="https://wpopaldemo.com/rentme/blog-medium-full-width/">Blog Medium Full Width</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11141 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Grid </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11146 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid-right-sidebar/">Blog Grid Right Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11147 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid-left-sidebar/">Blog Grid Left Sidebar</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11148 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Grid Full</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children dropdown menu-item-11149 level-1">
+                                            <a href="https://wpopaldemo.com/rentme/french-theme-park-will-use-50-drones-for-a-nighttime-spectacle/">Blog Detail Page </a> <b class="caret"></b>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-11150 level-2"><a href="https://wpopaldemo.com/rentme/zumper-national-rent-report-april-2016/">Blog Detail Page Left Sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+
+                </div>
+            </div>*@
+        </div>
+    </div>
+    <!-- #page -->
+    <script type="text/javascript">
+        var locations = [];
+       
+         @foreach (var d in Model.MapList)
+    {
+             
+        @:locations.push(@d.latitude,@d.longitude,"@d.InstitutionName");
+    }
+       
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: new google.maps.LatLng(locations[0],locations[1]),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i], locations[i+1]),
+          map: map,
+          icon: "./Images/map-marker.png"
+      });
+        
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infowindow.setContent(locations[i+2]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+      i=i+2;
+    }
+    </script>
+    <script type="text/html" id="tmpl-map-error-message">
+        <div class="overlay">
+            <div id="map-error-message">
+                <h3>Error</h3>
+                <div class="body-panel">
+                    <p class="desc">{{ data.message }}</p>
+                    <a href="#" id="opallisting-close-map-message" class="btn button">OK</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-marker-template">
+        <div class="opallisting-map-marker">
+            <div class="opallisting-map-marker-inner">
+                <span class="{{ data.marker_icon }}" style="color: {{{ data.color }}}"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                <path fill="{{{ data.color }}}" d="M256,0C167.641,0,96,71.625,96,160c0,24.75,5.625,48.219,15.672,69.125C112.234,230.313,256,512,256,512l142.594-279.375   C409.719,210.844,416,186.156,416,160C416,71.625,344.375,0,256,0z M256,256c-53.016,0-96-43-96-96s42.984-96,96-96 c53,0,96,43,96,96S309,256,256,256z"></path>
+						</svg>
+                <span class="shadow"></span>
+                <span class="pulse"></span>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/html" id="tmpl-opallisting-carousel-txt">
+        <div class="owl-text">
+            <span class="current">{{ data.current }}</span>
+            of					<span class="total">{{ data.total }}</span>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-place-grid-item">
+        <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid post-11489 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-cinemas place_category-clubs place_category-hostels place_category-hotels place_category-motels place_category-museums place_category-theatres opallisting_tags-food opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-spain opallisting_amenities-bottle-service opallisting_amenities-child-care opallisting_amenities-family-friendly opallisting_amenities-free-delivery opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-private-parties opallisting_amenities-reservations">
+
+            <header>
+                <div class="place-box-image">
+                    <a href="{{ data.url }}" class="place-box-image-inner">
+                        <img src="{{ data.thumb }}">
+                    </a>
+                </div>
+                <div class="place-actions">
+                    {{{ data.author_image }}}
+                    <a href="#" data-icon="heart" data-id="{{ data.id }}" data-nonce="{{ data.nonce }}" class="favorite active opallisting-toggle-favorite">
+                        <i class="{{ data.fav_class }}"></i>
+                    </a>
+                </div>
+            </header>
+
+            <div class="place-content">
+                <h4 class="place-title"><a href="{{ data.url }}" rel="bookmark">{{{ data.title }}}</a></h4>
+
+                <div class="place-address">
+                    <i class="fa fa-map-marker"></i>
+                    {{{ data.address }}}
+                </div>
+
+                <div class="place-type">
+                    <span class="{{ data.type_icon }}"></span>
+                    <span>{{ data.type_title }}</span>
+                </div>
+                <div class="place-meta">
+                    <div class="comment-rating-wrap">
+                        <div class="comment-rating">
+                            <span style="width:{{{ ( ( data.rating / 5 ) * 100 )  }}}%"></span>
+                        </div>
+                        <div class="listing-count-reviews">({{ data.review_count }})</div>
+                    </div>
+                    
+                </div><!-- .place-content -->
+            </div>
+                <meta itemprop="url" content="https://wpopaldemo.com/rentme/places/royal-ontario-museum/" />
+
+        </article><!-- #post-## -->
+    </script>
+    <div class="modal fade" id="modalLocationSelect" tabindex="-1" role="dialog" aria-labelledby="modalLocationSelect">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <div>
+                            <input class="form-control" id="LocationInputBox" ng-model="LocationInputBox" placeholder="Enter City Name" ng-change="ChangeLocation(LocationInputBox)" style="border-radius:0px;">
+                            <span ng-model="SelectedLocation">Search: {{SelectedLocation}}</span>
+                            <a ng-repeat="Lr in LocationResult">
+                                <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                    <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" data-dismiss="modal" aria-label="Close" ng-click="SaveLocation(Lr.CityName)">
+                                        <span data-dismiss="modal" aria-label="Close" ng-click="SaveLocation(Lr.CityName)">{{Lr.CityName}}</span>
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalNewSearch" tabindex="-1" role="dialog" aria-labelledby="modalNewSearch">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+
+                        <input class="form-control" id="SearchInputBox" placeholder="Search Kindergarten,Banking,IELTS,Cricket.." ng-model="TagSearch" ng-change="FireSearchTB(TagSearch)" name="search_tags" style="border-radius:0px;">
+                        <span>Search: {{TagSearch}}</span>
+                        <a ng-repeat="Sr in SearchResultTags">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" data-dismiss="modal" aria-label="Close" ng-click="GoToSearchPage(Sr.Tags)">
+                                    <span data-dismiss="modal" aria-label="Close" ng-click="GoToSearchPage(Sr.Tags)">{{Sr.Tags}}</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script async type='text/javascript' src='~/Scripts/js/wp-util.min.js'></script>
+    <script async type='text/javascript' src='~/Scripts/js/core.min.js'></script>
+   
+    
+    <script async type='text/javascript' src='~/Scripts/listing.js'></script>
+    
+    <script async type='text/javascript' src='~/Scripts/jquery.tipTip.minified.js'></script>
+    <script async type='text/javascript' src='~/Scripts/rating.js'></script>
+    
+    <script type='text/javascript' src='~/Scripts/js/owl-carousel/owl.carousel.min.js'></script>
+   
+    <script type='text/javascript' src='~/Scripts/js/functions.js'></script>
+    
+    
+   
+</body>
+</html>

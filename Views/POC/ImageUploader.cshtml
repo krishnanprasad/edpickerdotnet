@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+@model EdPicker.TestUploadImage
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ImageUploader</title>
+</head>
+<body>
+    @using (Html.BeginForm("ImageUploader", "POC",FormMethod.Post,new { enctype="multipart/form-data"}))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <h4>Brand</h4>
+            <hr/>
+            @Html.ValidationSummary(true,"",new { @class="text-danger"})
+            <div class="form-group">
+                @Html.LabelFor(model=>model.ImageData,htmlAttributes:new { @class="control-label"})
+                <div class="col-md-10">
+                    <input type="file" id="image1" name="image1" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-success"/>
+
+                </div>
+            </div>
+        </div>
+    }
+    <asp:FileUpload ID="FileUpload1" runat="server" />
+    <br /><br />
+    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
+    <br /><br />
+    <asp:Label ID="lblMessage" runat="server"></asp:Label>
+    <br /><br />
+    <asp:HyperLink ID="hyperlink" runat="server">View Uploaded Image</asp:HyperLink>
+</body>
+</html>

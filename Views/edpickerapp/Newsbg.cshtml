@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NEWS BACKGROUND</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+        var newsbgApp = angular.module("newsbgApps", []);
+        newsbgApp.controller("newsbgCtrl", ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+            $scope.InsertNews = function (heading, url, description, tags, frmsrc, imgsrc) {
+                var post = $http({
+                    method: "POST",
+                    url: "/edpickerapp/InsertNewsbg",
+                    dataType: 'json',
+                    data: { Headings: heading, URL: url, Description: description, Tags: tags, FrmSrc: frmsrc, ImgSrc: imgsrc },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+                    if (data == "Success") {
+                        alert("NEWS UPDATED");
+                        $("#newsform").find("input:text").val('');
+                    }
+                    else if(data=="Failed") {
+                        alert("NEWS UPDATE FAILED");
+                    }
+
+                });
+            }
+
+        }]);
+    </script>
+</head>
+<body ng-app="newsbgApps">
+    <div id="newsform" class="container" ng-controller="newsbgCtrl">
+        <h2>NEWS UPDATE</h2>
+        
+            <div class="form-group">
+                <label for="headingnews">Heading:</label>
+                <input type="text" class="form-control" id="headingnews" ng-model="newsheading" placeholder="Enter Heading" name="headingnews">
+            </div>
+            <div class="form-group">
+                <label for="urlnews">URL:</label>
+                <input type="text" class="form-control" id="urlnews" ng-model="newsurl" placeholder="Enter URL" name="urlnews">
+            </div>
+            <div class="form-group">
+                <label for="descriptionnews">Description:</label>
+                <textarea class="form-control" rows="5" id="descriptionnews" ng-model="newsdescription" placeholder="Enter description" name="descriptionnews"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tagsnews">Tags:</label>
+                <input type="text" class="form-control" id="tagsnews" ng-model="newstags" placeholder="Enter Tags" name="tagsnews">
+            </div>
+            <div class="form-group">
+                <label for="frmsrcnews">From Source:</label>
+                <input type="text" class="form-control" id="frmsrcnews" ng-model="newsfrmsrc" placeholder="Enter From Source" name="frmsrcnews">
+            </div>
+            <div class="form-group">
+                <label for="imgsrcnews">Image Source:</label>
+                <input type="text" class="form-control" id="imgsrcnews" ng-model="newsimgsrc" placeholder="Enter Image Source" name="imgsrcnews">
+            </div>
+            <button type="button" ng-click="InsertNews(newsheading,newsurl,newsdescription,newstags,newsfrmsrc,newsimgsrc)" class="btn btn-primary">Update</button>
+       
+    </div>
+
+</body>
+</html>

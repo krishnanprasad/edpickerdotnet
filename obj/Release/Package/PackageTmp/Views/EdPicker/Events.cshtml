@@ -1,0 +1,1532 @@
+﻿@model EdPicker.Models.IndexPage
+@{
+    Layout = "~/Views/Shared/ContentPage.cshtml";
+}
+<head>
+
+    <title>EdPicker:Search Kindergarten,Schools,Coaching Center</title>
+
+
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    @*<link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />*@
+
+    <script>
+        var IndexPageApp = angular.module("myApp", []);
+        IndexPageApp.controller("IndexPageCtrl", ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+            $scope.CallAlert = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/GetLocation",
+                    dataType: 'json',
+                    data: { Filter: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.Search = data.data;
+
+                });
+            }
+
+
+
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            @*@{
+                var IndexTrending = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var IndexTrendingjson = IndexTrending.Serialize(Model.TrendingList);
+
+            }*@
+
+            @*$rootScope.Trending =@Html.Raw(IndexTrendingjson);*@
+
+
+            $scope.ChangeLocation = function (SearchLocation) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetLocationTrial",
+                    dataType: 'json',
+                    data: { Location: SearchLocation },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.LocationResult = data.data;
+
+                });
+            }
+            $scope.SaveLocation = function (ResultLocation) {
+
+
+                $scope.LocationSelected=ResultLocation;
+            }
+
+            $scope.GoToSearchPage = function ()
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = document.getElementById('TagSelected').innerHTML;
+                if(Location=="Enter location here"&& TagSelected=="Enter what you want to learn here..")
+                {
+                    alert("Please Tell Us What you want to Learn and Location");
+                }
+                else
+                {
+                    window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+                }
+            }
+            $scope.GoToQuickSearch = function (Direct)
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = Direct;
+                window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.QuickSearch = function (Direct,Location)
+            {
+
+                var TagSelected = Direct;
+                window.location.href="/EdPicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.TagSelect= function (Search)
+            {
+                $scope.TagSelected=Search;
+            }
+            $scope.CallPage=function(InstitutionID)
+            {
+                window.location.href ="/EdPicker/GoToPage?InstitutionId="+InstitutionID;
+            }
+
+        }]);
+    </script>
+    <style>
+        #topdiv {
+            height: 25%;
+            width: 100%;
+            border: dashed;
+        }
+
+        #maindiv {
+            height: 75%;
+            width: 100%;
+            border: solid;
+        }
+
+        #container {
+            height: 100%;
+        }
+    </style>
+    <style>
+        .dropbtn {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdown {
+            position: relative;
+            /*display: inline-block;*/
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-content a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+
+        .dropbtncity {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdowncity {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-contentcity {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-contentcity a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+    </style>
+    <style>
+        [type="date"] {
+            background: rgba(0,0,0,0.2) url(/Images/map-pin.png) 97% 50% no-repeat;
+        }
+    </style>
+</head>
+
+<div ng-controller="IndexPageCtrl" class="page-template-default page page-id-10046 kingcomposer kc-css-system masthead-fixed singular">
+    <div id="page" class="hfeed site">
+        <section id="main-container" class="container inner">
+            <div class="row">
+
+                <div class="pull-left col-xs-12 col-md-3">
+                    <aside class="sidebar sidebar-left" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+                        <div id="opallisting-search-actions-2" class="widget widget_opallisting-search-actions">
+                            <div class="opallisting-search-actions">
+                                <p>
+                                    <a href="#share5afe4b46d6306" class="opallisting-share-search action btn">Share This Search</a>
+                                </p>
+                                <p>
+                                    <a href="#save5afe4b46d634b" class="opallisting-save-search action btn opallisting-need-login">Save This Search</a>
+                                </p>
+                            </div>
+
+                            <!-- Share Search -->
+                            <form class="opallisting-email-share-form mfp-with-anim mfp-hide opallisting-form" id="share5afe4b46d6306">
+                                <header>
+                                    <h4 class="box-heading">Share this search</h4>
+                                </header>
+                                <div class="body">
+                                    <p class="form-row">
+                                        <input type="email" name="recevice-email" id="recevice-email" placeholder="Friend Email">
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="text" name="name" id="name" placeholder="Name" value="">
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="email" name="email" id="email" placeholder="Your Email" value="">
+                                    </p>
+                                    <p class="form-row">
+                                        <textarea name="message" placeholder="Messages"></textarea>
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="hidden" id="opallisting-share-email-nonce" name="opallisting-share-email-nonce" value="263a0d1d0f"><input type="hidden" name="_wp_http_referer" value="/wordpress/rentme/search-places-with-form/?layout=grid">			<input type="hidden" name="action" value="opallisting_share_place_via_email">
+                                        <button type="submit" class="opallisting-submit submit btn btn-primary">Send Message</button>
+                                    </p>
+                                </div>
+                            </form>
+
+                            <!-- Save Search -->
+                            <form class="opallisting-save-search-form mfp-with-anim mfp-hide opallisting-form" id="save5afe4b46d634b">
+                                <header>
+                                    <h4 class="box-heading">Save this search</h4>
+                                </header>
+                                <div class="body">
+                                    <p class="form-row">
+                                        <input type="text" name="name" placeholder="Enter search name">
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="hidden" id="opallisting-save-nonce" name="opallisting-save-nonce" value="428c01f33a"><input type="hidden" name="_wp_http_referer" value="/wordpress/rentme/search-places-with-form/?layout=grid">			<input type="hidden" name="action" value="opallisting_save_search">
+                                        <button type="submit" class="opallisting-submit submit btn btn-primary">Save</button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div><div id="opallisting_place_ajax_filter_widget-2" class="widget widget_opallisting_place_ajax_filter_widget">
+                            <h2 class="widgettitle">Property types</h2>
+                            <div class="opallisting-search-ajax-filter">
+
+                                <div class="listings inner">
+
+                                    <h4 class="title">Listing Types</h4>
+                                    <ul class="opallisting-checkbox-list checklist">
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="11053" id="listing-type-11053">
+                                                <label for="listing-type-11053">Things to do</label>
+                                                <span class="count">(7)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="11052" id="listing-type-11052">
+                                                <label for="listing-type-11052">Travel</label>
+                                                <span class="count">(7)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="11050" id="listing-type-11050">
+                                                <label for="listing-type-11050">Restaurants</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="10524" id="listing-type-10524">
+                                                <label for="listing-type-10524">Shopping</label>
+                                                <span class="count">(4)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="10522" id="listing-type-10522">
+                                                <label for="listing-type-10522">Lodging</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="10521" id="listing-type-10521">
+                                                <label for="listing-type-10521">Nightlife</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="10520" id="listing-type-10520">
+                                                <label for="listing-type-10520">Cuisine</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="types[]" value="10518" id="listing-type-10518">
+                                                <label for="listing-type-10518">Culture</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="category inner">
+
+                                    <h4 class="title">Categories</h4>
+                                    <ul class="opallisting-checkbox-list checklist">
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="accessories" id="category-accessories">
+                                                <label for="category-accessories">Accessories</label>
+                                                <span class="count">(16)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="apartments" id="category-apartments">
+                                                <label for="category-apartments">Apartments</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="apparel" id="category-apparel">
+                                                <label for="category-apparel">Apparel</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="asian" id="category-asian">
+                                                <label for="category-asian">Asian</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="bars" id="category-bars">
+                                                <label for="category-bars">Bars</label>
+                                                <span class="count">(13)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="bbq" id="category-bbq">
+                                                <label for="category-bbq">BBQ</label>
+                                                <span class="count">(10)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="bed-breakfast" id="category-bed-breakfast">
+                                                <label for="category-bed-breakfast">Bed &amp; Breakfast</label>
+                                                <span class="count">(11)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="cinemas" id="category-cinemas">
+                                                <label for="category-cinemas">Cinemas</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="clubs" id="category-clubs">
+                                                <label for="category-clubs">Clubs</label>
+                                                <span class="count">(7)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="confectionaries" id="category-confectionaries">
+                                                <label for="category-confectionaries">Confectionaries</label>
+                                                <span class="count">(2)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="flower-shop" id="category-flower-shop">
+                                                <label for="category-flower-shop">Flower Shop</label>
+                                                <span class="count">(3)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="footwear" id="category-footwear">
+                                                <label for="category-footwear">Footwear</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="galleries" id="category-galleries">
+                                                <label for="category-galleries">Galleries</label>
+                                                <span class="count">(7)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="groceries" id="category-groceries">
+                                                <label for="category-groceries">Groceries</label>
+                                                <span class="count">(4)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="health-beauty" id="category-health-beauty">
+                                                <label for="category-health-beauty">Health &amp; Beauty</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="hostels" id="category-hostels">
+                                                <label for="category-hostels">Hostels</label>
+                                                <span class="count">(13)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="hotels" id="category-hotels">
+                                                <label for="category-hotels">Hotels</label>
+                                                <span class="count">(17)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="italian" id="category-italian">
+                                                <label for="category-italian">Italian</label>
+                                                <span class="count">(2)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="monuments" id="category-monuments">
+                                                <label for="category-monuments">Monuments</label>
+                                                <span class="count">(2)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="motels" id="category-motels">
+                                                <label for="category-motels">Motels</label>
+                                                <span class="count">(9)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="museums" id="category-museums">
+                                                <label for="category-museums">Museums</label>
+                                                <span class="count">(9)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="music-venue" id="category-music-venue">
+                                                <label for="category-music-venue">Music Venue</label>
+                                                <span class="count">(3)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="pubs" id="category-pubs">
+                                                <label for="category-pubs">Pubs</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="theatres" id="category-theatres">
+                                                <label for="category-theatres">Theatres</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="thing-to-do" id="category-thing-to-do">
+                                                <label for="category-thing-to-do">Thing To Do</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="wine-bar" id="category-wine-bar">
+                                                <label for="category-wine-bar">Wine Bar</label>
+                                                <span class="count">(11)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="category[]" value="wineries" id="category-wineries">
+                                                <label for="category-wineries">Wineries</label>
+                                                <span class="count">(10)</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="amenities inner">
+
+                                    <h4 class="title">Amenities</h4>
+                                    <ul class="opallisting-checkbox-list checklist">
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="bottle-service" id="amenities-bottle-service">
+                                                <label for="amenities-bottle-service">Bottle Service</label>
+                                                <span class="count">(16)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="child-care" id="amenities-child-care">
+                                                <label for="amenities-child-care">Child Care</label>
+                                                <span class="count">(7)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="credit-card-payment" id="amenities-credit-card-payment">
+                                                <label for="amenities-credit-card-payment">Credit Card Payment</label>
+                                                <span class="count">(7)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="daily-specials" id="amenities-daily-specials">
+                                                <label for="amenities-daily-specials">Daily Specials</label>
+                                                <span class="count">(15)</span>
+                                            </p>
+                                        </li>
+                                        <li class="">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="family-friendly" id="amenities-family-friendly">
+                                                <label for="amenities-family-friendly">Family Friendly</label>
+                                                <span class="count">(17)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="free-delivery" id="amenities-free-delivery">
+                                                <label for="amenities-free-delivery">Free Delivery</label>
+                                                <span class="count">(15)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="free-parking" id="amenities-free-parking">
+                                                <label for="amenities-free-parking">Free Parking</label>
+                                                <span class="count">(16)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="guided-tours" id="amenities-guided-tours">
+                                                <label for="amenities-guided-tours">Guided Tours</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="live-music" id="amenities-live-music">
+                                                <label for="amenities-live-music">Live Music</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="online-ordering" id="amenities-online-ordering">
+                                                <label for="amenities-online-ordering">Online Ordering</label>
+                                                <span class="count">(15)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="online-reservations" id="amenities-online-reservations">
+                                                <label for="amenities-online-reservations">Online Reservations</label>
+                                                <span class="count">(10)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="pet-friendly" id="amenities-pet-friendly">
+                                                <label for="amenities-pet-friendly">Pet Friendly</label>
+                                                <span class="count">(6)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="private-parties" id="amenities-private-parties">
+                                                <label for="amenities-private-parties">Private Parties</label>
+                                                <span class="count">(1)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="reservations" id="amenities-reservations">
+                                                <label for="amenities-reservations">Reservations</label>
+                                                <span class="count">(10)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="restaurant" id="amenities-restaurant">
+                                                <label for="amenities-restaurant">Restaurant</label>
+                                                <span class="count">(24)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="room-service" id="amenities-room-service">
+                                                <label for="amenities-room-service">Room Service</label>
+                                                <span class="count">(12)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="serves-alcohol" id="amenities-serves-alcohol">
+                                                <label for="amenities-serves-alcohol">Serves Alcohol</label>
+                                                <span class="count">(5)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="take-out" id="amenities-take-out">
+                                                <label for="amenities-take-out">Take-out</label>
+                                                <span class="count">(8)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="ticket-reservations" id="amenities-ticket-reservations">
+                                                <label for="amenities-ticket-reservations">Ticket Reservations</label>
+                                                <span class="count">(11)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="wheelchair-accessible" id="amenities-wheelchair-accessible">
+                                                <label for="amenities-wheelchair-accessible">Wheelchair Accessible</label>
+                                                <span class="count">(4)</span>
+                                            </p>
+                                        </li>
+                                        <li class="item hide">
+                                            <p class="form-row">
+                                                <input type="checkbox" name="amenities[]" value="wifi" id="amenities-wifi">
+                                                <label for="amenities-wifi">Wifi</label>
+                                                <span class="count">(15)</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="tags inner">
+
+                                    <h4 class="title">Tags</h4>
+                                    <ul class="opallisting-checkbox-list button">
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-468">
+                                                bar								<input type="checkbox" name="tag[]" value="bar" id="tags-468">
+                                                <span class="count">(12)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-514">
+                                                cafe								<input type="checkbox" name="tag[]" value="cafe" id="tags-514">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-467">
+                                                club								<input type="checkbox" name="tag[]" value="club" id="tags-467">
+                                                <span class="count">(13)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-474">
+                                                food								<input type="checkbox" name="tag[]" value="food" id="tags-474">
+                                                <span class="count">(11)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-462">
+                                                foods								<input type="checkbox" name="tag[]" value="foods" id="tags-462">
+                                                <span class="count">(4)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-471">
+                                                foot								<input type="checkbox" name="tag[]" value="foot" id="tags-471">
+                                                <span class="count">(12)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-505">
+                                                fruits								<input type="checkbox" name="tag[]" value="fruits" id="tags-505">
+                                                <span class="count">(3)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-504">
+                                                groceries								<input type="checkbox" name="tag[]" value="groceries" id="tags-504">
+                                                <span class="count">(7)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-507">
+                                                healthy								<input type="checkbox" name="tag[]" value="healthy" id="tags-507">
+                                                <span class="count">(13)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-464">
+                                                rice								<input type="checkbox" name="tag[]" value="rice" id="tags-464">
+                                                <span class="count">(11)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-475">
+                                                room								<input type="checkbox" name="tag[]" value="room" id="tags-475">
+                                                <span class="count">(11)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-512">
+                                                sale								<input type="checkbox" name="tag[]" value="sale" id="tags-512">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-463">
+                                                sandweek								<input type="checkbox" name="tag[]" value="sandweek" id="tags-463">
+                                                <span class="count">(10)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-513">
+                                                shoes								<input type="checkbox" name="tag[]" value="shoes" id="tags-513">
+                                                <span class="count">(2)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-503">
+                                                shop								<input type="checkbox" name="tag[]" value="shop" id="tags-503">
+                                                <span class="count">(19)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-511">
+                                                shopping								<input type="checkbox" name="tag[]" value="shopping" id="tags-511">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-509">
+                                                special								<input type="checkbox" name="tag[]" value="special" id="tags-509">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-510">
+                                                tour								<input type="checkbox" name="tag[]" value="tour" id="tags-510">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-508">
+                                                travel								<input type="checkbox" name="tag[]" value="travel" id="tags-508">
+                                                <span class="count">(2)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-506">
+                                                vegetables								<input type="checkbox" name="tag[]" value="vegetables" id="tags-506">
+                                                <span class="count">(12)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div id="main-content" class="main-content col-xs-12 col-md-9">
+                    <div id="primary" class="content-area">
+                        <div id="content" class="site-content" role="main">
+
+
+                            <article id="post-11219" class="post-11219 page type-page status-publish hentry">
+                                <div class="entry-content-page">
+
+
+                                    <div id="opallisting-places-ajax" class="opallisting-places-wrapper" data-layout="global" data-columns="3" data-limit="9" data-exclude_map="0" data-paged="1">
+                                        <div class="opallisting-archive-top">
+
+                                            <div class="row opal-row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="opallisting-count pull-left">
+                                                        46 Places Found
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="pull-right">
+                                                        <div class="opallisting-btn-group sortable">
+                                                            <a href="#" class="btn">Sort by : <strong>Newest</strong></a>
+                                                            <ul class="opallisting-dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=grid&amp;opalsortable=1" class=" active" data-opalsortable="1">
+                                                                        Newest
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=grid&amp;opalsortable=featured_desc" class="" data-opalsortable="featured_desc">
+                                                                        Featured First
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=grid&amp;opalsortable=rating_asc" class="" data-opalsortable="rating_asc">
+                                                                        Rating Ascending
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=grid&amp;opalsortable=rating_desc" class="" data-opalsortable="rating_desc">
+                                                                        Rating Desending
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="opallisting-btn-group layout">
+                                                            <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=grid" data-archive="" class="opallisting-switch-layout btn" data-action="opallisting_switch_layout" data-layout="grid" data-nonce="398ff33f49" title="Grid">
+                                                                <i class="fa fa-th"></i>					Grid
+                                                            </a>
+                                                            <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=list" data-archive="" class="opallisting-switch-layout btn active" data-action="opallisting_switch_layout" data-layout="list" data-nonce="398ff33f49" title="List">
+                                                                <i class="fa fa-th-list"></i>					List
+                                                            </a>
+                                                            <a href="http://venusdemo.com/wordpress/rentme/search-places-with-form/?layout=map" data-archive="" class="opallisting-switch-layout btn" data-action="opallisting_switch_layout" data-layout="map" data-nonce="398ff33f49" title="Map">
+                                                                <i class="fa fa-map-marker"></i>					Map
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opallisting-places-results opallisting-rows">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="0">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11489 type-opallisting_place status-publish has-post-thumbnail hentry place_category-cinemas place_category-clubs place_category-hostels place_category-hotels place_category-motels place_category-museums place_category-theatres opallisting_tags-food opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-spain opallisting_amenities-bottle-service opallisting_amenities-child-care opallisting_amenities-family-friendly opallisting_amenities-free-delivery opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-private-parties opallisting_amenities-reservations">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/royal-ontario-museum/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-50-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11489" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/royal-ontario-museum/" rel="bookmark">Royal Ontario Museum</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Rehab Esport, Carrer Quart
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-users "></span>
+                                                                            <span>Things to do</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(2 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/royal-ontario-museum/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="1">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11488 type-opallisting_place status-publish has-post-thumbnail hentry place_category-bars place_category-bbq place_category-bed-breakfast place_category-hotels place_category-thing-to-do place_category-wine-bar opallisting_tags-club opallisting_tags-healthy opallisting_tags-rice opallisting_tags-room opallisting_tags-sandweek opallisting_tags-shop opallisting_tags-vegetables opallisting_location-liverpool opallisting_amenities-bottle-service opallisting_amenities-child-care opallisting_amenities-family-friendly opallisting_amenities-restaurant opallisting_amenities-room-service">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/hockey-hall-of-fame/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-49-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11488" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/hockey-hall-of-fame/" rel="bookmark">Hockey Hall of Fame</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Hyatt Place Memphis
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-users "></span>
+                                                                            <span>Things to do</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/hockey-hall-of-fame/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="2">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11487 type-opallisting_place status-publish has-post-thumbnail hentry opallisting_tags-bar opallisting_tags-club opallisting_tags-foot opallisting_tags-shop opallisting_location-germany opallisting_amenities-family-friendly opallisting_amenities-reservations opallisting_amenities-restaurant opallisting_amenities-take-out">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/the-reservoir-lounge/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-48-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11487" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/the-reservoir-lounge/" rel="bookmark">The Reservoir Lounge</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Gummersbach
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-plane "></span>
+                                                                            <span>Travel</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/the-reservoir-lounge/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="3">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11486 type-opallisting_place status-publish has-post-thumbnail hentry place_category-bars place_category-bbq place_category-bed-breakfast place_category-footwear place_category-hostels opallisting_tags-bar opallisting_tags-club opallisting_tags-foods opallisting_tags-vegetables opallisting_location-itali opallisting_amenities-daily-specials opallisting_amenities-reservations opallisting_amenities-restaurant opallisting_amenities-take-out">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/roy-thomson-hall/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-47-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11486" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/roy-thomson-hall/" rel="bookmark">Roy Thomson Hall</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Metropolitan City of Rome
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-plane "></span>
+                                                                            <span>Travel</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 4 Star for listing">
+                                                                                <span style="width:80%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(1 Review)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/roy-thomson-hall/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="4">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11485 type-opallisting_place status-publish has-post-thumbnail hentry place_category-hotels place_category-italian place_category-museums place_category-music-venue place_category-pubs place_category-thing-to-do opallisting_tags-foot opallisting_tags-shop opallisting_tags-vegetables opallisting_tags-bar opallisting_tags-healthy opallisting_location-london opallisting_amenities-free-delivery opallisting_amenities-free-parking opallisting_amenities-guided-tours opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-take-out opallisting_amenities-ticket-reservations">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/ed-mirvish-theatre/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-46-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11485" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/ed-mirvish-theatre/" rel="bookmark">Ed Mirvish Theatre</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            244 Victoria Street, London
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-plane "></span>
+                                                                            <span>Travel</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/ed-mirvish-theatre/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="5">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11484 type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-apparel place_category-bars place_category-bbq place_category-flower-shop place_category-footwear place_category-groceries place_category-hotels opallisting_location-uk opallisting_amenities-credit-card-payment opallisting_amenities-daily-specials opallisting_amenities-live-music opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-pet-friendly">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/art-gallery-of-ontario/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-45-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11484" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/art-gallery-of-ontario/" rel="bookmark">Art Gallery of Ontario</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Ukraine Consulate
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-plane "></span>
+                                                                            <span>Travel</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/art-gallery-of-ontario/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="6">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11482 type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-asian place_category-bed-breakfast place_category-motels place_category-museums opallisting_tags-bar opallisting_tags-club opallisting_tags-groceries opallisting_tags-room opallisting_location-american opallisting_amenities-bottle-service opallisting_amenities-daily-specials opallisting_amenities-free-parking opallisting_amenities-restaurant opallisting_amenities-room-service opallisting_amenities-take-out opallisting_amenities-ticket-reservations">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/luxury-house/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-43-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11482" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/luxury-house/" rel="bookmark">Luxury house</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Saint-Tropez, France
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-glass "></span>
+                                                                            <span>Restaurants</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/luxury-house/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="7">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11472 type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-apartments place_category-bars place_category-bbq place_category-cinemas place_category-confectionaries place_category-health-beauty place_category-hostels opallisting_tags-vegetables opallisting_tags-shop opallisting_tags-food opallisting_tags-healthy opallisting_location-hollywood">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/persian-sella/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-42-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11472" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/persian-sella/" rel="bookmark">Persian sella</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Turkeye, Netherlands
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-glass "></span>
+                                                                            <span>Restaurants</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/persian-sella/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="8">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11400 type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-bars place_category-cinemas place_category-clubs place_category-hostels place_category-motels place_category-wine-bar place_category-wineries opallisting_tags-food opallisting_tags-foods opallisting_tags-vegetables opallisting_tags-healthy opallisting_tags-fruits opallisting_tags-rice opallisting_tags-sandweek opallisting_location-american opallisting_amenities-bottle-service opallisting_amenities-daily-specials opallisting_amenities-free-delivery opallisting_amenities-free-parking opallisting_amenities-live-music opallisting_amenities-online-ordering opallisting_amenities-online-reservations">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/travelers-turning/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/03/place-37-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                    <div class="place-actions">
+
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/profile-page/admin/profile/" class="author-link"><img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-96 photo" height="96" width="96"><span>admin</span></a>
+                                                                        <a href="#" data-icon="heart" data-id="11400" data-nonce="5741c01c47" class="favorite  opallisting-need-login">
+                                                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/travelers-turning/" rel="bookmark">Travelers Turning</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            American Express Community
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-film "></span>
+                                                                            <span>Lodging</span>
+                                                                        </div>
+
+                                                                    </div><!-- .place-content -->
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+                                                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                                                <span style="width:0%"></span>
+                                                                            </div>
+                                                                            <div class="listing-count-reviews">(0 Reviews)</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/travelers-turning/">
+
+                                                            </div>
+                                                        </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                            </div>
+
+                                            <div class="w-pagination pagination"><div class="pbr-pagination pagination-main"><ul class="pagination"><li class="disabled"><a aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li><li class="active" data-paged="1"><a href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php">1 <span class="sr-only"></span></a></li><li data-paged="2"><a href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=2">2</a></li><li data-paged="3"><a href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=3">3</a></li><li data-paged="2"><a aria-label="Next" href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=2"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li><li data-paged="0"><a aria-label="Last" href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=6"><span aria-hidden="true"><i class="fa fa-angle-double-right"></i></span></a></li></ul></div></div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div><!-- .entry-content -->
+                            </article><!-- #post-## -->
+
+                        </div><!-- #content -->
+                    </div><!-- #primary -->
+
+                </div><!-- #main-content -->
+
+            </div>
+        </section>
+    </div>
+    <!-- #page -->
+
+
+
+    <div class="modal fade" id="modalLocationSelect" tabindex="-1" role="dialog" aria-labelledby="modalLocationSelect">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="background-color:#00bac6;padding:5px;">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <h3>Search Location </h3>
+                        <input class="form-control" id="LocationInputBox" placeholder="Enter City Name" ng-model="Location" ng-change="ChangeLocation(Location)" style="border-radius:0px;">
+                        <span>Locations: {{SelectedLocation}}</span>
+                        <a ng-repeat="Lr in LocationResult">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" ng-click="SaveLocation(Lr.CityName)" data-dismiss="modal" aria-label="Close">
+                                    <span ng-click="SaveLocation(Lr.CityName)" data-dismiss="modal" aria-label="Close">{{Lr.CityName}}</span>
+                                </li>
+                            </ul>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalNewSearch" tabindex="-1" role="dialog" aria-labelledby="modalNewSearch">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="background-color:#00bac6;padding:5px;">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <h3>Search Education </h3>
+                        <input class="form-control" id="SearchInputBox" placeholder="Enter Education here(Ex:Kindergarten,Banking,IELTS,Cricket..)" ng-model="TagSearch" ng-change="FireSearchTB(TagSearch)" name="search_tags" style="border-radius:0px;">
+                        <span>Result: {{TagSearch}}</span>
+                        <a ng-repeat="Sr in SearchResultTags">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" ng-click="TagSelect(Sr.Tags)" data-dismiss="modal" aria-label="Close">
+                                    <span data-dismiss="modal" aria-label="Close" ng-click="TagSelect(Sr.Tags)">{{Sr.Tags}}</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

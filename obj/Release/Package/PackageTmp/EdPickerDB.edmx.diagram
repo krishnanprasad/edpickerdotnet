@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d48fbe6410894464850b04291e5bb4ed" Name="Diagram1">
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUAchievement" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUBasicDetail" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUBatchAvailable" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUGallery" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COULab" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUNew" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COURGeneral" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUSeminar" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUStaffDetail" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUSubjectList" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.COUTestimonial" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCBriefDetail" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCCompetitorTable" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCContactDetail" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCCourseList" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCGallery" Width="1.5" PointX="9.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCGeneralDetail" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCNew" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCSocialMediaDetail" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCTestimonial" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCCTimelineDetail" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCityDetail" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLBriefDetail" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLCompetitorTable" Width="1.5" PointX="15.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLContactDetail" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLDepartment" Width="1.5" PointX="15.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLFaclity" Width="1.5" PointX="5.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLGallery" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLGeneralDetail" Width="1.5" PointX="7.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLHostel" Width="1.5" PointX="9.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLNew" Width="1.5" PointX="15.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLReview" Width="1.5" PointX="17.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLSocialMediaDetail" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLSport" Width="1.5" PointX="17.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLTestimonial" Width="1.5" PointX="11.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLTimelineDetail" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCOLTransport" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCountryDetail" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPAchievement" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPBriefDetail" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPGallery" Width="1.5" PointX="19.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPLab" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPLecture" Width="1.5" PointX="19.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPNew" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPPlacementCompany" Width="1.5" PointX="19.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPPlacementsBasic" Width="1.5" PointX="19.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPReview" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPSeminar" Width="1.5" PointX="21.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPStaff" Width="1.5" PointX="5.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPSubject" Width="1.5" PointX="21.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPTimeline" Width="1.5" PointX="7.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PDEPWorkshop" Width="1.5" PointX="21.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PInstitutionRegistration" Width="1.5" PointX="9.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGCompetitorTable" Width="1.5" PointX="21.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGEventsDetail" Width="1.5" PointX="21.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGGallery" Width="1.5" PointX="15.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGTestimonial" Width="1.5" PointX="21.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PMessageToInstitution" Width="1.5" PointX="21.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCAchievement" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCBriefDetail" Width="1.5" PointX="11.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCCompetitorTable" Width="1.5" PointX="17.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCContactDetail" Width="1.5" PointX="23.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCExtraCurricular" Width="1.5" PointX="23.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCGallery" Width="1.5" PointX="23.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCGeneralDetail" Width="1.5" PointX="23.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCHostel" Width="1.5" PointX="23.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCNew" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCSocialMediaDetail" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCSport" Width="1.5" PointX="2.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCTestimonial" Width="1.5" PointX="4.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCTimelineDetail" Width="1.5" PointX="13.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSCTransport" Width="1.5" PointX="19.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PSearchTable" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PStateDetail" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PTag" Width="1.5" PointX="21.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PTrendingList" Width="1.5" PointX="23.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PUserKeyWordSearch" Width="1.5" PointX="25.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PUserLocationKeyword" Width="1.5" PointX="25.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PUserSearch" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.Type" Width="1.5" PointX="8.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGActivity" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGBriefDetail" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGContactDetail" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGDetail" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGSocialMediaDetail" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PKGTimelineDetail" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PStateDet__Count__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PKGActivi__Insti__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PKGBriefD__Insti__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PKGContac__Insti__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PKGDetail__Insti__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PKGSocial__Insti__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="Edlooker_DevModel.FK__PKGTimeli__Insti__531856C7" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.TestUploadImage" Width="1.5" PointX="16.375" PointY="25.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PBLOG" Width="1.5" PointX="26.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PCALENDER" Width="1.5" PointX="26.375" PointY="13.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.PNEW" Width="1.5" PointX="26.375" PointY="17.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_BOOKING_LOG" Width="1.5" PointX="26.375" PointY="21.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_Booking_Product_List" Width="1.5" PointX="26.375" PointY="25.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_Category_Detail" Width="1.5" PointX="27.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_Company_Detail" Width="1.5" PointX="3.375" PointY="27.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_CUSTOMER_DETAILS" Width="1.5" PointX="22.375" PointY="27.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_Product_Detail" Width="1.5" PointX="28.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Edlooker_DevModel.C_TempD_Product_Weighing_List" Width="1.5" PointX="5.375" PointY="28.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

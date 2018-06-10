@@ -1,0 +1,592 @@
+﻿@model EdPicker.Models.Calender
+@{
+    Layout = "~/Views/Shared/ContentPage.cshtml";
+}
+<head>
+
+    <title>Calender</title>
+
+    @*IMPORTANT FOR DATE TIME PICKER*@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    @*--DATE TIME PICKER---*@
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    @*<link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />*@
+
+    <script>
+        var IndexPageApp = angular.module("myApp", []);
+        IndexPageApp.controller("CalenderPageCtrl", ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+            $scope.CallAlert = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/GetLocation",
+                    dataType: 'json',
+                    data: { Filter: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.Search = data.data;
+
+                });
+            }
+
+
+
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+
+             @{
+                var CalenderList= new System.Web.Script.Serialization.JavaScriptSerializer();
+                var CalenderListjson = CalenderList.Serialize(Model.CalenderList);
+
+            }
+
+            $rootScope.CalenderList =@Html.Raw(CalenderListjson);
+
+
+            $scope.ChangeLocation = function (SearchLocation) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetLocationTrial",
+                    dataType: 'json',
+                    data: { Location: SearchLocation },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.LocationResult = data.data;
+
+                });
+            }
+            $scope.SaveLocation = function (ResultLocation) {
+
+
+                $scope.LocationSelected=ResultLocation;
+            }
+
+            $scope.GoToSearchPage = function ()
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = document.getElementById('TagSelected').innerHTML;
+                if(Location=="Enter location here"&& TagSelected=="Enter what you want to learn here..")
+                {
+                    alert("Please Tell Us What you want to Learn and Location");
+                }
+                else
+                {
+                    window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+                }
+            }
+            $scope.GoToQuickSearch = function (Direct)
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = Direct;
+                window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.QuickSearch = function (Direct,Location)
+            {
+
+                var TagSelected = Direct;
+                window.location.href="/EdPicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.TagSelect= function (Search)
+            {
+                $scope.TagSelected=Search;
+            }
+            $scope.CallPage=function(InstitutionID)
+            {
+                window.location.href ="/EdPicker/GoToPage?InstitutionId="+InstitutionID;
+            }
+
+        }]);
+    </script>
+    <style>
+        #topdiv {
+            height: 25%;
+            width: 100%;
+            border: dashed;
+        }
+
+        #maindiv {
+            height: 75%;
+            width: 100%;
+            border: solid;
+        }
+
+        #container {
+            height: 100%;
+        }
+    </style>
+    <style>
+        .dropbtn {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdown {
+            position: relative;
+            /*display: inline-block;*/
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-content a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+
+        .dropbtncity {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdowncity {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-contentcity {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-contentcity a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+    </style>
+    <style>
+        [type="date"] {
+            background: rgba(0,0,0,0.2) url(/Images/map-pin.png) 97% 50% no-repeat;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('input[name="daterange"]').daterangepicker({
+                opens: 'left'
+            }, function (start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+        });
+    </script>
+</head>
+
+<div ng-controller="CalenderPageCtrl" class="page-template-default page page-id-10046 kingcomposer kc-css-system masthead-fixed singular">
+    <div id="page" class="hfeed site">
+        <div class="opal-page-inner row-offcanvas row-offcanvas-left">
+            @*<div class="col-md-4" style="margin-top:10px;">
+                <input type="date" name="dateofbirth" id="dateofbirth" class="form-control">
+            </div>
+            <div class="col-md-6" style="margin-top:10px;">
+                <div class="dropdown">
+
+                    <input class="form-control dropbtn" id="LocationInputBox" placeholder="Enter City Name" ng-model="Location" ng-change="ChangeLocation(Location)" style="border-radius:0px;">
+                    <div class="dropdown-content" style="left:10px;">
+                        <a ng-repeat="Lr in LocationResult" href="#">{{y.CityName}}--{{y.Standard}}</a>
+
+                    </div>
+                </div>
+            </div>*@
+            <section id="main" class="site-main">
+                <section class="kc-elm kc-css-573500 kc_row" style="background-color:#009399">
+                    <div class="kc-row-container  kc-container">
+                        <div class="kc-wrap-columns">
+                            <div class="kc-elm kc-css-868791 kc_col-sm-12 kc_column kc_col-sm-12">
+                                <div class="kc-col-container">
+                                    <div id="" class="kc-elm kc-css-470799 kc_row kc_row_inner">
+                                        <div class="kc-elm kc-css-88835 kc_col-sm-12 kc_column_inner kc_col-sm-12 ">
+                                            <div class="kc_wrapper kc-col-inner-container">
+
+                                                <div class="kc-elm kc-css-522536 kc_text_block">
+                                                    <p style="color:white">Search Calender here!</p>
+
+                                                </div>
+
+
+                                                <div id="" class="kc-elm kc-css-496929 kc_row kc_row_inner">
+                                                    <div class="kc-elm kc-css-180637 kc_col-sm-6 kc_column_inner kc_col-sm-4 kc_col-md-4" style="margin-top:10px;">
+                                                        <div class="kc_wrapper kc-col-inner-container">
+                                                            <div class="message-boxes kc-elm kc-css-163675" data-toggle="modal" data-target="#modalNewSearch">
+                                                                <div class="message-box-wrapHome">
+                                                                    <i class="fa fa-search margintop"></i>
+                                                                    <span id="Topic" style="color:#888888;" ng-model="Topic" ng-init="TagSelected='Enter what you want to learn here..'" class="ng-pristine ng-untouched ng-valid ng-binding ng-not-empty">Enter Topic here..</span>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="kc-elm kc-css-279840 kc_col-sm-6 kc_column_inner kc_col-sm-4 kc_col-md-4" style="margin-top:10px;">
+                                                        <div class="kc_wrapper kc-col-inner-container">
+                                                            <div class="message-boxes kc-elm kc-css-163675" @*data-toggle="modal" data-target="#modalLocationSelect"*@>
+                                                                <div class="message-box-wrapHome">
+                                                                    @*<i class="fa fa-map-pin margintop"></i>*@
+                                                                    <label for="daterange">  Choose Dates:</label>
+                                                                    <input type="text" class="form-control" name="daterange" value="01/01/2018 - 01/15/2018" />
+                                                                    @*<span id="LocationID" style="color:#888888;" ng-model="LocationSelected" ng-init="LocationSelected='Enter location here'" class="ng-pristine ng-untouched ng-valid ng-binding ng-not-empty">Enter location here</span>*@
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    @*<div class="kc-elm kc-css-279840 kc_col-sm-6 kc_column_inner kc_col-sm-4 kc_col-md-4" style="margin-top:10px;">
+                                                <div class="kc_wrapper kc-col-inner-container">
+                                                    <div class="message-boxes kc-elm kc-css-163675">
+                                                        <div class="message-box-wrapHome">
+                                                            <label for="sel1">  Fees:</label>
+                                                            <select class="form-control" id="sel1">
+                                                                <option>Free</option>
+                                                                <option>Less 500</option>
+                                                                <option>Less 1000</option>
+                                                                <option>Less 5000</option>
+                                                                <option>Less 10000</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>*@
+                                                </div>
+                                                <div class="kc-elm kc-css-180637 kc_col-sm-12 kc_column_inner kc_col-sm-12" style="margin-top:10px;">
+
+                                                    <div class="kc-elm kc-css-35996 kc_col-sm-12 kc_column_inner kc_col-sm-12">
+                                                        <div class="kc_wrapper kc-col-inner-container">
+                                                            <div class="kc-elm kc-css-318228" style="padding-top: 10px;padding-bottom: 10px;">
+                                                                <a style="border-radius:5px;padding:15px 40px" class="kc_button HomeSearchbtn" ng-click="GoToSearchPage()">
+                                                                    Search
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="main-container" class="container-fluid inner">
+                    <div class="row">
+
+                        <div id="main-content" class="main-content col-xs-12 col-lg-12 col-md-12">
+                            <div id="primary" class="content-area">
+                                <div id="content" class="site-content" role="main">
+                                    @*<div class="col-md-6 col-md-offset-3"">
+                                <input type="text" class="form-control" name="daterange" value="01/01/2018 - 01/15/2018" />
+                            </div>*@
+
+                                    <article id="post-10046" class="post-10046 page type-page status-publish hentry">
+                                        <div class="entry-content-page">
+
+
+
+
+                                            <section class="kc-elm kc-css-573500 kc_row">
+                                                <div class="kc-row-container  kc-container">
+                                                    <div class="element-block-heading style-v3">
+                                                        <div class="inner">
+                                                            <h3 class="heading">Calender</h3>
+
+                                                            @*<h4 class="sub-heading">Few Instit</h4>*@
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-repeat="Cal in CalenderList">
+                                                            <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-11485 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-hotels place_category-italian place_category-museums place_category-music-venue place_category-pubs place_category-thing-to-do opallisting_tags-foot opallisting_tags-shop opallisting_tags-vegetables opallisting_tags-bar opallisting_tags-healthy opallisting_location-london opallisting_amenities-free-delivery opallisting_amenities-free-parking opallisting_amenities-guided-tours opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-take-out opallisting_amenities-ticket-reservations">
+
+
+                                                                <div class="place-content">
+
+                                                                    <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/ed-mirvish-theatre/" rel="bookmark">{{Cal.Heading}}</a></h4>
+
+                                                                    <div class="place-address">
+                                                                        <i class="fa fa-calendar"></i>
+                                                                        {{Cal.UpdatedDate.slice(6,-2) | date: 'dd-MM-yyyy HH:mm' }}
+                                                                    </div>
+                                                                    <div class="place-address">
+                                                                        <p>{{Cal.Description}}</p>
+                                                                    </div>
+
+                                                                    <div class="place-type">
+                                                                        <span class="fa fa-plane "></span>
+                                                                        <span>Travel</span>
+                                                                    </div>
+                                                                    <div class="place-meta">
+
+                                                                        <div class="comment-rating-wrap">
+
+                                                                            <div class="listing-count-reviews">Eligibility:@*{{Eligibility}}*@</div>
+                                                                        </div>
+                                                                        <span class="current-status  opening">
+                                                                            {{Cal.Source}}
+                                                                        </span>
+                                                                    </div>
+                                                                </div><!-- .place-content -->
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/ed-mirvish-theatre/">
+
+                                                            </article><!-- #post-## -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div><!-- .entry-content -->
+                                    </article><!-- #post-## -->
+
+                                </div><!-- #content -->
+                            </div><!-- #primary -->
+
+
+                        </div><!-- #main-content -->
+
+                    </div>
+                </section>
+            </section><!-- #main -->
+
+
+            <footer id="opal-footer" class="opal-footer" style="background-image:url('http://venusdemo.com/wordpress/rentme/wp-content/uploads/2016/11/background-7.png');">
+                <div class="opal-footer-profile clearfix">
+                    <style type="text/css">
+                        @@media only screen and (min-width: 1000px) and (max-width: 5000px) {
+                            body.kc-css-system .kc-css-432312 {
+                                width: 25%;
+                            }
+
+                            body.kc-css-system .kc-css-191855 {
+                                width: 25%;
+                            }
+
+                            body.kc-css-system .kc-css-180141 {
+                                width: 25%;
+                            }
+
+                            body.kc-css-system .kc-css-73219 {
+                                width: 25%;
+                            }
+                        }
+
+                        body.kc-css-system .kc-css-464440 {
+                            background: transparent url(http://venusdemo.com/wordpress/rentme/wp-content/uploads/2016/11/background-7.jpg) 0% 0%/auto no-repeat scroll;
+                            padding-top: 85px;
+                            padding-bottom: 85px;
+                        }
+
+                        body.kc-css-system .kc-css-248654 {
+                            ;
+                        }
+                    </style>
+
+                </div>
+
+
+
+            </footer>
+
+
+            <div id="opal-off-canvas" class="opal-off-canvas sidebar-offcanvas hidden-lg hidden-md">
+                <div class="opal-off-canvas-body">
+                    <div class="offcanvas-head bg-primary">
+                        <button type="button" class="btn btn-offcanvas btn-toggle-canvas btn-default" data-toggle="offcanvas">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <span>Menu</span>
+                    </div>
+                    <nav class="navbar navbar-offcanvas navbar-static">
+                        <div class="navbar-collapse navbar-offcanvas-collapse">
+                            <ul id="main-menu-offcanvas" class="nav navbar-nav">
+
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children dropdown active menu-item-4479 level-0">
+                                    <a href="#">Kindergarten </a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-9939 level-1"><a ng-click="GoToQuickSearch('Play School','Coimbatore')">Play School</a></li>
+                                        @*<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9938 level-1"><a href="https://wpopaldemo.com/rentme/home-2/">Nursery</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10046 current_page_item active menu-item-10054 level-1 active  active "><a href="https://wpopaldemo.com/rentme/home-3/">Home 3</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10982 level-1"><a href="https://wpopaldemo.com/rentme/home-4/">Home 4</a></li>*@
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11068 level-0">
+                                    <a href="#">School</a> <b class="caret"></b>
+                                    <ul class="dropdown-menu">
+                                        <li class="menu-item menu-item-type-taxonomy menu-item-object-place_category menu-item-11075 level-1"><a ng-click="GoToQuickSearch('CBSC','Coimbatore')">CBSC School</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11069 level-0">
+                                <a href="#">College </a> <b class="caret"></b>
+                                <ul class="dropdown-menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11528 level-1"><a href="https://wpopaldemo.com/rentme/places/roy-thomson-hall/">Property With Slider</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11529 level-1"><a href="https://wpopaldemo.com/rentme/places/hockey-hall-of-fame/">Property With Map</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11073 level-1"><a href="https://wpopaldemo.com/rentme/places/closest-hotel-to-university-of-kentucky/">Property With Gallery</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11074 level-1"><a href="https://wpopaldemo.com/rentme/places/spring-break-hot-spots/">Property With Tab1</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-opallisting_place menu-item-11072 level-1"><a href="https://wpopaldemo.com/rentme/places/same-nightclub/">Property With Tab2</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1767 level-0"><a title="Page" href="#">Pages</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9502 level-0"><a href="#">Features</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11261 level-0"><a href="#">Gallery</a></li>*@
+                                @*<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-11123 level-0">
+                                <a href="#">Tution Center </a> <b class="caret"></b>
+                                <ul class="dropdown-menu">
+
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11141 level-1">
+                                        <a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Grid </a> <b class="caret"></b>
+                                        <ul class="dropdown-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11146 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid-right-sidebar/">Blog Grid Right Sidebar</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11147 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid-left-sidebar/">Blog Grid Left Sidebar</a></li>
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11148 level-2"><a href="https://wpopaldemo.com/rentme/blog-grid/">Blog Grid Full</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children dropdown menu-item-11149 level-1">
+                                        <a href="https://wpopaldemo.com/rentme/french-theme-park-will-use-50-drones-for-a-nighttime-spectacle/">Blog Detail Page </a> <b class="caret"></b>
+                                        <ul class="dropdown-menu">
+                                            <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-11150 level-2"><a href="https://wpopaldemo.com/rentme/zumper-national-rent-report-april-2016/">Blog Detail Page Left Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>*@
+                            </ul>
+                        </div>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #page -->
+
+
+
+    <div class="modal fade" id="modalLocationSelect" tabindex="-1" role="dialog" aria-labelledby="modalLocationSelect">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="background-color:#00bac6;padding:5px;">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <h3>Search Location </h3>
+                        <input class="form-control" id="LocationInputBox" placeholder="Enter City Name" ng-model="Location" ng-change="ChangeLocation(Location)" style="border-radius:0px;">
+                        <span>Locations: {{SelectedLocation}}</span>
+                        <a ng-repeat="Lr in LocationResult">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" ng-click="SaveLocation(Lr.CityName)" data-dismiss="modal" aria-label="Close">
+                                    <span ng-click="SaveLocation(Lr.CityName)" data-dismiss="modal" aria-label="Close">{{Lr.CityName}}</span>
+                                </li>
+                            </ul>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalNewSearch" tabindex="-1" role="dialog" aria-labelledby="modalNewSearch">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="background-color:#00bac6;padding:5px;">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <h3>Search Education </h3>
+                        <input class="form-control" id="SearchInputBox" placeholder="Enter Education here(Ex:Kindergarten,Banking,IELTS,Cricket..)" ng-model="TagSearch" ng-change="FireSearchTB(TagSearch)" name="search_tags" style="border-radius:0px;">
+                        <span>Result: {{TagSearch}}</span>
+                        <a ng-repeat="Sr in SearchResultTags">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" ng-click="TagSelect(Sr.Tags)" data-dismiss="modal" aria-label="Close">
+                                    <span data-dismiss="modal" aria-label="Close" ng-click="TagSelect(Sr.Tags)">{{Sr.Tags}}</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

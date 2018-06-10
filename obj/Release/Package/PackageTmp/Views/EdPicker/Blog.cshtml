@@ -1,0 +1,303 @@
+﻿@model EdPicker.Models.Blog
+@{
+    Layout = "~/Views/Shared/ContentPage.cshtml";
+}
+<head>
+
+    <title>Blog</title>
+
+    <script>
+        var IndexPageApp = angular.module("myApp", []);
+        IndexPageApp.controller("BlogPageCtrl", ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+            $scope.CallAlert = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/GetLocation",
+                    dataType: 'json',
+                    data: { Filter: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.Search = data.data;
+
+                });
+            }
+
+
+
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            @{
+                var BlogTrending = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var BlogTrendingjson = BlogTrending.Serialize(Model.BlogList);
+
+            }
+
+            $rootScope.BlogList =@Html.Raw(BlogTrendingjson);
+
+
+            $scope.ChangeLocation = function (SearchLocation) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetLocationTrial",
+                    dataType: 'json',
+                    data: { Location: SearchLocation },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.LocationResult = data.data;
+
+                });
+            }
+            $scope.SaveLocation = function (ResultLocation) {
+
+
+                $scope.LocationSelected=ResultLocation;
+            }
+
+            $scope.GoToSearchPage = function ()
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = document.getElementById('TagSelected').innerHTML;
+                if(Location=="Enter location here"&& TagSelected=="Enter what you want to learn here..")
+                {
+                    alert("Please Tell Us What you want to Learn and Location");
+                }
+                else
+                {
+                    window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+                }
+            }
+            $scope.GoToQuickSearch = function (Direct)
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = Direct;
+                window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.QuickSearch = function (Direct,Location)
+            {
+
+                var TagSelected = Direct;
+                window.location.href="/EdPicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.TagSelect= function (Search)
+            {
+                $scope.TagSelected=Search;
+            }
+            $scope.CallPage=function(InstitutionID)
+            {
+                window.location.href ="/EdPicker/GoToPage?InstitutionId="+InstitutionID;
+            }
+
+        }]);
+    </script>
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    @*<link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />*@
+
+
+    <style>
+        #topdiv {
+            height: 25%;
+            width: 100%;
+            border: dashed;
+        }
+
+        #maindiv {
+            height: 75%;
+            width: 100%;
+            border: solid;
+        }
+
+        #container {
+            height: 100%;
+        }
+    </style>
+    <style>
+        .dropbtn {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdown {
+            position: relative;
+            /*display: inline-block;*/
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-content a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+
+        .dropbtncity {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdowncity {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-contentcity {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-contentcity a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+    </style>
+</head>
+
+<div ng-controller="BlogPageCtrl" class="page-template-default page page-id-10046 kingcomposer kc-css-system masthead-fixed singular">
+    <div id="opallisting-reviews" style="clear:none;" class="col-md-12">
+
+        <div class="review-section"  id="opallisting-comments">
+
+            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom:5px;border:0.3px solid #00bac6" ng-repeat="Bl in BlogList">
+                <div class="place-grid">
+
+                    <div class="reviews">
+                        <ol class="comment-list">
+                            <li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 comment" id="li-comment-192" style="padding:10px;">
+
+                                <div id="comment-192" class="comment_container">
+                                    <div class="comment-text">
+                                        <span class="comment-title">{{Bl.Heading}}</span>
+                                        <div class="comment-content">
+                                            <p>{{Bl.Description}}</p>
+                                        </div>
+                                        <div class="comment-author">
+                                            <img alt="" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png" srcset="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2014/06/avatar.png 2x" class="avatar avatar-40 photo" height="40" width="40">
+                                        </div>
+                                        <strong class="author">admin</strong>
+                                        <div class="meta">
+                                            <time datetime="2017-04-27T07:46:57+00:00">
+                                                {{Bl.UpdatedDate.slice(6, -2) | date: 'dd-MM-yyyy HH:mm' }}
+                                            </time>
+                                            <div class="comment-rating" title="Rated 4 Star">
+                                                <span style="width:80%"></span>
+                                            </div>
+
+                                            <a href="#" class="opallisting-toggle-helpful" data-action="opallisting_toggle_helpful" data-id="192" data-nonce="f3bdb388fb">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                Views<span class="count">{{Bl.TotalView}}</span>
+                                            </a>
+
+                                        </div>
+                                        <div class="row" style="margin-top:30px;">
+                                            <a href="#" class="opallisting-toggle-helpful" data-action="opallisting_toggle_helpful" data-id="192" data-nonce="f3bdb388fb" style="float:left">
+                                                <span class="count">{{Bl.FromSource}}</span>
+                                            </a>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </li><!-- #comment-## -->
+
+                        </ol>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-section hide" id="opallisting-review-form-wrapper">
+            <h3 class="room-single-title">
+                Ratings and Reviews            <a href="#opallisting-comments" class="opallisting-toggle-review close">Close</a>
+            </h3>
+            <div class="review-section-container">
+                <div id="opallisting-review-form">
+                    <div id="respond" class="comment-respond">
+                        <h3 id="reply-title" class="comment-reply-title">
+                            <small><a rel="nofollow" id="cancel-comment-reply-link" href="/wordpress/rentme/places/closest-hotel-to-university-of-kentucky/#respond" style="display:none;">Cancel reply</a></small>
+                        </h3>			<form action="http://venusdemo.com/wordpress/rentme/wp-comments-post.php" method="post" id="commentform" class="opallisting-comment-form" novalidate="">
+                            <p class="form-row comment-form-title"><input id="title" class="form-control" name="title" type="text" value="" placeholder="Summarize your opinion or hightlight interesting detail"></p><p class="form-row comment-form-comment"><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" placeholder="Tell about your experience or leave a tip for others"></textarea><input type="hidden" name="action" value="opallisting_process_add_review"><input name="opallisting-comment-nonce" value="a4da39978b" type="hidden"></p><p class="form-row comment-form-author"><input id="author" class="form-control" name="author" type="text" value="" placeholder="Your name" size="30" aria-required="true"></p>
+                            <p class="form-row comment-form-email"><input id="email" class="form-control" name="email" type="text" value="" placeholder="Your@email.com" size="30" aria-required="true"></p>
+                            <p class="form-submit">
+                                <input name="submit" type="submit" id="submit" class="submit" value="Submit"> <input type="hidden" name="comment_post_ID" value="10696" id="comment_post_ID">
+                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                            </p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3b67dd72f8"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1526442400895">
+                        </form>
+                    </div><!-- #respond -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

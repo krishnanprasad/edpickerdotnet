@@ -1,0 +1,1111 @@
+﻿@model EdPicker.Models.CoachingCenter
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://venusdemo.com/wordpress/rentme/xmlrpc.php">
+
+    <title>Coaching Center</title>
+    <link rel='dns-prefetch' href='//maps.googleapis.com' />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96119720-3', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alef:700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+    <link rel='dns-prefetch' href='//maps.googleapis.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="EdPicker; Feed" href="http://www.edpicker.com" />
+    <link rel="alternate" type="application/rss+xml" title="EdPicker; EdPicker Comments Feed" href="http://www.edpicker.com" />
+    <link rel="alternate" type="application/rss+xml" title="EdPicker; EdPicker Feed" href="http://www.edpicker.com" />
+    <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wpopaldemo.com\/rentme\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />
+    <link rel='stylesheet' id='magnific-popup-css' href='~/Styles/css/magnific-popup.css' type='text/css' media='' />
+    <link rel='stylesheet' id='tiptip-css' href='~/Styles/css/tipTip.css' type='text/css' media='' />
+    <link rel='stylesheet' id='opallisting-comment-css' href='~/Scripts/opallisting/comment.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='selectize-css' href='~/Styles/css/selectize.css' type='text/css' media='' />
+    <link rel='stylesheet' id='owl-carousel-css' href='~/Scripts/js/owl-carousel/owl.carousel.css' type='text/css' media='' />
+    <link rel='stylesheet' id='owl-carousel-theme-css' href='~/Scripts/js/owl-carousel/owl.theme.css' type='text/css' media='' />
+    <link rel='stylesheet' id='opallisting-style-css' href='~/Styles/css/opallisting.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='opalmembership-styles-css' href='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opalmembership/assets/style.css?ver=4.7.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='~/Scripts/revslider/css/settings.css' type='text/css' media='all' />
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+        .tp-caption a {
+            color: #ff7302;
+            text-shadow: none;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+        }
+
+            .tp-caption a:hover {
+                color: #ffa902;
+            }
+    </style>
+    <link rel='stylesheet' id='rentme-open-sans-css' href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Heebo:400,500,700|Playfair+Display:700,400italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+    <link rel='stylesheet' id='rentme-fa-css' href='~/Styles/css/font-awesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='rentme-style-css' href='~/Styles/css/style.css' type='text/css' media='all' />
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='rentme-ie-css'  href='https://wpopaldemo.com/rentme/wp-content/themes/rentme/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <link rel='stylesheet' id='prettyPhoto-css' href='~/Styles/css/rtl-prettyPhoto.css' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='kc-general-css' href='~/Styles/css/kingcomposer.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='kc-animate-css' href='~/Styles/css/animate.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='kc-icon-1-css' href='http://venusdemo.com/wordpress/rentme/wp-content/plugins/kingcomposer/assets/css/icons.css?ver=2.6.11' type='text/css' media='all' />
+    <script type='text/javascript' src='~/Scripts/jquery1.12.4.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery-migrate.min.js'></script>
+
+    <script type='text/javascript' src='//maps.googleapis.com/maps/api/js?sensor=false&#038;libraries=places%2Cdrawing%2Cgeometry&#038;key=AIzaSyDrNlL48YztY5kM6oH6goFmk3aV31qrSpA&#038;ver=0.0.1'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/infobox.js'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/markerclusterer.js'></script>
+    <script type='text/javascript' src='~/Scripts/opallisting/jquery.magnific-popup.min.js'></script>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var opalmembership_scripts = {"ajaxurl":"https:\/\/wpopaldemo.com\/rentme\/wp-admin\/admin-ajax.php","checkout":"https:\/\/wpopaldemo.com\/rentme\/membership-checkout\/"};
+/* ]]> */
+    </script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opalmembership/assets/script.js?ver=4.7.5'></script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opalmembership/assets/jquery.payment.min.js?ver=4.7.5'></script>
+    <script type='text/javascript' src='~/Scripts/revslider/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/revslider/js/jquery.themepunch.revolution.min.js'></script>
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var SnazzyDataForSnazzyMaps = [];
+SnazzyDataForSnazzyMaps={"id":83,"name":"Muted Blue","description":"An unobtrusive blue design for minimal user-experiences. Design for the Rock RMS project.","url":"https:\/\/snazzymaps.com\/style\/83\/muted-blue","imageUrl":"https:\/\/snazzy-maps-cdn.azureedge.net\/assets\/83-muted-blue.png?v=20170317101642","json":"[\r\n\t{\"featureType\": \"all\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"saturation\": 0},\r\n\t\t\t{\"hue\": \"#e7ecf0\"}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"road\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"saturation\": -70}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"transit\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"visibility\": \"off\"}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"poi\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"visibility\": \"off\"}\r\n\t\t]\r\n\t},\r\n\t{\"featureType\": \"water\",\r\n\t\t\"stylers\":[\r\n\t\t\t{\"visibility\": \"simplified\"},\r\n\t\t\t{\"saturation\": -60}\r\n\t\t]\r\n\t}\r\n]","views":35824,"favorites":158,"createdBy":{"name":"Jon Edmiston","url":"http:\/\/www.rockrms.com"},"createdOn":"2014-04-16T02:58:37.86","tags":["greyscale"],"colors":["blue","gray"]};
+/* ]]> */
+    </script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/snazzy-maps/snazzymaps.js?ver=1.1.3'></script>
+    <script type='text/javascript' src='~/Scripts/bootstrap.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/js/jquery.prettyPhoto.js'></script>
+    
+    <link rel='prev' title='Hotel Brussels Motel One' href='http://venusdemo.com/wordpress/rentme/places/hotel-brussels-motel-one/' />
+    <link rel='next' title='Easy Mill Arbor' href='http://venusdemo.com/wordpress/rentme/places/easy-mill-arbor/' />
+    <meta name="generator" content="WordPress 4.7.5" />
+    <link rel="canonical" href="http://www.edpicker.com" />
+    <link rel='shortlink' href='http://www.edpicker.com' />
+    
+    
+    
+    <script>
+        var CoachingCenterPageApp = angular.module("CoachingCenterPage", []);
+
+
+        CoachingCenterPageApp.controller("MainPage",function ($scope, $http, $rootScope) {
+
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            $scope.SendMessageToInstitution = function () {
+               
+                var institutionid = document.getElementById('institid').innerHTML;
+                var custname = document.getElementById('customername').value;
+                var custemail = document.getElementById('customeremail').value;
+                var custphone = document.getElementById('customerphone').value;
+                var custmessage = document.getElementById('customermessage').value;
+                
+                var post = $http({
+                    method: "POST",
+                    url: "/MessageToInstitution",
+                    dataType: 'json',
+                    data: {InstitutionID: institutionid,UserName: custname, UserEmail: custemail, UserPhone:custphone, UserQuestion:custmessage },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+                    alert("Thanks for the Message")
+                    document.getElementById('institid').innerHTML="";
+                    document.getElementById('institilocation').value="";
+                    document.getElementById('institcourse').value="";
+                    document.getElementById('institcontactname').value="";
+                    document.getElementById('institcontactnos').value="";
+
+                });
+            }
+
+            @{
+                var PCCGallery = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PCCGalleryjson = PCCGallery.Serialize(Model.PCCGalleryList);
+
+            }
+
+            $rootScope.Gallery =@Html.Raw(PCCGalleryjson);
+            @{
+                var PCCTestimonial = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PCCTestimonialjson = PCCTestimonial.Serialize(Model.PCCTestimonialList);
+
+            }
+
+            $rootScope.Testimonial =@Html.Raw(PCCTestimonialjson);
+
+             @{
+                 var PCCCourseList = new System.Web.Script.Serialization.JavaScriptSerializer();
+                 var PCCCourseListjson = PCCCourseList.Serialize(Model.PCCCourseLists);
+
+             }
+
+            $rootScope.CourseList =@Html.Raw(PCCCourseListjson);
+
+            @{
+                var PCCNew = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PCCNewjson = PCCNew.Serialize(Model.PCCNews);
+
+            }
+
+            $rootScope.News =@Html.Raw(PCCNewjson);
+
+            
+            @{
+                var PCOLCompetitor = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var PCOLCompetitorjson = PCOLCompetitor.Serialize(Model.ComptetitorList);
+
+            }
+
+            $rootScope.Competitor =@Html.Raw(PCOLCompetitorjson);
+
+            $scope.CallPage=function(InstitutionID)
+            {
+                window.location.href="/GoToPage?InstitutionId="+InstitutionID;
+            }
+
+            $scope.GoToCourse=function(CourseId)
+            {
+                window.location.href="/Course?CourseId="+CourseId;
+            }
+        
+        });
+
+    </script>
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+    <style type="text/css" id="rentme-header-css">
+    </style>
+    <meta name="generator" content="Powered by Slider Revolution 5.3.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+</head>
+
+<body ng-app="CoachingCenterPage" class="opallisting_place-template-default single single-opallisting_place postid-11489 kc-css-system masthead-fixed singular">
+        <div id="page" class="hfeed site">
+        <div class="opal-page-inner row-offcanvas row-offcanvas-left">
+
+            <div class="topbar-mobile  hidden-lg hidden-md">
+                <div class="active-mobile pull-left">
+                    <button data-toggle="offcanvas" class="btn btn-offcanvas btn-toggle-canvas offcanvas" type="button">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="topbar-inner pull-left">
+                    <div class="active-mobile search-popup pull-left">
+                        <span class="fa fa-search"></span>
+                        <div class="active-content">
+                            <form method="get" class="searchform" action="http://wwwedpicker.com">
+                                <div class="opal-search input-group">
+                                    <input name="s" maxlength="40" class="form-control input-large input-search" type="text" size="20" placeholder="Search...">
+                                    <span class="input-group-addon input-large btn-search">
+                                        <input type="submit" class="fa" value="&#xf002;" />
+                                    </span>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <header id="opal-masthead" class="site-header header-v1">
+                <div class="header-main clearfix ">
+
+                    <div class="logo-wrapper pull-left">
+                        <div id="opal-logo" class="logo logo-theme">
+                            <a href="http://www.edpicker.com">
+                                <img src="~/Images/logo.png" alt="EdPicker" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="opal-header-right pull-right">
+                        <div class="header-inner">
+                            <div class="box-user dropdown pull-right">
+
+                                <ul class="list-inline pull-right">
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#modalNewSearch" class="opal-user-login">
+                                            <span class="fa fa-search"></span> <span id="SearchID">Search</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="opal-mainmenu" class="opal-mainmenu">
+                        <div class="inner pull-left">
+                            <nav data-duration="400" class="hidden-xs hidden-sm opal-megamenu slide animate navbar navbar-mega">
+
+                                <div class="collapse navbar-collapse navbar-mega-collapse nopadding">
+
+                                </div>
+                            </nav>
+                        </div>
+                    </section>
+                    <div class="opal-header-right pull-right">
+                        <div class="header-inner">
+                            <div class="box-user dropdown pull-right">
+
+                                <ul class="list-inline pull-left">
+                                    <li>
+                                    <a href="#" data-toggle="modal" data-target="#modalLocationSelect" class="opal-user-login"><span class="fa fa-map-pin"></span>
+                                         <span id="LocationID">Location</span></a></li>
+                                    </ul>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header><!-- #masthead -->
+
+          
+            <section id="main" class="site-main" ng-controller="MainPage">
+
+                <div class="single-place-heading">
+                    <header>
+                        <div class="container">
+                           
+                            <h2>@Model.PCCTimelineDetails.InstitutionName</h2><ol class="breadcrumb">
+    <li><a href="http://edpicker.com">Coaching Center</a> </li>
+    @*<li><a href="https://venusdemo.com/wordpress/rentme/places/">Program2</a> </li>*@
+</ol>
+                            <div class="row">
+                                <div class="col-md-9 col-xs-12 pull-left ">
+                                    <div class="favorite-button">
+
+                                        <a href="#" data-icon="star" data-id="11489" data-nonce="5fbb1ae2e4" class="favorite  opallisting-need-login">
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                            <span>@Model.PCCTimelineDetails.InformationRating</span>
+                                        </a>
+                                    </div>
+                                    <div class="rating">
+
+                                        <div class="comment-rating-wrap">
+                                            <div class="comment-rating" title="Rated 0 Star for listing">
+                                                <span style="width:0%"></span>
+                                            </div>
+                                            <div class="listing-count-reviews">(1 Review)</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </header>
+                </div>
+
+                <section id="main-container" class="site-main container" role="main">
+                    <div class="row">
+
+                        <div class="row">
+                            <main id="primary" class="content content-area col-md-8 col-sm-8 col-xs-12">
+                                <div class="single-opallisting-container">
+
+
+                                    <article id="post-11489" itemscope itemtype="version-3 post-11233 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-bars place_category-bbq place_category-bed-breakfast place_category-motels place_category-museums place_category-pubs place_category-theatres place_category-thing-to-do opallisting_tags-foot opallisting_tags-healthy opallisting_location-liverpool opallisting_amenities-reservations opallisting_amenities-restaurant opallisting_amenities-room-service opallisting_amenities-serves-alcohol opallisting_amenities-take-out opallisting_amenities-ticket-reservations">
+
+                                        <div class="content-box " id="place-matterport">
+                                            <div class="row opal-row">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <div class="place-content">
+                                                        <h3 class="place-title box-heading">About @Model.PCCTimelineDetails.InstitutionName</h3>
+                                                        <p><strong>About </strong>@Model.PCCBriefDetails.Brief</p>
+                                                        <p>
+                                                            <strong>Started in </strong>@Model.PCCBriefDetails.FoundedYear
+                                                        </p>
+                                                       
+                                                      
+                                                    </div><!-- .place-content -->
+                                                </div>
+                                            </div>
+                                            <div class="row opal-row">
+                                                <div class="list-group place-amenities opallisting-box">
+                                                    <h4 class="list-group-item-heading">Staff</h4>
+                                                    <div class="list-group-item-text">
+                                                        <div class="row opal-row">
+
+                                                            <div class="col-lg-6 col-md-6 active">
+                                                                <span><i class="fa fa-check"></i>  Number of Staff : </span>
+                                                                <strong>@Model.PCCGeneralDetails.NumberofStaff</strong>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 active">
+                                                                <span><i class="fa fa-check"></i>  Number of Students : </span>
+                                                                <strong>@Model.PCCGeneralDetails.NumberofStudent</strong>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 active">
+                                                                <span><i class="fa fa-check"></i>  Number of Placements/Achievements : </span>
+                                                                <strong>@Model.PCCGeneralDetails.NumberofPlacements</strong>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 active">
+                                                                <span><i class="fa fa-check"></i>  Number of Technicians : </span>
+                                                                <strong>@Model.PCCGeneralDetails.NumberofAssistants</strong>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 active">
+                                                                <span><i class="fa fa-check"></i>  Parking : </span>
+                                                                <strong>@Model.PCCGeneralDetails.Parking</strong>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 active">
+                                                                <span><i class="fa fa-check"></i>  AC : </span>
+                                                                <strong>@Model.PCCGeneralDetails.AC</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row opal-row">
+                                                <section class="kc-elm kc-css-93576 kc_row">
+                                                    <div class="kc-row-container  kc-container">
+                                                        <div class="kc-wrap-columns">
+                                                            <div class="kc-elm kc-css-94159 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                <div class="kc-col-container">
+                                                                    <div id=" " class="kc-elm kc-css-596640 kc_row kc_row_inner">
+                                                                        <div class="kc-elm kc-css-25425 kc_col-sm-12 kc_column_inner kc_col-sm-12">
+                                                                            <div class="kc_wrapper kc-col-inner-container">
+                                                                                <div class="kc-elm kc-css-200698 kc-title-wrap ">
+                                                                                    <h2 class="kc_title title_style_1">Testimonial</h2>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="" class="kc-elm kc-css-572397 kc_row kc_row_inner">
+                                                                        <div class="kc-elm kc-css-387045 kc_col-sm-12 kc_column_inner kc_col-sm-12" ng-repeat="test in Testimonial">
+                                                                            <div class="kc_wrapper kc-col-inner-container">
+                                                                                <div class="kc-elm kc-css-577454 kc-testimo kc-testi-layout-4">
+
+                                                                                    @*<figure class="content-image">
+    <img src="~/Images/TestmonialUnknown.jpg" alt="">
+    </figure>*@
+                                                                                    <div class="box-right">
+                                                                                    <div class="content-desc">{{test.TestimonialDetail}}
+                                                                                    </div>
+                                                                                    <div class="content-position">{{test.Relation}}
+                                                                                    </div>
+                                                                                    <div class="content-title">{{test.TestimonialName}}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    
+                                                                    </div>
+                                                                   
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                           
+                                        </div>
+                                       <div class="row opal-row">
+                                           <div class="kc-elm kc-css-26518 kc_col-sm-6 kc_column kc_col-sm-6" ng-repeat="course in CourseList">
+                                               <div class="kc-col-container">
+                                                   <div class="pricing pricing-v3  ">
+                                                       <div class="pricing-header">
+                                                           <div class="pricing-header-inner">
+                                                              
+                                                               <div class="plan-price-wrap">
+                                                                   <div class="plan-price-block">
+                                                                       <div class="plan-price">
+                                                                           <div class="plan-price-inner">
+                                                                               <span class="plan-currency"></span>
+                                                                               <span style="font-size:18px;color:#00bac6" class="plan-figure">{{course.CourseName}}</span>
+                                                                             </div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                       <div class="clearfix"></div>
+                                                       <div class="pricing-body">
+                                                           @*<div class="description">
+                                                               Standard listing submission,
+                                                               active for 30 days.
+                                                           </div>*@
+                                                           <div class="plain-info">
+                                                               <div><strong>{{course.Hours}}</strong></div>
+                                                               <div><strong>{{course.Sessions}} </strong></div>
+                                                               <div><strong>{{course.Minspersession}} </strong></div>
+                                                               <div><strong>{{course.Schedule}}</strong></div>
+                                                               <div><strong>{{course.TotalSeat}}</strong> Total Seat Availablity</div>
+                                                           </div>
+                                                       </div>
+                                                       <div class="pricing-footer">
+                                                           <a class="btn btn-md btn-default radius-6x btn-3d" @*ng-click="GoToCourse(course.CourseURL)"*@ href="">Read more</a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                         
+                                       </div>
+                                        <div class="clear clearfix"></div>
+                                    </article>
+                                    <!-- #post-## -->
+
+                             
+
+                                </div>
+                            </main><!-- .site-main -->
+                            <aside class="sidebar sidebar-right col-md-4 col-sm-4 col-xs-12" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+                                <div id="opallisting_single_place_location_widget-3" class="widget widget_opallisting_single_place_location_widget">
+                                    <h2 class="widgettitle">Location</h2>    <div class="opallisting-box place-map-section widget-content">
+                                        <div class="place-map-section">
+                                            <div id="place-map" style="min-height:400px" data-marker_icon="fa fa-users" data-place_title="Royal Ontario Museum" data-latitude="@Model.PCCContactDetails.Latitude" data-longitude="@Model.PCCContactDetails.Longitude" data-icon="https://venusdemo.com/wordpress/rentme/wp-content/plugins/opallisting/assets/cluster-icon.png" data-zoom="10"></div>
+                                            <div class="overlay">
+                                                <ul class="sub-controls">
+                                                    <li>
+                                                        <a href="#" data-mode="BICYCLING">
+                                                            <i class="fa fa-bicycle" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-mode="DRIVING">
+                                                            <i class="fa fa-car" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-mode="TRANSIT">
+                                                            <i class="fa fa-bus" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-content">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="opallisting-show-direction">
+                                                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                                                        Show directions
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                    @Model.PCCContactDetails.Location
+                                                </li>
+                                                <li class="phone">
+                                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                                    @Model.PCCContactDetails.Phone
+                                                </li>
+                                                <li class="fax">
+                                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                    @Model.PCCContactDetails.Email
+                                                </li>
+                                                <li class="email">
+                                                    <i class="fa fa-university" aria-hidden="true"></i>
+                                                   <a href="@Model.PCCContactDetails.Website">@Model.PCCContactDetails.Website</a> 
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <ul class="social-meta">
+                                            <li>
+                                                <a href="@Model.PCCSocialMediaDetails.FacebookInstitutionURL" class="facebook">
+                                                    <i class="fa fa-facebook social-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Model.PCCSocialMediaDetails.TwitterInstitutionURL" class="twitter">
+                                                    <i class="fa fa-twitter social-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Model.PCCSocialMediaDetails.InstagramInstitutionURL" class="instagram">
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Model.PCCSocialMediaDetails.GoogleplusInstitutionURL" class="google-plus">
+                                                    <i class="fa fa-facebook fa-google-plus"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Model.PCCSocialMediaDetails.YoutubeInstitutionURL" class="youtube">
+                                                    <i class="fa fa-youtube"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div id="opallisting_single_place_widget-3" class="widget widget_opallisting_single_place_widget">
+                                    <h2 class="widgettitle">Photo Gallery</h2><div class="opallisting-place-gallery widget-content">
+                                        <div class="row">
+
+                                            <div class="col-md-4" ng-repeat="sri in Gallery">
+                                                <a class="item" href="{{sri.GalleryURL}}">
+                                                    <img width="890" height="593" src="{{sri.GalleryURL}}" class="attachment- size-" alt="" />
+                                                </a>
+                                            </div>
+                                         
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="opallisting_open_hours_widget-4" class="widget widget_opallisting_open_hours_widget">
+                                    <div class="place-open-hours widget-content">
+                                        <h2 class="widgettitle">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            News<span class="status opening">Latest</span>
+                                            <!--<span class="time">
+                                                16 Events/Yr
+                                            </span>-->
+                                        </h2>
+                                        <table class="place-open-hours-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Function</th>
+                                                  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="" ng-repeat="New in News">
+                                                    <td>{{New.News}}</td>
+                                                    
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="opallisting_user_contact_widget-3" class="widget widget_opallisting_user_contact_widget">
+                                    <h2 class="widgettitle">Message to Institution</h2>
+                                    <div class="widget-content">
+
+                                        <form class="opallisting-contact-form" data-id="">
+
+
+                                            <p class="form-row validate-required" id="name-field">
+                                                <label for="customername">
+                                                    Name			 <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <input type="text" class="" name="customername" id="customername" value="" placeholder="Your Name" />
+                                            </p><p class="form-row validate-required" id="email-field">
+                                                <label for="customeremail">
+                                                    Email			 <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <input type="text" class="" name="customeremail" id="customeremail" value="" placeholder="Your@email.com" />
+                                            </p>
+                                            <p class="form-row validate-required" id="subject-field">
+                                                <label for="customerphone">
+                                                    Phone
+                                                    <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <input type="text" class="" name="customerphone" id="customerphone" value="" placeholder="Your Phone Number" />
+                                            </p>
+                                            <p class="form-row validate-required" id="content-field">
+                                                <label for="customermessage">
+                                                    Message			 <abbr class="required" title="required">*</abbr>
+                                                </label>
+                                                <textarea name="customermessage" id="customermessage" cols="20" rows="5" placeholder="Message/Comment/Feedback..."></textarea>
+                                                <span style="display:none" id="institid">@Model.PCCTimelineDetails.InstitutionID</span>
+                                            </p>
+
+                                            <p class="form-row submit">
+                                                <input type="hidden" id="opallisting-contact-nonce" name="opallisting-contact-nonce" value="b76a729c20" />
+                                                <input type="hidden" name="_wp_http_referer" value="/rentme/places/royal-ontario-museum/" />
+                                                <input type="hidden" name="action" value="opallisting_process_contact_form" />
+                                                <input type="hidden" name="contact-form-id" value="" />
+                                                <input type="hidden" name="place-id" value="11489" />
+                                                <button type="submit" class="btn btn-primary btn-block submit" ng-click="SendMessageToInstitution()">Send Message</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <div>
+
+
+                        <h3 class="box-heading">You may also like</h3>
+                        <div class="opallisting-carousel-play">
+                            <div class="opallisting-places opallisting-places-carousel opallisting-carousel" data-items="3" data-pagination="true" data-navigation="true">
+                                <div class="item" ng-repeat="comp in Competitor">
+                                    <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid place-grid-v1 post-11398 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-accessories place_category-bars place_category-hotels place_category-wine-bar place_category-wineries opallisting_tags-bar opallisting_tags-club opallisting_tags-room opallisting_location-london">
+
+
+                                        <header>
+                                            <span class="featured">Featured</span>
+                                            <div class="place-box-image">
+                                                <a ng-click="CallPage(comp.InstitutionID)" class="place-box-image-inner">
+                                                    <img width="495" height="500" src="{{comp.InstitutionImageURL}}" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="" />
+                                                </a>
+                                            </div>
+
+                                            <div class="place-actions">
+
+                                                
+                                                <a href="#" data-icon="heart" data-id="11398" data-nonce="f937f05126" class="favorite  opallisting-need-login">
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </header>
+
+                                        <div class="place-content">
+
+                                            <h4 class="place-title"><a ng-click="CallPage(comp.InstitutionID)" href="#" rel="bookmark">{{comp.InstitutionName}}</a></h4>
+                                            <span style="display:none" id="PassIntitutionId">{{comp.InstitutionID}}</span>
+                                            <div class="place-address">
+                                                <i class="fa fa-map-marker"></i>
+                                                {{comp.Location}}
+                                            </div>
+
+
+                                            <div class="place-meta">
+
+                                                <div class="comment-rating-wrap">
+                                                    <div class="comment-rating" title="Rated 0 Star for listing">
+                                                        <span style="width:0%"></span>
+                                                    </div>
+                                                    <div class="listing-count-reviews">(0 Reviews)</div>
+                                                </div>
+                                                <span class="current-status  opening">
+                                                    Opening
+                                                </span>
+                                            </div>
+                                        </div><!-- .place-content -->
+
+
+                                        <meta itemprop="url" content="http://www.edpicker.com" />
+
+                                    </article><!-- #post-## -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section><!-- .content-area -->
+
+            </section>
+            <!-- #main -->
+
+            
+
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+                                <aside id="widget_sp_image-18" class="widget clearfix widget_sp_image">
+                                <img width="187" height="57" class="attachment-full" style="max-width: 100%;" src="~/Images/logo.png" />
+                                </aside>
+                            </div>
+
+
+                            <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                                <aside id="popupnewsletter-3" class="clearfix widget_popupnewsletter">
+                                    <div class="popupnewsletter">
+                                        <span class="pull-right">Subscribe to Our News Offers</span>
+                                        <button type="button" class="btn btn-flying-right pull-right" data-toggle="modal" data-target="#popupNewsletterModal">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="popupNewsletterModal" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content" style="background: url('') no-repeat 0 0 transparent">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <div class="modal-body">
+                                                        <div class="popupnewsletter-widget  ">
+                                                            <div>
+                                                                <h3>
+                                                                    <span>Newsletter</span>
+                                                                </h3>
+
+                                                                <p class="description">
+                                                                    Put your content here
+                                                                </p>
+
+
+                                                                <script type="text/javascript">
+(function () {
+    if (!window.mc4wp) {
+        window.mc4wp = {
+            listeners: [],
+            forms: {
+                on: function (event, callback) {
+                    window.mc4wp.listeners.push({
+                        event: event,
+                        callback: callback
+                    });
+                }
+            }
+        }
+    }
+})();
+                                                                </script>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </footer><!-- #colophon -->
+            <div class="opal-copyright clearfix">
+                <div class="container">
+                    <a href="#" class="scrollup"><span class="fa fa-long-arrow-up"></span></a>
+                    Copyright 2017 - EdPicker - All Rights Reserved.
+                </div>
+            </div>
+
+         
+        </div>
+    </div>
+    <!-- #page -->
+
+    <script type="text/html" id="tmpl-map-error-message">
+        <div class="overlay">
+            <div id="map-error-message">
+                <h3>Error</h3>
+                <div class="body-panel">
+                    <p class="desc">{{ data.message }}</p>
+                    <a href="#" id="opallisting-close-map-message" class="btn button">OK</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-marker-template">
+        <div class="opallisting-map-marker">
+            <div class="opallisting-map-marker-inner">
+                <span class="{{ data.marker_icon }}" style="color: {{{ data.color }}}"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                <path fill="{{{ data.color }}}" d="M256,0C167.641,0,96,71.625,96,160c0,24.75,5.625,48.219,15.672,69.125C112.234,230.313,256,512,256,512l142.594-279.375   C409.719,210.844,416,186.156,416,160C416,71.625,344.375,0,256,0z M256,256c-53.016,0-96-43-96-96s42.984-96,96-96 c53,0,96,43,96,96S309,256,256,256z"></path>
+						</svg>
+                <span class="shadow"></span>
+                <span class="pulse"></span>
+            </div>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-loading">
+        <svg class="opallisting-loading" width="57" height="57" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)" stroke-width="2">
+                    <circle cx="5" cy="50" r="5">
+                        <animate attributeName="cy"
+                                 begin="0s" dur="2.2s"
+                                 values="50;5;50;50"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="cx"
+                                 begin="0s" dur="2.2s"
+                                 values="5;27;49;5"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="27" cy="5" r="5">
+                        <animate attributeName="cy"
+                                 begin="0s" dur="2.2s"
+                                 from="5" to="5"
+                                 values="5;50;50;5"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="cx"
+                                 begin="0s" dur="2.2s"
+                                 from="27" to="27"
+                                 values="27;49;5;27"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="49" cy="50" r="5">
+                        <animate attributeName="cy"
+                                 begin="0s" dur="2.2s"
+                                 values="50;50;5;50"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="cx"
+                                 from="49" to="49"
+                                 begin="0s" dur="2.2s"
+                                 values="49;5;27;49"
+                                 calcMode="linear"
+                                 repeatCount="indefinite" />
+                    </circle>
+                </g>
+            </g>
+        </svg>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-carousel-txt">
+        <div class="owl-text">
+            <span class="current">{{ data.current }}</span>
+            of					<span class="total">{{ data.total }}</span>
+        </div>
+    </script>
+    <script type="text/html" id="tmpl-opallisting-place-grid-item">
+        <article itemscope="itemscope" itemtype="http://schema.org/Place" class="place-grid post-11489 opallisting_place type-opallisting_place status-publish has-post-thumbnail hentry place_category-cinemas place_category-clubs place_category-hostels place_category-hotels place_category-motels place_category-museums place_category-theatres opallisting_tags-food opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-spain opallisting_amenities-bottle-service opallisting_amenities-child-care opallisting_amenities-family-friendly opallisting_amenities-free-delivery opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-private-parties opallisting_amenities-reservations">
+
+            <header>
+                <div class="place-box-image">
+                    <a href="{{ data.url }}" class="place-box-image-inner">
+                        <img src="{{ data.thumb }}">
+                    </a>
+                </div>
+                <div class="place-actions">
+                    {{{ data.author_image }}}
+                    <a href="#" data-icon="heart" data-id="{{ data.id }}" data-nonce="{{ data.nonce }}" class="favorite active opallisting-toggle-favorite">
+                        <i class="{{ data.fav_class }}"></i>
+                    </a>
+                </div>
+            </header>
+            <footer>
+                <div class="place-content">
+                    <h4 class="place-title"><a href="{{ data.url }}" rel="bookmark">{{{ data.title }}}</a></h4>
+
+                    <div class="place-address">
+                        <i class="fa fa-map-marker"></i>
+                        {{{ data.address }}}
+                    </div>
+
+                    <div class="place-type">
+                        <span class="{{ data.type_icon }}"></span>
+                        <span>{{ data.type_title }}</span>
+                    </div>
+                    <div class="place-meta">
+                        <div class="comment-rating-wrap">
+                            <div class="comment-rating">
+                                <span style="width:{{{ ( ( data.rating / 5 ) * 100 )  }}}%"></span>
+                            </div>
+                            <div class="listing-count-reviews">({{ data.review_count }})</div>
+                        </div>
+
+                    </div><!-- .place-content -->
+                </div>
+            </footer>
+            <meta itemprop="url" content="http://www.edpicker.com" />
+
+        </article><!-- #post-## -->
+    </script>
+
+    <div class="modal fade" id="modalLocationSelect" tabindex="-1" role="dialog" aria-labelledby="modalLocationSelect">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <a href="https://venusdemo.com/wordpress/rentme">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <div id="opalloginform" class="form-wrapper">
+                            <form class="login-form" action="/rentme/place-category/hotels/" method="post">
+
+                                <p class="lead">Select your City</p>
+                                <div class="form-group">
+                                    <input autocomplete="off" type="text" name="wpopal_username" class="required form-control" placeholder="City Name" />
+                                </div>
+
+
+                            </form>
+                        </div>
+                        <div id="opallostpasswordform" class="form-wrapper">
+                            <form name="lostpasswordform" id="lostpasswordform" class="lostpassword-form" action="https://venusdemo.com/wordpress/rentme/wp-login.php?action=lostpassword" method="post">
+
+                                <p class="lead">Reset Password</p>
+                                <div class="lostpassword-fields">
+                                    <p class="form-group">
+                                        <label>
+                                            Username or E-mail:<br />
+                                            <input type="text" name="user_login" class="user_login form-control" value="" size="20" tabindex="10" />
+                                        </label>
+                                    </p><input type="hidden" id="security" name="security" value="c7728de3d4" /><input type="hidden" name="_wp_http_referer" value="/rentme/home-3/" />
+                                    <p class="submit">
+                                        <input type="submit" class="btn btn-primary" name="wp-submit" value="Get New Password" tabindex="100" />
+                                        <input type="button" class="btn btn-default btn-cancel" value="Cancel" tabindex="101" />
+                                    </p>
+                                    <p class="nav">
+
+                                    </p>
+                                </div>
+                                <div class="lostpassword-link"><a href="#opalloginform" class="toggle-links">Back To Login</a></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalNewSearch" tabindex="-1" role="dialog" aria-labelledby="modalNewSearch">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <a href="http://edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+
+                        <input class="form-control" id="SearchInputBox" placeholder="Kindergarten,Banking,IELTS,Cricket.." ng-model="TagSearch" ng-change="FireSearchTB(TagSearch)" name="search_tags" style="border-radius:0px;">
+                        <span>Search: {{TagSearch}}</span>
+                        <a ng-repeat="srt in SearchResultTags">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1">
+                                    <span ng-click="GoToSearchPage(srt.Tags)">{{srt.Tags}}</span>
+                                </li>
+                            </ul>
+                        </a>
+
+                        <button type="button" class="close btn btn-sm btn-success pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Save</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function () {
+            function addEventListener(element, event, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(event, handler, false);
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + event, handler);
+                }
+            } function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = "http://" + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            if (urlFields && urlFields.length > 0) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    addEventListener(urlFields[j], 'blur', maybePrefixUrlField);
+                }
+            }/* test if browser supports date fields */
+            var testInput = document.createElement('input');
+            testInput.setAttribute('type', 'date');
+            if (testInput.type !== 'date') {
+
+                /* add placeholder & pattern to all date fields */
+                var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+                for (var i = 0; i < dateFields.length; i++) {
+                    if (!dateFields[i].placeholder) {
+                        dateFields[i].placeholder = 'YYYY-MM-DD';
+                    }
+                    if (!dateFields[i].pattern) {
+                        dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+                    }
+                }
+            }
+
+        })();
+    </script>
+
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/akismet/_inc/form.js?ver=3.3.2'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = { "recaptcha": { "messages": { "empty": "Please verify that you are not a robot." } } };
+        /* ]]> */
+    </script>
+
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpUtilSettings = { "ajax": { "url": "\/rentme\/wp-admin\/admin-ajax.php" } };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/Scripts/js/wp-util.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/js/core.min.js'></script>
+
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opallisting/assets/js/map.js?ver=1.0.0'></script>
+
+    <script type='text/javascript' src='~/Scripts/listing.js'></script>
+
+    <script type='text/javascript' src='~/Scripts/jquery.tipTip.minified.js'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var OpalListingComment = { "option_enabled_rating": "1", "option_require_rating": "1", "require_rating": "Please rating before submit your review.", "map": { "SHARE_LOCATION": "Let's share your current location", "CURRENT_LOCATION": "Current Location", "ZERO_RESULTS": "No route could be found between the origin and destination.", "UNKNOWN_ERROR": "A directions request could not be processed due to a server error. The request may succeed if you try again.", "NO_DIRECTION": "No directions found.", "REQUEST_DENIED": "This webpage is not allowed to use the directions service.", "OVER_QUERY_LIMIT": "The webpage has gone over the requests limit in too short a period of time.", "NOT_FOUND": "At least one of the origin, destination, or waypoints could not be geocoded.", "INVALID_REQUEST": "The DirectionsRequest provided was invalid.", "ERROR": "There was an unknown error in your request. Requeststatus: " } };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/Scripts/rating.js'></script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/opallisting/assets/libs/selectize/selectize.min.js?ver=1.0'></script>
+    <script type='text/javascript' src='~/Scripts/js/owl-carousel/owl.carousel.min.js'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var rentmeAjax = { "ajaxurl": "https:\/\/wpopaldemo.com\/rentme\/wp-admin\/admin-ajax.php" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/Scripts/js/functions.js'></script>
+    <script type='text/javascript' src='http://venusdemo.com/wordpress/rentme/wp-content/plugins/kingcomposer/assets/frontend/js/kingcomposer.min.js?ver=2.6.11'></script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var mc4wp_forms_config = [];
+        /* ]]> */
+    </script>
+
+   
+</body>
+</html>

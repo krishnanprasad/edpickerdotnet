@@ -1,0 +1,704 @@
+﻿@model EdPicker.Models.IndexPage
+@{
+    Layout = "~/Views/Shared/ContentPage.cshtml";
+}
+<head>
+
+    <title>EdPicker:Search Kindergarten,Schools,Coaching Center</title>
+
+
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='~/Styles/Rentmestyle.css' type='text/css' media='all' />
+    @*<link rel='stylesheet' id='font-awesome-css' href='~/Styles/css/font-awesome.css' type='text/css' media='' />*@
+
+    <script>
+        var IndexPageApp = angular.module("myApp", []);
+        IndexPageApp.controller("IndexPageCtrl", ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+            $scope.CallAlert = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/GetLocation",
+                    dataType: 'json',
+                    data: { Filter: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.Search = data.data;
+
+                });
+            }
+
+
+
+            $scope.FireSearchTB = function (name) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetTags",
+                    dataType: 'json',
+                    data: { q: name },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.SearchResultTags = data.data;
+
+                });
+            }
+            @*@{
+                var IndexTrending = new System.Web.Script.Serialization.JavaScriptSerializer();
+                var IndexTrendingjson = IndexTrending.Serialize(Model.TrendingList);
+
+            }*@
+
+            @*$rootScope.Trending =@Html.Raw(IndexTrendingjson);*@
+
+
+            $scope.ChangeLocation = function (SearchLocation) {
+                var post = $http({
+                    method: "POST",
+                    url: "/EdPicker/GetLocationTrial",
+                    dataType: 'json',
+                    data: { Location: SearchLocation },
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                post.then(function (data, status) {
+
+
+                    $rootScope.LocationResult = data.data;
+
+                });
+            }
+            $scope.SaveLocation = function (ResultLocation) {
+
+
+                $scope.LocationSelected=ResultLocation;
+            }
+
+            $scope.GoToSearchPage = function ()
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = document.getElementById('TagSelected').innerHTML;
+                if(Location=="Enter location here"&& TagSelected=="Enter what you want to learn here..")
+                {
+                    alert("Please Tell Us What you want to Learn and Location");
+                }
+                else
+                {
+                    window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+                }
+            }
+            $scope.GoToQuickSearch = function (Direct)
+            {
+
+                var Location = document.getElementById('LocationID').innerHTML;
+                var TagSelected = Direct;
+                window.location.href="/Edpicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.QuickSearch = function (Direct,Location)
+            {
+
+                var TagSelected = Direct;
+                window.location.href="/EdPicker/Search?q="+TagSelected+'&Location='+Location;
+            }
+            $scope.TagSelect= function (Search)
+            {
+                $scope.TagSelected=Search;
+            }
+            $scope.CallPage=function(InstitutionID)
+            {
+                window.location.href ="/EdPicker/GoToPage?InstitutionId="+InstitutionID;
+            }
+
+        }]);
+    </script>
+    <style>
+        #topdiv {
+            height: 25%;
+            width: 100%;
+            border: dashed;
+        }
+
+        #maindiv {
+            height: 75%;
+            width: 100%;
+            border: solid;
+        }
+
+        #container {
+            height: 100%;
+        }
+    </style>
+    <style>
+        .dropbtn {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdown {
+            position: relative;
+            /*display: inline-block;*/
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-content a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+
+        .dropbtncity {
+            background-color: white;
+            color: dodgerblue;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        .dropdowncity {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-contentcity {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: block;
+        }
+
+            .dropdown-contentcity a {
+                color: dodgerblue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                background-color: #f1f1f1;
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+            }
+    </style>
+    <style>
+        [type="date"] {
+            background: rgba(0,0,0,0.2) url(/Images/map-pin.png) 97% 50% no-repeat;
+        }
+    </style>
+</head>
+
+<div ng-controller="EventPageCtrl" class="page-template-default page page-id-10046 kingcomposer kc-css-system masthead-fixed singular">
+    <div id="page" class="hfeed site">
+        <section class="kc-elm kc-css-573500 kc_row" style="background-color:#009399">
+            <div class="kc-row-container  kc-container">
+                <div class="kc-wrap-columns">
+                    <div class="kc-elm kc-css-868791 kc_col-sm-12 kc_column kc_col-sm-12">
+                        <div class="kc-col-container">
+                            <div id="" class="kc-elm kc-css-470799 kc_row kc_row_inner">
+                                <div class="kc-elm kc-css-88835 kc_col-sm-12 kc_column_inner kc_col-sm-12 ">
+                                    <div class="kc_wrapper kc-col-inner-container">
+
+                                        <div class="kc-elm kc-css-522536 kc_text_block">
+                                            <p style="color:white">Search Events here!</p>
+
+                                        </div>
+
+
+                                        <div id="" class="kc-elm kc-css-496929 kc_row kc_row_inner">
+                                            <div class="kc-elm kc-css-180637 kc_col-sm-6 kc_column_inner kc_col-sm-4 kc_col-md-4" style="margin-top:10px;">
+                                                <div class="kc_wrapper kc-col-inner-container">
+                                                    <div class="message-boxes kc-elm kc-css-163675" data-toggle="modal" data-target="#modalNewSearch">
+                                                        <div class="message-box-wrapHome">
+                                                            <i class="fa fa-search margintop"></i>
+                                                            <span id="Topic" style="color:#888888;" ng-model="Topic" ng-init="TagSelected='Enter what you want to learn here..'" class="ng-pristine ng-untouched ng-valid ng-binding ng-not-empty">Enter Topic here..</span>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="kc-elm kc-css-279840 kc_col-sm-6 kc_column_inner kc_col-sm-4 kc_col-md-4" style="margin-top:10px;">
+                                                <div class="kc_wrapper kc-col-inner-container">
+                                                    <div class="message-boxes kc-elm kc-css-163675" data-toggle="modal" data-target="#modalLocationSelect">
+                                                        <div class="message-box-wrapHome">
+                                                            <i class="fa fa-map-pin margintop"></i>
+                                                            <span id="LocationID" style="color:#888888;" ng-model="LocationSelected" ng-init="LocationSelected='Enter location here'" class="ng-pristine ng-untouched ng-valid ng-binding ng-not-empty">Enter location here</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            @*<div class="kc-elm kc-css-279840 kc_col-sm-6 kc_column_inner kc_col-sm-4 kc_col-md-4" style="margin-top:10px;">
+                                                <div class="kc_wrapper kc-col-inner-container">
+                                                    <div class="message-boxes kc-elm kc-css-163675">
+                                                        <div class="message-box-wrapHome">
+                                                            <label for="sel1">  Fees:</label>
+                                                            <select class="form-control" id="sel1">
+                                                                <option>Free</option>
+                                                                <option>Less 500</option>
+                                                                <option>Less 1000</option>
+                                                                <option>Less 5000</option>
+                                                                <option>Less 10000</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>*@
+                                        </div>
+                                        <div class="kc-elm kc-css-180637 kc_col-sm-12 kc_column_inner kc_col-sm-12" style="margin-top:10px;">
+
+                                            <div class="kc-elm kc-css-35996 kc_col-sm-12 kc_column_inner kc_col-sm-12">
+                                                <div class="kc_wrapper kc-col-inner-container">
+                                                    <div class="kc-elm kc-css-318228" style="padding-top: 10px;padding-bottom: 10px;">
+                                                        <a style="border-radius:5px;padding:15px 40px" class="kc_button HomeSearchbtn" ng-click="GoToSearchPage()">
+                                                            Search
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="main-container" class="container inner">
+            <div class="row">
+
+                <div class="pull-left col-xs-12 col-md-3">
+                    <aside class="sidebar sidebar-left" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+                        <div id="opallisting-search-actions-2" class="widget widget_opallisting-search-actions">
+                            <div class="opallisting-search-actions">
+                                <p>
+                                    <a href="#share5afe4b46d6306" class="opallisting-share-search action btn">Share This Search</a>
+                                </p>
+                                <p>
+                                    <a href="#save5afe4b46d634b" class="opallisting-save-search action btn opallisting-need-login">Save This Search</a>
+                                </p>
+                            </div>
+
+                            <!-- Share Search -->
+                            <form class="opallisting-email-share-form mfp-with-anim mfp-hide opallisting-form" id="share5afe4b46d6306">
+                                <header>
+                                    <h4 class="box-heading">Share this search</h4>
+                                </header>
+                                <div class="body">
+                                    <p class="form-row">
+                                        <input type="email" name="recevice-email" id="recevice-email" placeholder="Friend Email">
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="text" name="name" id="name" placeholder="Name" value="">
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="email" name="email" id="email" placeholder="Your Email" value="">
+                                    </p>
+                                    <p class="form-row">
+                                        <textarea name="message" placeholder="Messages"></textarea>
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="hidden" id="opallisting-share-email-nonce" name="opallisting-share-email-nonce" value="263a0d1d0f"><input type="hidden" name="_wp_http_referer" value="/wordpress/rentme/search-places-with-form/?layout=grid">			<input type="hidden" name="action" value="opallisting_share_place_via_email">
+                                        <button type="submit" class="opallisting-submit submit btn btn-primary">Send Message</button>
+                                    </p>
+                                </div>
+                            </form>
+
+                            <!-- Save Search -->
+                            <form class="opallisting-save-search-form mfp-with-anim mfp-hide opallisting-form" id="save5afe4b46d634b">
+                                <header>
+                                    <h4 class="box-heading">Save this search</h4>
+                                </header>
+                                <div class="body">
+                                    <p class="form-row">
+                                        <input type="text" name="name" placeholder="Enter search name">
+                                    </p>
+                                    <p class="form-row">
+                                        <input type="hidden" id="opallisting-save-nonce" name="opallisting-save-nonce" value="428c01f33a"><input type="hidden" name="_wp_http_referer" value="/wordpress/rentme/search-places-with-form/?layout=grid">			<input type="hidden" name="action" value="opallisting_save_search">
+                                        <button type="submit" class="opallisting-submit submit btn btn-primary">Save</button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="opallisting_place_ajax_filter_widget-2" class="widget widget_opallisting_place_ajax_filter_widget">
+                            <h2 class="widgettitle">Property types</h2>
+                            <div class="opallisting-search-ajax-filter">
+
+                            
+                                <div class="tags inner">
+
+                                    <h4 class="title">Tags</h4>
+                                    <ul class="opallisting-checkbox-list button">
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-468">
+                                                bar								<input type="checkbox" name="tag[]" value="bar" id="tags-468">
+                                                <span class="count">(12)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-514">
+                                                cafe								<input type="checkbox" name="tag[]" value="cafe" id="tags-514">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-467">
+                                                club								<input type="checkbox" name="tag[]" value="club" id="tags-467">
+                                                <span class="count">(13)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-474">
+                                                food								<input type="checkbox" name="tag[]" value="food" id="tags-474">
+                                                <span class="count">(11)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-462">
+                                                foods								<input type="checkbox" name="tag[]" value="foods" id="tags-462">
+                                                <span class="count">(4)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-471">
+                                                foot								<input type="checkbox" name="tag[]" value="foot" id="tags-471">
+                                                <span class="count">(12)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-505">
+                                                fruits								<input type="checkbox" name="tag[]" value="fruits" id="tags-505">
+                                                <span class="count">(3)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-504">
+                                                groceries								<input type="checkbox" name="tag[]" value="groceries" id="tags-504">
+                                                <span class="count">(7)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-507">
+                                                healthy								<input type="checkbox" name="tag[]" value="healthy" id="tags-507">
+                                                <span class="count">(13)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-464">
+                                                rice								<input type="checkbox" name="tag[]" value="rice" id="tags-464">
+                                                <span class="count">(11)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-475">
+                                                room								<input type="checkbox" name="tag[]" value="room" id="tags-475">
+                                                <span class="count">(11)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-512">
+                                                sale								<input type="checkbox" name="tag[]" value="sale" id="tags-512">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-463">
+                                                sandweek								<input type="checkbox" name="tag[]" value="sandweek" id="tags-463">
+                                                <span class="count">(10)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-513">
+                                                shoes								<input type="checkbox" name="tag[]" value="shoes" id="tags-513">
+                                                <span class="count">(2)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-503">
+                                                shop								<input type="checkbox" name="tag[]" value="shop" id="tags-503">
+                                                <span class="count">(19)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-511">
+                                                shopping								<input type="checkbox" name="tag[]" value="shopping" id="tags-511">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-509">
+                                                special								<input type="checkbox" name="tag[]" value="special" id="tags-509">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-510">
+                                                tour								<input type="checkbox" name="tag[]" value="tour" id="tags-510">
+                                                <span class="count">(1)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-508">
+                                                travel								<input type="checkbox" name="tag[]" value="travel" id="tags-508">
+                                                <span class="count">(2)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                        <li>
+                                            <!-- <p class="form-row"> -->
+                                            <label class="checkbox-button" for="tags-506">
+                                                vegetables								<input type="checkbox" name="tag[]" value="vegetables" id="tags-506">
+                                                <span class="count">(12)</span>
+                                            </label>
+                                            <!-- </p> -->
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div id="main-content" class="main-content col-xs-12 col-md-9">
+                    <div id="primary" class="content-area">
+                        <div id="content" class="site-content" role="main">
+
+
+                            <article id="post-11219" class="post-11219 page type-page status-publish hentry">
+                                <div class="entry-content-page">
+
+
+                                    <div id="opallisting-places-ajax" class="opallisting-places-wrapper" data-layout="global" data-columns="3" data-limit="9" data-exclude_map="0" data-paged="1">
+                                       
+                                        <div class="opallisting-places-results opallisting-rows">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12" data-related="map" data-id="0">
+                                                    <article itemscope="" itemtype="http://schema.org/Place" class="post-11489 type-opallisting_place status-publish has-post-thumbnail hentry place_category-cinemas place_category-clubs place_category-hostels place_category-hotels place_category-motels place_category-museums place_category-theatres opallisting_tags-food opallisting_tags-fruits opallisting_tags-groceries opallisting_tags-healthy opallisting_tags-shop opallisting_tags-vegetables opallisting_location-spain opallisting_amenities-bottle-service opallisting_amenities-child-care opallisting_amenities-family-friendly opallisting_amenities-free-delivery opallisting_amenities-online-ordering opallisting_amenities-online-reservations opallisting_amenities-pet-friendly opallisting_amenities-private-parties opallisting_amenities-reservations">
+                                                        <div class="place-list-style-v2">
+
+                                                            <div class="place-list container-cols-3">
+                                                                <header>
+                                                                    <div class="place-box-image">
+                                                                        <a href="http://venusdemo.com/wordpress/rentme/places/royal-ontario-museum/" class="place-box-image-inner">
+                                                                            <img width="495" height="500" src="http://venusdemo.com/wordpress/rentme/wp-content/uploads/2017/04/place-50-495x500.jpg" class="attachment-rentme_place_thumbnail size-rentme_place_thumbnail wp-post-image" alt="">
+                                                                        </a>
+                                                                    </div>
+
+                                                                </header>
+
+                                                                <div class="abs-col-item">
+                                                                    <div class="place-content">
+
+
+                                                                        <h4 class="place-title"><a href="http://venusdemo.com/wordpress/rentme/places/royal-ontario-museum/" rel="bookmark">Event Name</a></h4>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Description
+                                                                        </div>
+
+                                                                        <div class="place-type">
+                                                                            <span class="fa fa-expand "></span>
+                                                                            <span>Tags</span>
+                                                                        </div>
+
+                                                                        <div class="place-address">
+                                                                            <i class="fa fa-map-marker"></i>
+                                                                            Location
+                                                                        </div>
+                                                                        <div class="place-address">
+                                                                            <div class="list-group place-amenities opallisting-box">
+                                                                              
+                                                                                <div class="list-group-item-text">
+                                                                                    <div class="row opal-row">
+                                                                                        <div class="col-lg-4 col-md-4 active">
+                                                                                            <span> Total Hours : </span>
+                                                                                            <strong>Brown Place</strong>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4 col-md-4 active">
+                                                                                            <span>Fees : </span>
+                                                                                            <strong>Night King</strong>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4 col-md-4 active">
+                                                                                            <span>Elibility : </span>
+                                                                                            <strong>Reliance Green</strong>
+                                                                                        </div>
+                                                                                       
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+
+
+                                                                <meta itemprop="url" content="http://venusdemo.com/wordpress/rentme/places/royal-ontario-museum/">
+
+                                                            </div>
+                                                        </div>
+                                                            </div>
+                                                    </article><!-- #post-## -->
+                                                </div>
+                                       
+                                            </div>
+
+                                            <div class="w-pagination pagination"><div class="pbr-pagination pagination-main"><ul class="pagination"><li class="disabled"><a aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li><li class="active" data-paged="1"><a href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php">1 <span class="sr-only"></span></a></li><li data-paged="2"><a href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=2">2</a></li><li data-paged="3"><a href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=3">3</a></li><li data-paged="2"><a aria-label="Next" href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=2"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li><li data-paged="0"><a aria-label="Last" href="http://venusdemo.com/wordpress/rentme/wp-admin/admin-ajax.php?paged=6"><span aria-hidden="true"><i class="fa fa-angle-double-right"></i></span></a></li></ul></div></div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div><!-- .entry-content -->
+                            </article><!-- #post-## -->
+
+                        </div><!-- #content -->
+                    </div><!-- #primary -->
+
+                </div><!-- #main-content -->
+
+            </div>
+        </section>
+    </div>
+    <!-- #page -->
+
+
+
+    <div class="modal fade" id="modalLocationSelect" tabindex="-1" role="dialog" aria-labelledby="modalLocationSelect">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="background-color:#00bac6;padding:5px;">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <h3>Search Location </h3>
+                        <input class="form-control" id="LocationInputBox" placeholder="Enter City Name" ng-model="Location" ng-change="ChangeLocation(Location)" style="border-radius:0px;">
+                        <span>Locations: {{SelectedLocation}}</span>
+                        <a ng-repeat="Lr in LocationResult">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" ng-click="SaveLocation(Lr.CityName)" data-dismiss="modal" aria-label="Close">
+                                    <span ng-click="SaveLocation(Lr.CityName)" data-dismiss="modal" aria-label="Close">{{Lr.CityName}}</span>
+                                </li>
+                            </ul>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalNewSearch" tabindex="-1" role="dialog" aria-labelledby="modalNewSearch">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="inner">
+                        <button type="button" class="close btn btn-sm btn-primary pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="background-color:#00bac6;padding:5px;">x</span></button>
+                        <a href="http://www.edpicker.com">
+                            <img class="img-responsive center-image" src="~/Images/logo.png" alt="">
+                        </a>
+                        <h3>Search Education </h3>
+                        <input class="form-control" id="SearchInputBox" placeholder="Enter Education here(Ex:Kindergarten,Banking,IELTS,Cricket..)" ng-model="TagSearch" ng-change="FireSearchTB(TagSearch)" name="search_tags" style="border-radius:0px;">
+                        <span>Result: {{TagSearch}}</span>
+                        <a ng-repeat="Sr in SearchResultTags">
+                            <ul style="line-height:90%;list-style-type:none;color:dimgrey">
+                                <li style="padding-bottom:5px;padding-top:5px;border-bottom:1px solid #f1f1f1" ng-click="TagSelect(Sr.Tags)" data-dismiss="modal" aria-label="Close">
+                                    <span data-dismiss="modal" aria-label="Close" ng-click="TagSelect(Sr.Tags)">{{Sr.Tags}}</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

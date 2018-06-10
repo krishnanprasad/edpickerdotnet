@@ -1,0 +1,1303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Edlooker_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="COUAchievement">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUBasicDetail">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Numberofstudent" Type="Int64" />
+    <Property Name="Placement" Type="Int64" />
+    <Property Name="Achievement" Type="Int64" />
+    <Property Name="TotalSessions" Type="Int64" />
+    <Property Name="TotalHours" Type="Int64" />
+  </EntityType>
+  <EntityType Name="COUBatchAvailable">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BatchName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BatchTiming" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COULab">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Labname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUNew">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="News" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COURGeneral">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="About" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Institutionname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CourseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUSeminar">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUStaffDetail">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumberofStaff" Type="Int64" />
+    <Property Name="NumberofStudent" Type="Int64" />
+    <Property Name="StudentStaffRatio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUSubjectList">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COUTestimonial">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCBriefDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Brief" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FoundedYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrinicpalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionId" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDOne" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDTwo" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDThree" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCContactDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCCourseList">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Hours" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Sessions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Minspersession" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Schedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TotalSeat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CourseURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CourseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCGeneralDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumberofStaff" Type="Int64" />
+    <Property Name="NumberofStudent" Type="Int64" />
+    <Property Name="NumberofPlacements" Type="Int64" />
+    <Property Name="NumberofAssistants" Type="Int64" />
+    <Property Name="NumberofCourse" Type="Int64" />
+    <Property Name="NumberofSessions" Type="Int64" />
+    <Property Name="Parking" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCNew">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="News" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCSocialMediaDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FacebookInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleplusInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YoutubeInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCTestimonial">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCCTimelineDetail">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="InformationRating" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewRating" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewPercentage" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="BannerImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCityDetail">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="StateID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PCOLBriefDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Brief" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FoundedYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrinicpalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionId" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDOne" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDTwo" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDThree" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLContactDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLFaclity">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalStudents" Type="Int64" />
+    <Property Name="TotalStaff" Type="Int64" />
+    <Property Name="TotalDepartments" Type="Int64" />
+    <Property Name="TotalClubs" Type="Int64" />
+    <Property Name="Canteen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Transport" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Library" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLGeneralDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EnterpreneurshipCell" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Scholorship" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Canteen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ArtsClub" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TechnologyClub" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SmartClasses" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Transportation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Hostel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RaggingAssociation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NirbhayaAssociation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DepressionAssociation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLHostel">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TotalAvailablity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StudperRoom" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Food" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Internet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GYM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SwimmingPool" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Policestationdistance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Hospitaldistance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLNew">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="News" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLReview">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Review" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dated" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLSocialMediaDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FacebookInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleplusInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YoutubeInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLSport">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SportsAvailable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Facilties" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumberofCoach" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumberofAchievements" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLTestimonial">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLTimelineDetail">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="InformationRating" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewRating" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="ReviewPercentage" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="BannerImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCOLTransport">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalBus" Type="Int64" />
+    <Property Name="Tracking" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StudentBus" Type="Int64" />
+    <Property Name="BusFees" Type="Int64" />
+    <Property Name="BusRoutes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCountryDetail">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="CountryName" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PStateDetails" Relationship="Self.FK__PStateDet__Count__4B7734FF" FromRole="PCountryDetails" ToRole="PStateDetails" />
+  </EntityType>
+  <EntityType Name="PDEPAchievement">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Totalprojects" Type="Int32" />
+    <Property Name="Totalawards" Type="Int32" />
+    <Property Name="Totalparticipation" Type="Int32" />
+    <Property Name="Totalpatents" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PDEPBriefDetail">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Brief" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TotalTotalStudents" Type="Int32" />
+    <Property Name="TotalTotalStaff" Type="Int32" />
+    <Property Name="TotalPlaced" Type="Int32" />
+    <Property Name="TotalAchievements" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PDEPGallery">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPLab">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Labname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPLecture">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPNew">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="News" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPPlacementCompany">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Companyname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPPlacementsBasic">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Totalcompanies" Type="Int64" />
+    <Property Name="Totalplaced" Type="Int64" />
+    <Property Name="Conversionrate" Type="Int64" />
+    <Property Name="Intership" Type="Int64" />
+  </EntityType>
+  <EntityType Name="PDEPReview">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Review" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dated" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPSeminar">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPStaff">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Totalphd" Type="Int32" />
+    <Property Name="Totaldoctorate" Type="Int32" />
+    <Property Name="Totalprofessor" Type="Int32" />
+    <Property Name="Totallabtechnicians" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PDEPSubject">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Points" Type="Decimal" Precision="12" Scale="6" />
+  </EntityType>
+  <EntityType Name="PDEPTimeline">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CollegeURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CollegeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CourseDuration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PDEPWorkshop">
+    <Key>
+      <PropertyRef Name="SerialNos" />
+    </Key>
+    <Property Name="SerialNos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PInstitutionRegistration">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CourseOffered" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContactName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PKGCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionId" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDOne" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDTwo" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDThree" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PKGEventsDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Event" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PKGGallery">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PKGTestimonial">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PMessageToInstitution">
+    <Key>
+      <PropertyRef Name="SNo" />
+    </Key>
+    <Property Name="SNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserEmail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserPhone" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCAchievement">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AchievementHeading" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AchievementDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCBriefDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Brief" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FoundedYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrinicpalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCCompetitorTable">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionId" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDOne" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDTwo" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionIDThree" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCContactDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCExtraCurricular">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SmartClassURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YogaURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DigitalContentURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SocialClubURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StudentTrackingURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TotalVacationsURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ArtsClubURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TechnologyClubURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WomenSafetyClubURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LanguageClubURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCGallery">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GalleryDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCGeneralDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalStudents" Type="Int64" />
+    <Property Name="TotalStaff" Type="Int64" />
+    <Property Name="TotalSections" Type="Int64" />
+    <Property Name="Canteen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Curriculam" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCHostel">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TotalAvailablity" Type="Int64" />
+    <Property Name="HostelCampus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StudentsperRoom" Type="Int32" />
+    <Property Name="AC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Food" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Internet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GYM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SwimmingPool" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NearestHospital" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NearestPoliceStation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ApproxFees" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCNew">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="News" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCSocialMediaDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FacebookAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleplusAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleplusInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YoutubeAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YoutubeInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCSport">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SportsAvailable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Facilties" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumberofCoach" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NumberofAchievements" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCTestimonial">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TestimonialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TestimonialDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCTimelineDetail">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="AdmissionsStatusID" Type="Int32" />
+    <Property Name="InformationRating" Type="Decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewRating" Type="Decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewPercentage" Type="Decimal" Precision="6" Scale="3" />
+    <Property Name="BoardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BannerImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ClassRange" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSCTransport">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalBus" Type="Int64" />
+    <Property Name="Tracking" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StudentPerBus" Type="Int32" />
+    <Property Name="ApproxBusFees" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BusRoutes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PSearchTable">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="999" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionImageURL" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InstitutionURL" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
+    <Property Name="Tags" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InformationRating" Type="Decimal" Precision="6" Scale="3" Nullable="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="PaidStatus" Type="Boolean" />
+    <Property Name="InstitutionType" Type="Int32" />
+    <Property Name="LocationTags" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="12" Scale="8" />
+    <Property Name="Longitude" Type="Decimal" Precision="12" Scale="8" />
+    <Property Name="ViewCount" Type="Int32" />
+    <NavigationProperty Name="PKGActivities" Relationship="Self.FK__PKGActivi__Insti__57DD0BE4" FromRole="PSearchTable" ToRole="PKGActivities" />
+    <NavigationProperty Name="PKGBriefDetails" Relationship="Self.FK__PKGBriefD__Insti__55F4C372" FromRole="PSearchTable" ToRole="PKGBriefDetail" />
+    <NavigationProperty Name="PKGContactDetails" Relationship="Self.FK__PKGContac__Insti__5BAD9CC8" FromRole="PSearchTable" ToRole="PKGContactDetails" />
+    <NavigationProperty Name="PKGDetails" Relationship="Self.FK__PKGDetail__Insti__59C55456" FromRole="PSearchTable" ToRole="PKGDetails" />
+    <NavigationProperty Name="PKGSocialMediaDetails" Relationship="Self.FK__PKGSocial__Insti__5D95E53A" FromRole="PSearchTable" ToRole="PKGSocialMediaDetails" />
+    <NavigationProperty Name="PKGTimelineDetails" Relationship="Self.FK__PKGTimeli__Insti__531856C7" FromRole="PSearchTable" ToRole="PKGTimelineDetails" />
+  </EntityType>
+  <EntityType Name="PStateDetail">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" />
+    <Property Name="StateName" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <NavigationProperty Name="PCountryDetail" Relationship="Self.FK__PStateDet__Count__4B7734FF" FromRole="PStateDetails" ToRole="PCountryDetails" />
+  </EntityType>
+  <EntityType Name="PTag">
+    <Key>
+      <PropertyRef Name="Tags" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tags" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SimilarTags" Type="String" MaxLength="990" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PTrendingList">
+    <Key>
+      <PropertyRef Name="InstitutionID" />
+    </Key>
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PUserKeyWordSearch">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KeyWordTerm" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PUserLocationKeyword">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KeyWordTerm" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PUserSearch">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SearchTerm" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PKGActivity">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="OutdoorPlayArea" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Painting" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Yoga" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="StoryTelling" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="StageShow" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Learning" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Waterpool" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Dance" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Music" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="CCTV" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PSearchTable" Relationship="Self.FK__PKGActivi__Insti__57DD0BE4" FromRole="PKGActivities" ToRole="PSearchTable" />
+  </EntityType>
+  <EntityType Name="PKGBriefDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Brief" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FoundedYear" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="PrinicpalName" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PSearchTable" Relationship="Self.FK__PKGBriefD__Insti__55F4C372" FromRole="PKGBriefDetail" ToRole="PSearchTable" />
+  </EntityType>
+  <EntityType Name="PKGContactDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="Longitude" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="LocationAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PSearchTable" Relationship="Self.FK__PKGContac__Insti__5BAD9CC8" FromRole="PKGContactDetails" ToRole="PSearchTable" />
+  </EntityType>
+  <EntityType Name="PKGDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TotalStudents" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TotalStaff" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="TotalRooms" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Food" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Curriculam" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="Transport" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PSearchTable" Relationship="Self.FK__PKGDetail__Insti__59C55456" FromRole="PKGDetails" ToRole="PSearchTable" />
+  </EntityType>
+  <EntityType Name="PKGSocialMediaDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FacebookInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TwitterInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleplusAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GoogleplusInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YoutubeAvailableImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YoutubeInstitutionURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PSearchTable" Relationship="Self.FK__PKGSocial__Insti__5D95E53A" FromRole="PKGSocialMediaDetails" ToRole="PSearchTable" />
+  </EntityType>
+  <EntityType Name="PKGTimelineDetail">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionID" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="AdmissionsStatusID" Type="Int32" />
+    <Property Name="InformationRating" Type="Decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewRating" Type="Decimal" Precision="6" Scale="3" />
+    <Property Name="ReviewPercentage" Type="Decimal" Precision="6" Scale="3" />
+    <Property Name="BannerImageURL" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PSearchTable" Relationship="Self.FK__PKGTimeli__Insti__531856C7" FromRole="PKGTimelineDetails" ToRole="PSearchTable" />
+  </EntityType>
+  <Association Name="FK__PStateDet__Count__4B7734FF">
+    <End Role="PCountryDetails" Type="Self.PCountryDetail" Multiplicity="0..1" />
+    <End Role="PStateDetails" Type="Self.PStateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PCountryDetails">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="PStateDetails">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGActivi__Insti__57DD0BE4">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGActivities" Type="Self.PKGActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGActivities">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGBriefD__Insti__55F4C372">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGBriefDetail" Type="Self.PKGBriefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGBriefDetail">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGContac__Insti__5BAD9CC8">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGContactDetails" Type="Self.PKGContactDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGContactDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGDetail__Insti__59C55456">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGDetails" Type="Self.PKGDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGSocial__Insti__5D95E53A">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGSocialMediaDetails" Type="Self.PKGSocialMediaDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGSocialMediaDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PKGTimeli__Insti__531856C7">
+    <End Role="PSearchTable" Type="Self.PSearchTable" Multiplicity="0..1" />
+    <End Role="PKGTimelineDetails" Type="Self.PKGTimelineDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PSearchTable">
+        <PropertyRef Name="InstitutionID" />
+      </Principal>
+      <Dependent Role="PKGTimelineDetails">
+        <PropertyRef Name="InstitutionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Edlooker_DevEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COUAchievements" EntityType="Self.COUAchievement" />
+    <EntitySet Name="COUBasicDetails" EntityType="Self.COUBasicDetail" />
+    <EntitySet Name="COUBatchAvailables" EntityType="Self.COUBatchAvailable" />
+    <EntitySet Name="COUGalleries" EntityType="Self.COUGallery" />
+    <EntitySet Name="COULabs" EntityType="Self.COULab" />
+    <EntitySet Name="COUNews" EntityType="Self.COUNew" />
+    <EntitySet Name="COURGenerals" EntityType="Self.COURGeneral" />
+    <EntitySet Name="COUSeminars" EntityType="Self.COUSeminar" />
+    <EntitySet Name="COUStaffDetails" EntityType="Self.COUStaffDetail" />
+    <EntitySet Name="COUSubjectLists" EntityType="Self.COUSubjectList" />
+    <EntitySet Name="COUTestimonials" EntityType="Self.COUTestimonial" />
+    <EntitySet Name="PCCBriefDetails" EntityType="Self.PCCBriefDetail" />
+    <EntitySet Name="PCCCompetitorTables" EntityType="Self.PCCCompetitorTable" />
+    <EntitySet Name="PCCContactDetails" EntityType="Self.PCCContactDetail" />
+    <EntitySet Name="PCCCourseLists" EntityType="Self.PCCCourseList" />
+    <EntitySet Name="PCCGalleries" EntityType="Self.PCCGallery" />
+    <EntitySet Name="PCCGeneralDetails" EntityType="Self.PCCGeneralDetail" />
+    <EntitySet Name="PCCNews" EntityType="Self.PCCNew" />
+    <EntitySet Name="PCCSocialMediaDetails" EntityType="Self.PCCSocialMediaDetail" />
+    <EntitySet Name="PCCTestimonials" EntityType="Self.PCCTestimonial" />
+    <EntitySet Name="PCCTimelineDetails" EntityType="Self.PCCTimelineDetail" />
+    <EntitySet Name="PCityDetails" EntityType="Self.PCityDetail" />
+    <EntitySet Name="PCOLBriefDetails" EntityType="Self.PCOLBriefDetail" />
+    <EntitySet Name="PCOLCompetitorTables" EntityType="Self.PCOLCompetitorTable" />
+    <EntitySet Name="PCOLContactDetails" EntityType="Self.PCOLContactDetail" />
+    <EntitySet Name="PCOLDepartments" EntityType="Self.PCOLDepartment" />
+    <EntitySet Name="PCOLFaclities" EntityType="Self.PCOLFaclity" />
+    <EntitySet Name="PCOLGalleries" EntityType="Self.PCOLGallery" />
+    <EntitySet Name="PCOLGeneralDetails" EntityType="Self.PCOLGeneralDetail" />
+    <EntitySet Name="PCOLHostels" EntityType="Self.PCOLHostel" />
+    <EntitySet Name="PCOLNews" EntityType="Self.PCOLNew" />
+    <EntitySet Name="PCOLReviews" EntityType="Self.PCOLReview" />
+    <EntitySet Name="PCOLSocialMediaDetails" EntityType="Self.PCOLSocialMediaDetail" />
+    <EntitySet Name="PCOLSports" EntityType="Self.PCOLSport" />
+    <EntitySet Name="PCOLTestimonials" EntityType="Self.PCOLTestimonial" />
+    <EntitySet Name="PCOLTimelineDetails" EntityType="Self.PCOLTimelineDetail" />
+    <EntitySet Name="PCOLTransports" EntityType="Self.PCOLTransport" />
+    <EntitySet Name="PCountryDetails" EntityType="Self.PCountryDetail" />
+    <EntitySet Name="PDEPAchievements" EntityType="Self.PDEPAchievement" />
+    <EntitySet Name="PDEPBriefDetails" EntityType="Self.PDEPBriefDetail" />
+    <EntitySet Name="PDEPGalleries" EntityType="Self.PDEPGallery" />
+    <EntitySet Name="PDEPLabs" EntityType="Self.PDEPLab" />
+    <EntitySet Name="PDEPLectures" EntityType="Self.PDEPLecture" />
+    <EntitySet Name="PDEPNews" EntityType="Self.PDEPNew" />
+    <EntitySet Name="PDEPPlacementCompanies" EntityType="Self.PDEPPlacementCompany" />
+    <EntitySet Name="PDEPPlacementsBasics" EntityType="Self.PDEPPlacementsBasic" />
+    <EntitySet Name="PDEPReviews" EntityType="Self.PDEPReview" />
+    <EntitySet Name="PDEPSeminars" EntityType="Self.PDEPSeminar" />
+    <EntitySet Name="PDEPStaffs" EntityType="Self.PDEPStaff" />
+    <EntitySet Name="PDEPSubjects" EntityType="Self.PDEPSubject" />
+    <EntitySet Name="PDEPTimelines" EntityType="Self.PDEPTimeline" />
+    <EntitySet Name="PDEPWorkshops" EntityType="Self.PDEPWorkshop" />
+    <EntitySet Name="PInstitutionRegistrations" EntityType="Self.PInstitutionRegistration" />
+    <EntitySet Name="PKGCompetitorTables" EntityType="Self.PKGCompetitorTable" />
+    <EntitySet Name="PKGEventsDetails" EntityType="Self.PKGEventsDetail" />
+    <EntitySet Name="PKGGalleries" EntityType="Self.PKGGallery" />
+    <EntitySet Name="PKGTestimonials" EntityType="Self.PKGTestimonial" />
+    <EntitySet Name="PMessageToInstitutions" EntityType="Self.PMessageToInstitution" />
+    <EntitySet Name="PSCAchievements" EntityType="Self.PSCAchievement" />
+    <EntitySet Name="PSCBriefDetails" EntityType="Self.PSCBriefDetail" />
+    <EntitySet Name="PSCCompetitorTables" EntityType="Self.PSCCompetitorTable" />
+    <EntitySet Name="PSCContactDetails" EntityType="Self.PSCContactDetail" />
+    <EntitySet Name="PSCExtraCurriculars" EntityType="Self.PSCExtraCurricular" />
+    <EntitySet Name="PSCGalleries" EntityType="Self.PSCGallery" />
+    <EntitySet Name="PSCGeneralDetails" EntityType="Self.PSCGeneralDetail" />
+    <EntitySet Name="PSCHostels" EntityType="Self.PSCHostel" />
+    <EntitySet Name="PSCNews" EntityType="Self.PSCNew" />
+    <EntitySet Name="PSCSocialMediaDetails" EntityType="Self.PSCSocialMediaDetail" />
+    <EntitySet Name="PSCSports" EntityType="Self.PSCSport" />
+    <EntitySet Name="PSCTestimonials" EntityType="Self.PSCTestimonial" />
+    <EntitySet Name="PSCTimelineDetails" EntityType="Self.PSCTimelineDetail" />
+    <EntitySet Name="PSCTransports" EntityType="Self.PSCTransport" />
+    <EntitySet Name="PSearchTables" EntityType="Self.PSearchTable" />
+    <EntitySet Name="PStateDetails" EntityType="Self.PStateDetail" />
+    <EntitySet Name="PTags" EntityType="Self.PTag" />
+    <EntitySet Name="PTrendingLists" EntityType="Self.PTrendingList" />
+    <EntitySet Name="PUserKeyWordSearches" EntityType="Self.PUserKeyWordSearch" />
+    <EntitySet Name="PUserLocationKeywords" EntityType="Self.PUserLocationKeyword" />
+    <EntitySet Name="PUserSearches" EntityType="Self.PUserSearch" />
+    <EntitySet Name="Types" EntityType="Self.Type" />
+    <EntitySet Name="PKGActivities" EntityType="Self.PKGActivity" />
+    <EntitySet Name="PKGBriefDetails" EntityType="Self.PKGBriefDetail" />
+    <EntitySet Name="PKGContactDetails" EntityType="Self.PKGContactDetail" />
+    <EntitySet Name="PKGDetails" EntityType="Self.PKGDetail" />
+    <EntitySet Name="PKGSocialMediaDetails" EntityType="Self.PKGSocialMediaDetail" />
+    <EntitySet Name="PKGTimelineDetails" EntityType="Self.PKGTimelineDetail" />
+    <AssociationSet Name="FK__PStateDet__Count__4B7734FF" Association="Self.FK__PStateDet__Count__4B7734FF">
+      <End Role="PCountryDetails" EntitySet="PCountryDetails" />
+      <End Role="PStateDetails" EntitySet="PStateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGActivi__Insti__57DD0BE4" Association="Self.FK__PKGActivi__Insti__57DD0BE4">
+      <End Role="PSearchTable" EntitySet="PSearchTables" />
+      <End Role="PKGActivities" EntitySet="PKGActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGBriefD__Insti__55F4C372" Association="Self.FK__PKGBriefD__Insti__55F4C372">
+      <End Role="PSearchTable" EntitySet="PSearchTables" />
+      <End Role="PKGBriefDetail" EntitySet="PKGBriefDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGContac__Insti__5BAD9CC8" Association="Self.FK__PKGContac__Insti__5BAD9CC8">
+      <End Role="PSearchTable" EntitySet="PSearchTables" />
+      <End Role="PKGContactDetails" EntitySet="PKGContactDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGDetail__Insti__59C55456" Association="Self.FK__PKGDetail__Insti__59C55456">
+      <End Role="PSearchTable" EntitySet="PSearchTables" />
+      <End Role="PKGDetails" EntitySet="PKGDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGSocial__Insti__5D95E53A" Association="Self.FK__PKGSocial__Insti__5D95E53A">
+      <End Role="PSearchTable" EntitySet="PSearchTables" />
+      <End Role="PKGSocialMediaDetails" EntitySet="PKGSocialMediaDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PKGTimeli__Insti__531856C7" Association="Self.FK__PKGTimeli__Insti__531856C7">
+      <End Role="PSearchTable" EntitySet="PSearchTables" />
+      <End Role="PKGTimelineDetails" EntitySet="PKGTimelineDetails" />
+    </AssociationSet>
+    <EntitySet Name="TestUploadImages" EntityType="Edlooker_DevModel.TestUploadImage" />
+    <EntitySet Name="PBLOGs" EntityType="Edlooker_DevModel.PBLOG" />
+    <EntitySet Name="PCALENDERs" EntityType="Edlooker_DevModel.PCALENDER" />
+    <EntitySet Name="PNEWS" EntityType="Edlooker_DevModel.PNEW" />
+    <EntitySet Name="C_TempD_BOOKING_LOG" EntityType="Edlooker_DevModel.C_TempD_BOOKING_LOG" />
+    <EntitySet Name="C_TempD_Booking_Product_List" EntityType="Edlooker_DevModel.C_TempD_Booking_Product_List" />
+    <EntitySet Name="C_TempD_Category_Detail" EntityType="Edlooker_DevModel.C_TempD_Category_Detail" />
+    <EntitySet Name="C_TempD_Company_Detail" EntityType="Edlooker_DevModel.C_TempD_Company_Detail" />
+    <EntitySet Name="C_TempD_CUSTOMER_DETAILS" EntityType="Edlooker_DevModel.C_TempD_CUSTOMER_DETAILS" />
+    <EntitySet Name="C_TempD_Product_Detail" EntityType="Edlooker_DevModel.C_TempD_Product_Detail" />
+    <EntitySet Name="C_TempD_Product_Weighing_List" EntityType="Edlooker_DevModel.C_TempD_Product_Weighing_List" />
+  </EntityContainer>
+  <EntityType Name="TestUploadImage">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="ImageData" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PBLOG">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Heading" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalView" Type="Int32" />
+    <Property Name="Tags" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="FromSource" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="ImageSource" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PCALENDER">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Heading" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastDateforApplying" Type="DateTime" Precision="3" />
+    <Property Name="URL" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="TotalView" Type="Int32" />
+    <Property Name="Tags" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Source" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="ImageSource" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PNEW">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Heading" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalView" Type="Int32" />
+    <Property Name="Tags" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="FromSource" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="ImageSrc" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="C_TempD_BOOKING_LOG">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Booking_ID" Type="String" MaxLength="333" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Customer_ID" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Product" Type="Int32" />
+    <Property Name="Total_Cost" Type="Int64" />
+    <Property Name="Booking_Time" Type="DateTime" Precision="3" />
+    <Property Name="Delivery_Time" Type="Int32" />
+    <Property Name="Delivery_Pincode" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Delivery_Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Delivery_Phone" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="C_TempD_Booking_Product_List">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Booking_ID" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Product_ID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Cost" Type="Int64" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="C_TempD_Category_Detail">
+    <Key>
+      <PropertyRef Name="Category_ID" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_ID" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Category_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="C_TempD_Company_Detail">
+    <Key>
+      <PropertyRef Name="Company_ID" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_ID" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Company_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Company_ImgSrc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="C_TempD_CUSTOMER_DETAILS">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Landmark" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Pincode" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Wallet_Balance" Type="Int64" />
+    <Property Name="Cust_Image" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="C_TempD_Product_Detail">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_ID" Type="Int32" Nullable="false" />
+    <Property Name="Product_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cost" Type="Int64" />
+    <Property Name="C_Weighing_List" Type="Int32" />
+    <Property Name="Company_ID" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Product_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Product_ImgSrc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Availability" Type="Int32" />
+    <Property Name="Category_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="C_TempD_Product_Weighing_List">
+    <Key>
+      <PropertyRef Name="Product_Weighing_ID" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_ID" Type="Int32" />
+    <Property Name="Product_Weighing_ID" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Weighing_Type" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Weighing_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Cost" Type="Int64" />
+  </EntityType>
+</Schema>
